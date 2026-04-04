@@ -34,32 +34,109 @@ export default function About() {
           </div>
         ))}
       </div>
-      <p>
-        I am a full stack developer with a passion for creating robust and
-        scalable web applications. I have a wide understanding of both frontend
-        and backend technologies.
-      </p>
-      <p className="my-4">
-        On the front end, I am skilled in using modern JavaScript frameworks
-        such as React.js, Next js, and interactive user interfaces. I have a
-        firm grasp of HTML, CSS, and JavaScript and expertise in front-end
-        libraries and tools like Bootstrap, Sass, Style-components, and
-        Tailwind CSS. My proficiency in Redux enables me to efficiently manage
-        the state of complex applications, ensuring a smooth and predictable user
-        experience.
-      </p>
-      <p>
-        On the back end, I am proficient in server-side technologies such as
-        Node.js, Express.js, and Nest.js, and I have extensive experience in
-        designing and developing RESTful APIs. I am well-versed in handling
-        data storage and retrieval, utilizing databases such as MongoDB and
-        Postgres. Additionally, I have a strong background in database modeling
-        using technologies like Mongoose and Prisma, and I am skilled in writing
-        server-side code using TypeScript, which enhances code quality and
-        maintainability. My expertise extends to implementing authentication
-        and authorization mechanisms, including technologies like Firebase, to
-        ensure robust security and user access control.
-      </p>
+      {/* Main description */}
+      <div className="mx-auto mt-10 text-center text-gray-700 dark:text-gray-300 space-y-5">
+        <p>
+          I&apos;m{" "}
+          <span className="font-semibold text-indigo-600 dark:text-indigo-400">
+            Sabbir Chowdhury
+          </span>
+          , a{" "}
+          <span className="font-medium text-emerald-500 dark:text-emerald-400">
+            Tech Lead
+          </span>{" "}
+          and{" "}
+          <span className="font-medium text-emerald-500 dark:text-emerald-400">
+            Full-Stack Developer
+          </span>{" "}
+          from <span className="font-medium">Bangladesh</span> with extensive
+          experience building and shipping production-grade web applications. I
+          currently lead a talented development team at{" "}
+          <a
+            href="https://ewynk.com"
+            target="_blank"
+            className="font-semibold text-underline text-indigo-500 dark:text-indigo-400"
+          >
+            ewynk
+          </a>
+          , where I manage sprints, mentor developers, and shape system
+          architecture.
+        </p>
+
+        <p>
+          On the frontend, I specialize in{" "}
+          <span className="font-medium text-indigo-500 dark:text-indigo-400">
+            React.js
+          </span>
+          ,{" "}
+          <span className="font-medium text-indigo-500 dark:text-indigo-400">
+            Next.js
+          </span>
+          , and{" "}
+          <span className="font-medium text-indigo-500 dark:text-indigo-400">
+            TypeScript
+          </span>
+          — crafting responsive, accessible interfaces with Tailwind CSS,
+          ShadCN, and Framer Motion. I&apos;ve built{" "}
+          <span className="font-semibold text-emerald-500 dark:text-emerald-400">
+            30+ reusable components
+          </span>{" "}
+          and developed a no-code visual editor that{" "}
+          <span className="font-semibold text-emerald-500 dark:text-emerald-400">
+            reduced manual design effort by 80%
+          </span>
+          , accelerating team delivery speed.
+        </p>
+
+        <p>
+          On the backend, I work with{" "}
+          <span className="font-medium text-indigo-500 dark:text-indigo-400">
+            Node.js
+          </span>
+          ,{" "}
+          <span className="font-medium text-indigo-500 dark:text-indigo-400">
+            Express.js
+          </span>
+          , and{" "}
+          <span className="font-medium text-indigo-500 dark:text-indigo-400">
+            Nest.js
+          </span>{" "}
+          to build robust RESTful APIs. I integrate payment solutions like{" "}
+          <span className=" text-emerald-500 dark:text-emerald-400">
+            Stripe
+          </span>
+          ,{" "}
+          <span className=" text-emerald-500 dark:text-emerald-400">
+            PayPal
+          </span>
+          , and{" "}
+          <span className=" text-emerald-500 dark:text-emerald-400">
+            Razorpay
+          </span>
+          , manage data via <span className="font-medium">PostgreSQL</span> and{" "}
+          <span className="font-medium">MongoDB</span> with Prisma and Mongoose,
+          and deploy with confidence on{" "}
+          <span className="font-medium">Vercel</span> and{" "}
+          <span className="font-medium">Netlify</span>.
+        </p>
+
+        <p>
+          Beyond the stack, I&apos;ve led{" "}
+          <span className="font-semibold text-emerald-500 dark:text-emerald-400">
+            AI-powered features
+          </span>{" "}
+          using MediaPipe Pose Detection, automated workflows saving{" "}
+          <span className="font-medium text-emerald-500 dark:text-emerald-400">
+            6–7 hours daily
+          </span>
+          , and boosted backend response times by{" "}
+          <span className="font-medium text-emerald-500 dark:text-emerald-400">
+            20%+
+          </span>
+          . I thrive in Agile environments and love creating products that are
+          not only fast and scalable — but genuinely useful.
+        </p>
+      </div>
     </motion.section>
   );
 }

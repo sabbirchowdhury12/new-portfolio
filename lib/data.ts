@@ -7,11 +7,11 @@ import { BsCalendar3EventFill } from "react-icons/bs";
 import { GrFlagFill } from "react-icons/gr";
 import { MdEmail } from "react-icons/md";
 import { FaSquareWhatsapp, FaDiscord } from "react-icons/fa6";
-import img1 from "@/public/auto-x.png";
+import img1 from "@/public/tigsaw.png";
 import fullstack2 from "@/public/full-stack-media-app.png";
-import img2 from "@/public/Go-trip.png";
-import img3 from "@/public/chat.png";
-import img4 from "@/public/phone.png";
+import img2 from "@/public/removeq.png";
+import img3 from "@/public/posture.png";
+import img4 from "@/public/dollerpe.png";
 import img5 from "@/public/tour.png";
 import css1 from "@/public/css1.png";
 import css2 from "@/public/css2.png";
@@ -68,164 +68,104 @@ export const aboutCards = [
 
 export const experiencesData = [
   {
-    title: "Web Development Course",
-    location: "Programming Hero",
+    title: "Tech Lead",
+    location: "EYWINK — Remote",
     description:
-      "Through this course, I've cultivated a robust foundation in web development, mastering HTML, CSS, and JavaScript. I specialize in building dynamic, responsive web applications with React.js and server-side development using Express.js, and MongoDB for databases.",
+      "Leading a 3-member development team, managing sprints and reviewing 20+ pull requests weekly. Built an AI-powered posture analysis platform using MediaPipe, automated Binance P2P operations saving 6–7 hours/day, and mentored 3 junior developers reducing feature delivery time by ~25%.",
     icon: React.createElement(CgWorkAlt),
-    date: "2022 - 2023",
+    date: "2026 - Present",
   },
   {
-    title: "Development Course Level 2",
+    title: "Full-Stack Web Developer",
+    location: "RemoveQ Technology Pvt. Ltd. — Remote (India)",
+    description:
+      "Built 30+ reusable UI components, developed 15+ RESTful APIs, and integrated PayPal & Razorpay payment gateways. Pioneered a no-code visual editor that reduced manual design efforts by 80%. Integrated Supabase Auth and built a scalable AWS S3 file storage system.",
+    icon: React.createElement(CgWorkAlt),
+    date: "2024 - 2025",
+  },
+  {
+    title: "Web Development Course (Level 1 & 2)",
     location: "Programming Hero",
     description:
-      "Completed coursework in full-stack development, learning to build fast React apps with Next.js and manage state with Redux Toolkit. Used Mongoose to work with MongoDB and Prisma for database management. Gained skills in designing and querying databases with PostgreSQL.",
-    icon: React.createElement(CgWorkAlt),
-    date: "2023 - 2024",
+      "Built a strong foundation in full-stack development — mastering React, Next.js, Redux, Node.js, Express, MongoDB, PostgreSQL, Prisma, and TypeScript through structured coursework and projects.",
+    icon: React.createElement(FaReact),
+    date: "2022 - 2024",
   },
   {
     title: "BSS (Hons)",
     location: "Govt. Debendro College",
     description: "",
     icon: React.createElement(LuGraduationCap),
-    date: "2019 - present",
-  },
-  {
-    title: "Youtube - Online Course",
-    location: "Online",
-    description: "",
-    icon: React.createElement(FaReact),
-    date: "2021 - present",
+    date: "2019 - Present",
   },
 ] as const;
-
 export const fullStackProjectData = [
   {
     id: 1,
-    title: "Auto-X (Car-Rental)",
+    title: "Tigsaw (SaaS Platform)",
     imgUrl: img1,
     tags: [
-      "Typescript",
-      "Next JS",
-      "Redux",
-      "Shadcn",
-      "Express JS",
+      "Next.js",
+      "TypeScript",
       "Prisma",
-      "Postgres",
-      "Es-lint",
-      "Prettier",
-      "Husky",
+      "PostgreSQL",
+      "ShadCN",
+      "Tailwind CSS",
+      "Framer Motion",
+      "PayPal",
+      "Razorpay",
+      "REST API",
     ],
-    client: "https://github.com/sabbirchowdhury12/nextjs-auto-X-frontend",
-    server: "https://github.com/sabbirchowdhury12/auto-X-backend",
-    live: "https://autox-frontend.vercel.app",
-    name: "Auto-X ",
-    dashboard: {
-      name: "Auto-X Admin Account",
-      link: "https://autox-frontend.vercel.app/login?role=admin",
-    },
-  },
-  {
-    id: 6,
-    title: "Media-app",
-    imgUrl: fullstack2,
-    tags: [
-      "Express",
-      "Mongoose",
-      "MongoDB",
-      "React",
-      "Redux",
-      "Material UI",
-      "React Dropzone",
-      "Formik",
-      "Yup",
-    ],
-    client:
-      "https://github.com/sabbirchowdhury12/mern-stack-social-media-client",
-    server:
-      "https://github.com/sabbirchowdhury12/mern-stack-social-media-server",
-    live: "https://mediabook-social-app.vercel.app/",
-    name: "Auto-X ",
+    client: "",
+    server: "",
+    live: "https://tigsaw.com",
+    name: "Tigsaw",
   },
   {
     id: 2,
-    title: "GoTrip (Service Provider Website)",
+    title: "RemoveQ (Analytics Platform)",
     imgUrl: img2,
     tags: [
-      "Typescript",
-      "Express JS",
-      "Prisma",
-      "Postgres",
-      "Next JS",
-      "Redux",
-      "Material Tailwind",
+      "Next.js",
+      "TypeScript",
+      "Supabase",
+      "AWS S3",
+      "Tailwind CSS",
+      "ShadCN",
+      "REST API",
       "JWT",
     ],
-    client:
-      "https://github.com/sabbirchowdhury12/full-stack-tourist-service-frontend",
-    server:
-      "https://github.com/sabbirchowdhury12/full-stack-tourist-service-backend",
-    live: "https://full-stack-tourist-service-frontend.vercel.app",
-    name: "GoTrip",
+    client: "",
+    server: "",
+    live: "https://removeq.com",
+    name: "RemoveQ",
   },
   {
     id: 3,
-    title: "Chat App",
+    title: "AI Posture Analysis Platform",
     imgUrl: img3,
     tags: [
-      "Express JS",
-      "Mongoose",
-      "MongoDB",
-      "React JS",
-      "Styled-components",
-      "Socket.io",
-      "Nodemailer",
+      "React.js",
+      "TypeScript",
+      "MediaPipe",
+      "Node.js",
+      "REST API",
+      "Tailwind CSS",
     ],
-    client:
-      "https://github.com/sabbirchowdhury12/mern-stack-chat-application-client-side",
-    server:
-      "https://github.com/sabbirchowdhury12/mern-stack-chat-application-server-side",
-    live: "https://mern-stack-chat-app.netlify.app",
-    name: "Chat Application",
+    client: "",
+    server: "",
+    live: "",
+    name: "AI Posture Analysis",
   },
   {
     id: 4,
-    title: "Resale Phone",
+    title: "Binance P2P Automation",
     imgUrl: img4,
-    tags: [
-      "Node JS/Express JS",
-      "MongoDB CRUD Operation",
-      "JWT",
-      "Firebase Authentication",
-      "React JS",
-      "Stripe payment method",
-      "Tailwind CSS",
-    ],
-    client:
-      "https://github.com/sabbirchowdhury12/sabbirchowdhury12-mern-stack-repair-resale-phone-client",
-    server:
-      "https://github.com/sabbirchowdhury12/mern-stack-Repair-Resale-Phone-server",
-    live: "https://resale-repair-phone.web.app/",
-    name: "Resale and Buy Phone",
-  },
-  {
-    id: 5,
-    title: "Tour Website",
-    imgUrl: img5,
-    tags: [
-      "Node JS/Express JS",
-      "MongoDB",
-      "JWT",
-      "Firebase Authentication",
-      "React JS",
-      "Daisy UI",
-    ],
-    client:
-      "https://github.com/sabbirchowdhury12/mern-stack-tourist-service-website-client",
-    server:
-      "https://github.com/sabbirchowdhury12/mern-stack-tourist-service-website-server",
-    live: "https://world-tourist-website.web.app/",
-    name: "Tour Website",
+    tags: ["Node.js", "TypeScript", "Express.js", "REST API", "Automation"],
+    client: "",
+    server: "",
+    live: "",
+    name: "Binance P2P Automation",
   },
 ] as const;
 
@@ -317,32 +257,30 @@ export const frontendSkillsData = [
   "HTML",
   "CSS",
   "JavaScript",
-  "React JS",
-  "Next.js",
-  "BOOTSTRAP",
-  "MUI",
-  "STYLED-COMPONENTS",
-  "SHADCN",
-  "Tailwind",
-  "Redux",
-  "Git",
-] as const;
-
-export const backendSkillsData = [
   "TypeScript",
-  "Node.js",
-  "NEST JS",
-  "Prisma",
-  "MongoDB",
-  "Mongoose",
-  "FIREBASE",
-  "GraphQL",
-  "Express",
-  "PostgreSQL",
-  "NODEMAILER",
-  "JWT",
+  "React.js",
+  "Next.js",
+  "Redux",
+  "Tailwind CSS",
+  "ShadCN",
+  "Styled-components",
+  "Framer Motion",
+  "MUI",
 ] as const;
-
+export const backendSkillsData = [
+  "Node.js",
+  "Express.js",
+  "Nest.js",
+  "Prisma",
+  "REST API",
+  "JWT",
+  "Mongoose",
+  "MongoDB",
+  "PostgreSQL",
+  "Firebase",
+  "Supabase",
+  "GraphQL",
+] as const;
 export const contactCards = [
   {
     icon: React.createElement(MdEmail),
@@ -353,7 +291,7 @@ export const contactCards = [
   {
     icon: React.createElement(FaSquareWhatsapp),
     title: "Whatsapp",
-    describe: "+8801989969238",
+    describe: "+8801617837797",
   },
   {
     icon: React.createElement(FaDiscord),

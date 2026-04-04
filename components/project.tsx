@@ -11,27 +11,27 @@ export default function Project({ project }: { project: any }) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["0 1", "1.33 1"],
+    offset: ["0.2 1", "0.8 1"],
   });
-  const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
-  const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+
+  const scale = useTransform(scrollYProgress, [0, 1], [0.9, 1]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
 
   return (
     <motion.div
       ref={ref}
-      style={{
-        scale: scaleProgess,
-        opacity: opacityProgess,
-      }}
-      className="group mb-3 sm:mb-8 last:mb-0"
+      style={{ scale, opacity }}
+      className="group mb-6 sm:mb-8 last:mb-0"
     >
-      <div
-        key={project?.title}
-        className="shadow-lg p-4 rounded-lg dark:bg-[#1D2432]"
+      <motion.div
+        transition={{ type: "spring", stiffness: 180, damping: 12 }}
+        className="shadow-lg p-4 rounded-lg dark:bg-[#1D2432] bg-white/80 border border-gray-200 dark:border-gray-700 transition-all"
       >
-        <p className="text-sm md:text-2xl text-center my-2 font-bold">
+        <p className="text-xl font-bold text-center my-3 dark:text-white/80">
           {project.title}
         </p>
+
+        {/* Image container with smooth vertical scroll movement on hover */}
         <div className="projects_img w-full h-[350px] overflow-hidden cursor-pointer">
           <Image
             src={project.imgUrl}
@@ -41,56 +41,69 @@ export default function Project({ project }: { project: any }) {
             className="object-cover w-full transition-transform ease-out duration-[5000ms] rounded-[1rem]"
           />
         </div>
-
-        <ul className="flex flex-wrap justify-center items-center pt-4 my-4 gap-2 sm:mt-auto">
-          {project.tags.map((tag: string, index: number) => (
-            <li
-              className="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70"
-              key={index}
+        {/* Technology tags */}
+        <ul className="flex flex-wrap justify-center pt-4 my-4 gap-2">
+          {project.tags.map((tag: string, i: number) => (
+            <motion.li
+              key={i}
+              whileHover={{ scale: 1.08 }}
+              transition={{ type: "spring", stiffness: 250, damping: 15 }}
+              className="px-3 py-1 bg-gray-900/80 text-[0.7rem] text-white uppercase tracking-wider 
+                         rounded-full dark:bg-white/15 dark:text-white/70"
             >
               {tag}
-            </li>
+            </motion.li>
           ))}
         </ul>
-        <div className="flex justify-center items-center gap-4">
-          <a
-            className="icon"
-            href={project.client}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaGithubSquare />
-          </a>
-          <a
-            className="icon"
-            href={project.server}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaGithubSquare />
-          </a>
-          <a
-            className="icon"
-            href={project.live}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <BsBoxArrowUpRight />
-          </a>
 
-          {project?.dashboard && (
+        {/* Links */}
+        <div className="flex justify-center items-center gap-5 text-2xl text-gray-700 dark:text-white/80 mt-4">
+          {project.client && (
             <a
+              href={project.client}
               target="_blank"
               rel="noopener noreferrer"
-              title="admin account"
-              href={project?.dashboard?.link}
-              className="icon"
+              title="Client Repository"
+              className="hover:text-indigo-500 transition-colors"
+            >
+              <FaGithubSquare />
+            </a>
+          )}
+          {project.server && (
+            <a
+              href={project.server}
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Server Repository"
+              className="hover:text-indigo-500 transition-colors"
+            >
+              <FaGithubSquare />
+            </a>
+          )}
+          {project.live && (
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Live Site"
+              className="hover:text-indigo-500 transition-colors"
+            >
+              <BsBoxArrowUpRight />
+            </a>
+          )}
+          {project.dashboard && (
+            <a
+              href={project.dashboard.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Admin Dashboard"
+              className="hover:text-indigo-500 transition-colors"
             >
               <MdDashboard />
             </a>
           )}
         </div>
-      </div>
+      </motion.div>
     </motion.div>
   );
 }
