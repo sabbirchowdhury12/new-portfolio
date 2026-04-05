@@ -9,15 +9,17 @@ import { FileText, ChevronRight, ChevronDown, Loader2 } from "lucide-react";
 
 interface Category {
   id: string;
+  slug: string;
   name: string;
-  documents: { id: string; title: string }[];
+  documents: { id: string; slug: string; title: string }[];
 }
 
 interface Document {
   id: string;
+  slug: string;
   title: string;
   content: string;
-  category: { id: string; name: string } | null;
+  category: { id: string; slug: string; name: string } | null;
 }
 
 export default function DocsPage() {
@@ -134,7 +136,7 @@ export default function DocsPage() {
                       {category.documents.map((doc) => (
                         <Link
                           key={doc.id}
-                          href={`/docs/${category.id}/${doc.id}`}
+                          href={`/docs/${category.slug}/${doc.slug}`}
                           className={`block px-3 py-2 text-sm rounded-lg transition-colors ${
                             selectedDocId === doc.id
                               ? "bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 font-medium"

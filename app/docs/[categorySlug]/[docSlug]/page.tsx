@@ -9,18 +9,20 @@ import { FileText, ChevronRight, ChevronDown, Loader2 } from "lucide-react";
 
 interface Category {
   id: string;
+  slug: string;
   name: string;
-  documents: { id: string; title: string }[];
+  documents: { id: string; slug: string; title: string }[];
 }
 
 interface Document {
   id: string;
+  slug: string;
   title: string;
   content: string;
-  category: { id: string; name: string } | null;
+  category: { id: string; slug: string; name: string } | null;
 }
 
-export default function DocsCategoryPage() {
+export default function DocsSlugPage() {
   const params = useParams();
   const [categories, setCategories] = useState<Category[]>([]);
   const [document, setDocument] = useState<Document | null>(null);
@@ -29,19 +31,20 @@ export default function DocsCategoryPage() {
     new Set(),
   );
 
-  const selectedDocId = params.id as string | undefined;
+  const categorySlug = params.categorySlug as string | undefined;
+  const docSlug = params.docSlug as string | undefined;
 
   useEffect(() => {
     fetchCategories();
   }, []);
 
   useEffect(() => {
-    if (selectedDocId) {
-      fetchDocument(selectedDocId);
+    if (categorySlug && docSlug) {
+      fetchDocument(categorySlug, docSlug);
     } else {
       setDocument(null);
     }
-  }, [selectedDocId]);
+  }, [categorySlug, docSlug]);
 
   useEffect(() => {
     if (categories.length > 0) {
@@ -64,13 +67,17 @@ export default function DocsCategoryPage() {
     }
   }
 
-  async function fetchDocument(id: string) {
+  async function fetchDocument(categorySlug: string, docSlug: string) {
     setLoading(true);
     try {
-      const res = await fetch(`/api/public/documents/${id}`);
+      const res = await fetch(`/api/public/documents/${docSlug}`);
       if (res.ok) {
         const data = await res.json();
-        setDocument(data);
+        if (data.category?.slug === categorySlug) {
+          setDocument(data);
+        } else {
+          setDocument(null);
+        }
       }
     } catch (error) {
       console.error("Failed to fetch document:", error);
@@ -134,9 +141,9 @@ export default function DocsCategoryPage() {
                       {category.documents.map((doc) => (
                         <Link
                           key={doc.id}
-                          href={`/docs/${category.id}/${doc.id}`}
+                          href={`/docs/${category.slug}/${doc.slug}`}
                           className={`block px-3 py-2 text-sm rounded-lg transition-colors ${
-                            selectedDocId === doc.id
+                            docSlug === doc.slug
                               ? "bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 font-medium"
                               : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800"
                           }`}
@@ -168,7 +175,7 @@ export default function DocsCategoryPage() {
                 {document.title}
               </h1>
             </div>
-            <div className="prose prose-lg dark:prose-invert max-w-none prose-headings:font-semibold prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl prose-code:bg-gray-100 dark:prose-code:bg-gray-800 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none prose-pre:bg-gray-900 dark:prose-pre:bg-gray-950 prose-pre:rounded-xl prose-a:text-blue-600 dark:prose-a:text-blue-400">
+            <div className="prose prose-lg dark:prose-invert max-w-none prose-headings:font-semibold prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl prose-code:bg-gray-200 dark:prose-code:bg-gray-700 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none prose-code:text-gray-900 dark:prose-code:text-gray-100 prose-pre:bg-gray-200 dark:prose-pre:bg-gray-700 prose-pre:text-gray-900 dark:prose-pre:text-gray-100 prose-pre:rounded-xl prose-a:text-blue-600 dark:prose-a:text-blue-400">
               <ReactMarkdown remarkPlugins={[remarkGfm]}>
                 {document.content}
               </ReactMarkdown>
