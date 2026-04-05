@@ -2,10 +2,16 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { useParams } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { FileText, ChevronRight, ChevronDown, Loader2 } from "lucide-react";
+import {
+  FileText,
+  ChevronRight,
+  ChevronDown,
+  Loader2,
+  Menu,
+  X,
+} from "lucide-react";
 
 interface Category {
   id: string;
@@ -14,42 +20,17 @@ interface Category {
   documents: { id: string; slug: string; title: string }[];
 }
 
-interface Document {
-  id: string;
-  slug: string;
-  title: string;
-  content: string;
-  category: { id: string; slug: string; name: string } | null;
-}
-
 export default function DocsPage() {
-  const params = useParams();
   const [categories, setCategories] = useState<Category[]>([]);
-  const [document, setDocument] = useState<Document | null>(null);
   const [loading, setLoading] = useState(true);
   const [expandedCategories, setExpandedCategories] = useState<Set<string>>(
     new Set(),
   );
-
-  const selectedDocId = params.id as string | undefined;
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   useEffect(() => {
     fetchCategories();
   }, []);
-
-  useEffect(() => {
-    if (selectedDocId) {
-      fetchDocument(selectedDocId);
-    } else {
-      setDocument(null);
-    }
-  }, [selectedDocId]);
-
-  useEffect(() => {
-    if (categories.length > 0 && !selectedDocId) {
-      setExpandedCategories(new Set(categories.map((c) => c.id)));
-    }
-  }, [categories, selectedDocId]);
 
   async function fetchCategories() {
     setLoading(true);
@@ -61,21 +42,6 @@ export default function DocsPage() {
       }
     } catch (error) {
       console.error("Failed to fetch categories:", error);
-    } finally {
-      setLoading(false);
-    }
-  }
-
-  async function fetchDocument(id: string) {
-    setLoading(true);
-    try {
-      const res = await fetch(`/api/public/documents/${id}`);
-      if (res.ok) {
-        const data = await res.json();
-        setDocument(data);
-      }
-    } catch (error) {
-      console.error("Failed to fetch document:", error);
     } finally {
       setLoading(false);
     }
@@ -95,16 +61,25 @@ export default function DocsPage() {
 
   if (loading && categories.length === 0) {
     return (
-      <div className="flex items-center justify-center min-h-screen">
-        <Loader2 className="w-8 h-8 animate-spin text-gray-900 dark:text-white" />
+      <div className="flex items-center justify-center min-h-screen bg-gray-50 dark:bg-gray-950">
+        <Loader2 className="w-8 h-8 animate-spin text-blue-600" />
       </div>
     );
   }
 
   return (
     <div className="flex min-h-screen bg-gray-50 dark:bg-gray-950">
-      <aside className="w-72 border-r border-gray-200 dark:border-gray-800 fixed h-full overflow-y-auto bg-white dark:bg-gray-900">
-        <div className="p-6">
+      <button
+        onClick={() => setSidebarOpen(!sidebarOpen)}
+        className="lg:hidden fixed top-4 left-4 z-50 p-2 rounded-lg bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-lg"
+      >
+        {sidebarOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+      </button>
+
+      <aside
+        className={`fixed lg:sticky top-0 inset-y-0 left-0 z-40 w-72 border-r border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 transform transition-transform duration-200 ease-in-out lg:translate-x-0 ${sidebarOpen ? "translate-x-0" : "-translate-x-full"} h-screen overflow-y-auto`}
+      >
+        <div className="p-6 pt-16 lg:pt-6">
           <Link
             href="/docs"
             className="flex items-center gap-2 text-sm font-semibold text-gray-900 dark:text-white mb-6 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
@@ -137,11 +112,8 @@ export default function DocsPage() {
                         <Link
                           key={doc.id}
                           href={`/docs/${category.slug}/${doc.slug}`}
-                          className={`block px-3 py-2 text-sm rounded-lg transition-colors ${
-                            selectedDocId === doc.id
-                              ? "bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 font-medium"
-                              : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800"
-                          }`}
+                          onClick={() => setSidebarOpen(false)}
+                          className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors"
                         >
                           {doc.title}
                         </Link>
@@ -155,35 +127,55 @@ export default function DocsPage() {
         </div>
       </aside>
 
-      <main className="flex-1 ml-72 p-12">
-        {loading ? (
-          <div className="flex items-center justify-center h-64">
-            <Loader2 className="w-8 h-8 animate-spin text-blue-600" />
-          </div>
-        ) : document ? (
-          <div className="max-w-4xl mx-auto">
-            <div className="mb-8 pb-8 border-b border-gray-200 dark:border-gray-800">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-medium mb-4">
-                {document.category?.name}
-              </div>
-              <h1 className="text-4xl font-bold text-gray-900 dark:text-white">
-                {document.title}
-              </h1>
+      {sidebarOpen && (
+        <div
+          className="lg:hidden fixed inset-0 z-30 bg-black/50"
+          onClick={() => setSidebarOpen(false)}
+        />
+      )}
+
+      <main className="flex-1 lg:ml-0 p-4 lg:p-12">
+        <div className="px-0 lg:px-4 mx-auto max-w-4xl">
+          <h1 className="text-2xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            Documentation
+          </h1>
+          <p className="text-gray-600 dark:text-gray-400 mb-8">
+            Welcome to my documentation. Select a topic from the sidebar to get
+            started.
+          </p>
+
+          {categories.length > 0 && (
+            <div className="grid gap-6 md:grid-cols-2">
+              {categories.map((category) => (
+                <div
+                  key={category.id}
+                  className="p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900"
+                >
+                  <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                    {category.name}
+                  </h2>
+                  <ul className="space-y-2">
+                    {category.documents.slice(0, 5).map((doc) => (
+                      <li key={doc.id}>
+                        <Link
+                          href={`/docs/${category.slug}/${doc.slug}`}
+                          className="text-blue-600 dark:text-blue-400 hover:underline"
+                        >
+                          {doc.title}
+                        </Link>
+                      </li>
+                    ))}
+                    {category.documents.length > 5 && (
+                      <li className="text-sm text-gray-500">
+                        +{category.documents.length - 5} more...
+                      </li>
+                    )}
+                  </ul>
+                </div>
+              ))}
             </div>
-            <div className="prose prose-lg dark:prose-invert max-w-none prose-headings:font-semibold prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl prose-code:bg-gray-100 dark:prose-code:bg-gray-800 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none prose-pre:bg-gray-900 dark:prose-pre:bg-gray-950 prose-pre:rounded-xl prose-a:text-blue-600 dark:prose-a:text-blue-400">
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                {document.content}
-              </ReactMarkdown>
-            </div>
-          </div>
-        ) : (
-          <div className="flex items-center justify-center h-64 text-gray-500">
-            <div className="text-center">
-              <FileText className="w-16 h-16 mx-auto mb-4 opacity-30" />
-              <p className="text-lg">Select a document from the sidebar</p>
-            </div>
-          </div>
-        )}
+          )}
+        </div>
       </main>
     </div>
   );
