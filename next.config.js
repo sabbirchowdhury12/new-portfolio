@@ -12,7 +12,7 @@ const nextConfig = {
     return [
       {
         source: "/api/public/:path*",
-        destination: "http://localhost:3000/api/public/:path*",
+        destination: "https://personal-editor.vercel.app/api/public/:path*",
       },
     ];
   },

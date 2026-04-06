@@ -10,7 +10,7 @@ import Skills from "@/components/skills";
 
 export default function Home() {
   return (
-    <main className="flex max-w-5xl mx-auto flex-col items-center px-4">
+    <main className=" pt-36 flex max-w-5xl mx-auto flex-col items-center px-4">
       <Header />
 
       <Intro />

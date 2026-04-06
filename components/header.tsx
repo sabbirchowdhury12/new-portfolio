@@ -15,7 +15,7 @@ export default function Header() {
     <header className="z-[999] relative">
       {/* Background glass pill */}
       <motion.div
-        className="fixed top-4 left-1/2 -translate-x-1/2 h-[3.5rem] w-full max-w-[90%] sm:max-w-[38rem] sm:h-[3.25rem] 
+        className="fixed top-4 left-1/2 -translate-x-1/2 h-[3.5rem] w-full max-w-[90%] sm:max-w-[44rem] sm:h-[3.25rem] 
                    rounded-full border border-gray-200/50 dark:border-gray-700/50
                    bg-white/80 dark:bg-gray-900/80 
                    shadow-lg shadow-black/[0.05] backdrop-blur-xl

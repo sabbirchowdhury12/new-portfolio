@@ -80,9 +80,13 @@ export default function Intro() {
           </span>
           , a Tech Lead & Full‑Stack Developer from Bangladesh. Currently
           leading a development team at{" "}
-          <span className="font-semibold text-emerald-500 dark:text-emerald-400">
+          <a
+            href="https://ewynk.com"
+            target="_blank"
+            className="font-semibold underline text-emerald-500 dark:text-emerald-400"
+          >
             ewynk
-          </span>
+          </a>
           , I build scalable, performant web applications using{" "}
           <span className="font-medium">React</span>,{" "}
           <span className="font-medium">Next.js</span>, and{" "}

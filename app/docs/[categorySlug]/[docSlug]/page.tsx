@@ -5,7 +5,14 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { FileText, ChevronRight, ChevronDown, Loader2, Menu, X } from "lucide-react";
+import {
+  FileText,
+  ChevronRight,
+  ChevronDown,
+  Loader2,
+  Menu,
+  X,
+} from "lucide-react";
 
 interface Category {
   id: string;
@@ -26,17 +33,31 @@ export default function DocsSlugPage() {
   const params = useParams();
   const [categories, setCategories] = useState<Category[]>([]);
   const [document, setDocument] = useState<Document | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [initialLoading, setInitialLoading] = useState(true);
+  const [contentLoading, setContentLoading] = useState(false);
   const [expandedCategories, setExpandedCategories] = useState<Set<string>>(
     new Set(),
   );
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [categoriesLoaded, setCategoriesLoaded] = useState(false);
 
   const categorySlug = params.categorySlug as string | undefined;
   const docSlug = params.docSlug as string | undefined;
 
   useEffect(() => {
-    fetchCategories();
+    const cached = localStorage.getItem("docs_categories");
+    if (cached) {
+      try {
+        const data = JSON.parse(cached);
+        setCategories(data);
+        setCategoriesLoaded(true);
+        setInitialLoading(false);
+      } catch {
+        fetchCategories();
+      }
+    } else {
+      fetchCategories();
+    }
   }, []);
 
   useEffect(() => {
@@ -54,22 +75,25 @@ export default function DocsSlugPage() {
   }, [categories]);
 
   async function fetchCategories() {
-    setLoading(true);
+    if (categoriesLoaded) return;
+
     try {
       const res = await fetch("/api/public/categories");
       if (res.ok) {
         const data = await res.json();
         setCategories(data);
+        setCategoriesLoaded(true);
+        localStorage.setItem("docs_categories", JSON.stringify(data));
       }
     } catch (error) {
       console.error("Failed to fetch categories:", error);
     } finally {
-      setLoading(false);
+      setInitialLoading(false);
     }
   }
 
   async function fetchDocument(categorySlug: string, docSlug: string) {
-    setLoading(true);
+    setContentLoading(true);
     try {
       const res = await fetch(`/api/public/documents/${docSlug}`);
       if (res.ok) {
@@ -83,7 +107,7 @@ export default function DocsSlugPage() {
     } catch (error) {
       console.error("Failed to fetch document:", error);
     } finally {
-      setLoading(false);
+      setContentLoading(false);
     }
   }
 
@@ -99,14 +123,6 @@ export default function DocsSlugPage() {
     });
   }
 
-  if (loading && categories.length === 0) {
-    return (
-      <div className="flex items-center justify-center min-h-screen bg-gray-50 dark:bg-gray-950">
-        <Loader2 className="w-8 h-8 animate-spin text-blue-600" />
-      </div>
-    );
-  }
-
   return (
     <div className="flex min-h-screen bg-gray-50 dark:bg-gray-950">
       <button
@@ -116,7 +132,9 @@ export default function DocsSlugPage() {
         {sidebarOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
       </button>
 
-      <aside className={`fixed lg:sticky top-0 inset-y-0 left-0 z-40 w-72 border-r border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 transform transition-transform duration-200 ease-in-out lg:translate-x-0 ${sidebarOpen ? "translate-x-0" : "-translate-x-full"} h-screen overflow-y-auto`}>
+      <aside
+        className={`fixed lg:sticky top-0 inset-y-0 left-0 z-40 w-72 border-r border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 transform transition-transform duration-200 ease-in-out lg:translate-x-0 ${sidebarOpen ? "translate-x-0" : "-translate-x-full"} h-screen overflow-y-auto`}
+      >
         <div className="p-6 pt-16 lg:pt-6">
           <Link
             href="/docs"
@@ -124,7 +142,7 @@ export default function DocsSlugPage() {
             className="flex items-center gap-2 text-sm font-semibold text-gray-900 dark:text-white mb-6 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
           >
             <FileText className="w-4 h-4" />
-            Documentation
+            Learn with Sabbir
           </Link>
 
           {categories.length === 0 ? (
@@ -178,7 +196,7 @@ export default function DocsSlugPage() {
       )}
 
       <main className="flex-1 lg:ml-0 p-4 lg:p-12">
-        {loading ? (
+        {contentLoading || (initialLoading && categories.length === 0) ? (
           <div className="flex items-center justify-center h-64">
             <Loader2 className="w-8 h-8 animate-spin text-blue-600" />
           </div>
