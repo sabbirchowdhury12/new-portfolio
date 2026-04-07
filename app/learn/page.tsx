@@ -81,7 +81,7 @@ export default function DocsPage() {
       >
         <div className="p-6 pt-16 lg:pt-6">
           <Link
-            href="/docs"
+            href="/learn"
             className="flex items-center gap-2 text-sm font-semibold text-gray-900 dark:text-white mb-6 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
           >
             <FileText className="w-4 h-4" />
@@ -111,7 +111,7 @@ export default function DocsPage() {
                       {category.documents.map((doc) => (
                         <Link
                           key={doc.id}
-                          href={`/docs/${category.slug}/${doc.slug}`}
+                          href={`/learn/${category.slug}/${doc.slug}`}
                           onClick={() => setSidebarOpen(false)}
                           className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors"
                         >
@@ -158,7 +158,7 @@ export default function DocsPage() {
                     {category.documents.slice(0, 5).map((doc) => (
                       <li key={doc.id}>
                         <Link
-                          href={`/docs/${category.slug}/${doc.slug}`}
+                          href={`/learn/${category.slug}/${doc.slug}`}
                           className="text-blue-600 dark:text-blue-400 hover:underline"
                         >
                           {doc.title}

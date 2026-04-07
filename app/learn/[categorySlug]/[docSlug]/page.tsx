@@ -39,7 +39,7 @@ export default function DocsSlugPage() {
     new Set(),
   );
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [categoriesLoaded, setCategoriesLoaded] = useState(false);
+  const [isSyncing, setIsSyncing] = useState(false);
 
   const categorySlug = params.categorySlug as string | undefined;
   const docSlug = params.docSlug as string | undefined;
@@ -50,14 +50,12 @@ export default function DocsSlugPage() {
       try {
         const data = JSON.parse(cached);
         setCategories(data);
-        setCategoriesLoaded(true);
-        setInitialLoading(false);
       } catch {
         fetchCategories();
+        return;
       }
-    } else {
-      fetchCategories();
     }
+    fetchCategories();
   }, []);
 
   useEffect(() => {
@@ -75,19 +73,18 @@ export default function DocsSlugPage() {
   }, [categories]);
 
   async function fetchCategories() {
-    if (categoriesLoaded) return;
-
+    setIsSyncing(true);
     try {
       const res = await fetch("/api/public/categories");
       if (res.ok) {
         const data = await res.json();
         setCategories(data);
-        setCategoriesLoaded(true);
         localStorage.setItem("docs_categories", JSON.stringify(data));
       }
     } catch (error) {
       console.error("Failed to fetch categories:", error);
     } finally {
+      setIsSyncing(false);
       setInitialLoading(false);
     }
   }
@@ -137,7 +134,7 @@ export default function DocsSlugPage() {
       >
         <div className="p-6 pt-16 lg:pt-6">
           <Link
-            href="/docs"
+            href="/learn"
             onClick={() => setSidebarOpen(false)}
             className="flex items-center gap-2 text-sm font-semibold text-gray-900 dark:text-white mb-6 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
           >
@@ -145,7 +142,12 @@ export default function DocsSlugPage() {
             Learn with Sabbir
           </Link>
 
-          {categories.length === 0 ? (
+          {isSyncing && categories.length === 0 ? (
+            <div className="flex items-center gap-2 text-sm text-gray-500">
+              <Loader2 className="w-4 h-4 animate-spin" />
+              Loading...
+            </div>
+          ) : categories.length === 0 ? (
             <p className="text-sm text-gray-500">No documents available</p>
           ) : (
             <div className="space-y-4">
@@ -168,7 +170,7 @@ export default function DocsSlugPage() {
                       {category.documents.map((doc) => (
                         <Link
                           key={doc.id}
-                          href={`/docs/${category.slug}/${doc.slug}`}
+                          href={`/learn/${category.slug}/${doc.slug}`}
                           onClick={() => setSidebarOpen(false)}
                           className={`block px-3 py-2 text-sm rounded-lg transition-colors ${
                             docSlug === doc.slug
@@ -196,7 +198,8 @@ export default function DocsSlugPage() {
       )}
 
       <main className="flex-1 lg:ml-0 p-4 lg:p-12">
-        {contentLoading || (initialLoading && categories.length === 0) ? (
+        {contentLoading ||
+        (initialLoading && categories.length === 0 && !isSyncing) ? (
           <div className="flex items-center justify-center h-64">
             <Loader2 className="w-8 h-8 animate-spin text-blue-600" />
           </div>

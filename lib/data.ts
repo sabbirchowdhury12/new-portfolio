@@ -48,8 +48,8 @@ export const links = [
     hash: "#contact",
   },
   {
-    name: "Blog",
-    hash: "/docs",
+    name: "Learn",
+    hash: "/learn",
   },
 ] as const;
 
