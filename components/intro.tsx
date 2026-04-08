@@ -7,6 +7,7 @@ import { BsArrowRight, BsLinkedin, BsGithub, BsFacebook } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
+import { trackCVDownload } from "@/lib/analytics";
 
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
@@ -117,6 +118,7 @@ export default function Intro() {
           <a
             href="/CV.pdf"
             download
+            onClick={trackCVDownload}
             className="group bg-white dark:bg-white/10 border border-gray-300 dark:border-white/20
                        text-gray-800 dark:text-white/80 px-7 py-3 rounded-full flex items-center gap-2
                        hover:border-emerald-500 hover:scale-105 active:scale-95 transition-all"

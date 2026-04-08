@@ -6,6 +6,7 @@ import ActiveSectionContextProvider from "@/context/active-section-context";
 import Footer from "@/components/footer";
 import { Toaster } from "react-hot-toast";
 import ThemeSwitch from "@/components/theme-switch";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -29,7 +30,11 @@ export default function RootLayout({
       >
         <ThemeContextProvider>
           <ActiveSectionContextProvider>
-            <div className=" mx-auto">{children}</div>
+            <div className=" mx-auto">
+              {children}
+
+              <GoogleAnalytics gaId="G-DFSZTQLYKX" />
+            </div>
 
             <Toaster position="top-right" />
             <ThemeSwitch />

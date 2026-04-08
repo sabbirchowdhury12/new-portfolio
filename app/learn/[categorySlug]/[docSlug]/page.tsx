@@ -13,6 +13,7 @@ import {
   Menu,
   X,
 } from "lucide-react";
+import { trackDocView } from "@/lib/analytics";
 
 interface Category {
   id: string;
@@ -97,6 +98,7 @@ export default function DocsSlugPage() {
         const data = await res.json();
         if (data.category?.slug === categorySlug) {
           setDocument(data);
+          trackDocView(data.title, data.category?.name || "");
         } else {
           setDocument(null);
         }

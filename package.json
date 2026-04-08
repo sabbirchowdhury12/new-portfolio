@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/third-parties": "^16.2.2",
     "@react-email/components": "^0.0.19",
     "@react-email/tailwind": "^0.0.18",
     "brevo": "^1.0.0",
