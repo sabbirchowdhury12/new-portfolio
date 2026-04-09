@@ -7,6 +7,8 @@ import Footer from "@/components/footer";
 import { Toaster } from "react-hot-toast";
 import ThemeSwitch from "@/components/theme-switch";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import Script from "next/script";
+
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -32,7 +34,23 @@ export default function RootLayout({
           <ActiveSectionContextProvider>
             <div className=" mx-auto">
               {children}
-
+ <Script
+          id="tigsaw-script"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(t,i,g,s,a,w){
+                i=t.currentScript.getAttribute("tigsaw-id");
+                (w||window).tigsawContainerId=i;
+                g=t.createElement('script');
+                g.src='https://static.tigsaw.com/delivery/smartscript.js';
+                g.defer=true;
+                t.head.appendChild(g);
+              })(document,typeof window!=='undefined'?window:this);
+            `,
+          }}
+          data-tigsaw-id="RX054JN4"
+        />
               <GoogleAnalytics gaId="G-DFSZTQLYKX" />
             </div>
 
