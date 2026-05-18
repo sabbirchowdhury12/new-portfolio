@@ -69,9 +69,12 @@ export default function DocsSlugPage() {
 
   useEffect(() => {
     if (categories.length > 0) {
-      setExpandedCategories(new Set(categories.map((c) => c.id)));
+      const activeCategory = categories.find((c) => c.slug === categorySlug);
+      if (activeCategory) {
+        setExpandedCategories(new Set([activeCategory.id]));
+      }
     }
-  }, [categories]);
+  }, [categories, categorySlug]);
 
   async function fetchCategories() {
     setIsSyncing(true);
