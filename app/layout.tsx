@@ -8,6 +8,7 @@ import { Toaster } from "react-hot-toast";
 import ThemeSwitch from "@/components/theme-switch";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
+
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -32,7 +33,7 @@ export default function RootLayout({
           <ActiveSectionContextProvider>
             <div className=" mx-auto">
               {children}
-
+ 
               <GoogleAnalytics gaId="G-DFSZTQLYKX" />
             </div>
 
