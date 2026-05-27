@@ -1,9 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Modern+Antiqua&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 html {
   --line-color: #e5e7eb;
+}
+
+@keyframes blob {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  33% {
+    transform: rotate(120deg) scale(1.08);
+  }
+  66% {
+    transform: rotate(240deg) scale(0.92);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 8s ease-in-out infinite;
+}
+
+.blob {
+  aspect-ratio: 1;
+  clip-path: shape(from 74.26% 41.92%, curve to 74.26% 69.97% with 98.51% 50.00%, curve to 41.29% 69.97% with 50.00% 89.95%, curve to 41.29% 41.92% with 32.58% 50.00%, curve to 74.26% 41.92% with 50.00% 33.83%);
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
 }
 
 html.dark {
