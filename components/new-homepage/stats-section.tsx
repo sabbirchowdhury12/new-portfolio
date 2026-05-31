@@ -6,7 +6,7 @@ export default function StatsSection() {
       <div className="bg-[#F5E6D3] rounded-[80px] p-6 sm:p-12 grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
         {/* Years Experience */}
         <div className="text-center">
-          <div className="relative w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center mx-auto mb-4">
+          <div className="relative w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center mx-auto mb-4 overflow-hidden">
             <div
               className="absolute inset-0 blob"
               style={{
@@ -38,7 +38,7 @@ export default function StatsSection() {
 
         {/* Client Projects */}
         <div className="text-center">
-          <div className="relative w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center mx-auto mb-4">
+          <div className="relative w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center mx-auto mb-4 overflow-hidden">
             <div
               className="absolute inset-0 blob"
               style={{
@@ -70,7 +70,7 @@ export default function StatsSection() {
 
         {/* Hours Available */}
         <div className="text-center">
-          <div className="relative w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center mx-auto mb-4">
+          <div className="relative w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center mx-auto mb-4 overflow-hidden">
             <div
               className="absolute inset-0 blob"
               style={{

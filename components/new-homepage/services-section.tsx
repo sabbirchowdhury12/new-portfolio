@@ -86,23 +86,33 @@ export default function ServicesSection() {
               <div
                 key={s.id}
                 className={[
-                  "flex items-center gap-4 sm:gap-8 mb-0",
-                  "w-full max-w-[60%]",
-                  isRight ? "ml-auto" : "",
+                  "flex flex-col md:flex-row items-center gap-4 sm:gap-8 mb-0",
+                  "w-full md:max-w-[60%]",
+                  isRight ? "md:ml-auto" : "",
                 ].join(" ")}
               >
-                <div className="shrink-0">
+                <div className="shrink-0 flex md:hidden items-center gap-3">
                   <div className="h-16 w-16 border flex justify-center items-center border-dashed rounded-full border-[#BE5F47]">
                     <div className="h-10 w-10 bg-[#BE5F47] rounded-full flex justify-center items-center text-white font-bold">
                       {s.id}
                     </div>
+                  </div>
+                  <div
+                    className="h-16 w-16 flex justify-center items-center rounded-full shrink-0"
+                    style={{
+                      background:
+                        "linear-gradient(134.19deg, #BE5F47 27.13%, #D29D73 73.56%)",
+                    }}
+                  >
+                    <Icon className="w-8 h-8 text-white" />
                   </div>
                 </div>
 
                 <div
                   className={[
                     "min-w-0 flex flex-col gap-2",
-                    isRight ? "text-right items-end" : "text-left items-start",
+                    isRight ? "md:text-right md:items-end" : "md:text-left md:items-start",
+                    "text-center items-center",
                   ].join(" ")}
                 >
                   <p className="text-xl text-gray-900 font-['Modern_Antiqua']">
@@ -113,7 +123,7 @@ export default function ServicesSection() {
                   </p>
                 </div>
 
-                <div className="shrink-0">
+                <div className="shrink-0 hidden md:block">
                   <div
                     className="h-16 w-16 flex justify-center items-center rounded-full shrink-0"
                     style={{

@@ -8,6 +8,7 @@ import ServicesSection from "@/components/new-homepage/services-section";
 import SkillsSection from "@/components/new-homepage/skills-section";
 import AboutSection from "@/components/new-homepage/about-section";
 import ExperienceSection from "@/components/new-homepage/experience-section";
+import ProjectsSection from "@/components/new-homepage/projects-section";
 import ContactSection from "@/components/new-homepage/contact-section";
 import Footer from "@/components/new-homepage/footer";
 
@@ -32,6 +33,7 @@ export default function NewHomepage() {
       {/* Other Sections */}
       <ServicesSection />
       <SkillsSection />
+      <ProjectsSection />
       <ExperienceSection />
 
       {/* Contact */}
