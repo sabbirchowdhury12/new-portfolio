@@ -23,7 +23,7 @@ const values = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-16 sm:py-24 bg-[#F5E6D3]">
+    <section id="about" className="py-16 sm:py-24 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         {/* Header */}
 
@@ -43,7 +43,7 @@ export default function AboutSection() {
                 alt="Sabbir Chowdhury"
                 width={600}
                 height={700}
-                className="w-full h-full object-cover rounded-2xl scale-x-[-1]"
+                className="w-full h-full object-cover rounded-2xl"
               />
             </div>
           </motion.div>
@@ -96,7 +96,11 @@ export default function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="text-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl hover:scale-105 hover:brightness-110 transition-all duration-300" style={{ background: 'linear-gradient(134.19deg, #BE5F47 27.13%, #D29D73 73.56%)' }}
+              className="text-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl hover:scale-105 hover:brightness-110 transition-all duration-300"
+              style={{
+                background:
+                  "linear-gradient(134.19deg, #BE5F47 27.13%, #D29D73 73.56%)",
+              }}
             >
               <h3 className="text-2xl font-['Modern_Antiqua'] mb-3">
                 {value.title}

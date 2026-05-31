@@ -52,6 +52,40 @@ const experiences = [
   },
 ];
 
+function Card({ exp }: { exp: (typeof experiences)[number] }) {
+  return (
+    <div className="bg-white rounded-2xl p-6 shadow-md">
+      <div className="flex items-start gap-4">
+        <div
+          className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0"
+          style={{ backgroundColor: `${exp.color}20` }}
+        >
+          <exp.icon className="w-7 h-7" style={{ color: exp.color }} />
+        </div>
+
+        <div className="flex-1">
+          <h3 className="text-xl font-semibold text-gray-900 mb-1">
+            {exp.title}
+          </h3>
+          <p className="text-sm font-medium mb-2" style={{ color: exp.color }}>
+            {exp.company}
+          </p>
+
+          {exp.achievements?.length > 0 && (
+            <ul className="text-sm text-gray-600 space-y-2 mt-4 list-disc list-inside">
+              {exp.achievements.map((a, i) => (
+                <li key={i} className="leading-relaxed">
+                  {a}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function ExperienceSection() {
   return (
     <section id="experience" className="py-16 sm:py-24 bg-[#F5E6D3]">
@@ -70,195 +104,126 @@ export default function ExperienceSection() {
           </p>
         </div>
 
-        {/* Timeline */}
+        {/* Timeline wrapper */}
         <div className="relative">
-          {/* Center Line */}
-          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-[#BE5F47]/20"></div>
+          {/* The center vertical line across the whole timeline */}
+          <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-[#BE5F47]/25" />
 
-          {/* Experience Items */}
           <div className="space-y-12">
-            {experiences.map((exp, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`relative grid md:grid-cols-2 gap-8 items-center ${
-                  index % 2 === 0 ? "" : "md:flex-row-reverse"
-                }`}
-              >
-                {/* Left Side (or Right for odd items) */}
-                <div
-                  className={`${
-                    index % 2 === 0
-                      ? "md:text-right md:pr-12"
-                      : "md:order-2 md:pl-12"
-                  }`}
+            {experiences.map((exp, index) => {
+              const isLeft = index % 2 === 0; // card on left for even, right for odd
+
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="relative"
                 >
-                  {index % 2 === 0 && (
-                    <div className="bg-white rounded-2xl p-6 shadow-md">
-                      <div className="flex items-start gap-4 md:flex-row-reverse md:text-right">
+                  {/* Desktop: 3-column layout */}
+                  <div className="hidden md:grid grid-cols-[1fr_120px_1fr] gap-8 items-center">
+                    {/* LEFT COLUMN */}
+                    <div className="flex justify-end">
+                      {isLeft ? (
+                        <div className="w-full max-w-lg">
+                          <Card exp={exp} />
+                        </div>
+                      ) : (
+                        // period on left when card is on right (matches screenshot)
                         <div
-                          className="bg-[#FFE8DC] w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0"
-                          style={{ backgroundColor: `${exp.color}20` }}
+                          className="text-sm font-medium justify-self-end"
+                          style={{ color: exp.color }}
                         >
-                          <exp.icon
-                            className="w-7 h-7"
-                            style={{ color: exp.color }}
-                          />
+                          {exp.period}
                         </div>
-                        <div className="flex-1">
-                          <h3 className="text-xl font-semibold text-gray-900 mb-1">
-                            {exp.title}
-                          </h3>
-                          <p
-                            className="text-sm font-medium mb-2"
-                            style={{ color: exp.color }}
-                          >
-                            {exp.company}
-                          </p>
-                          {exp.achievements.length > 0 && (
-                            <ul className="text-sm text-gray-600 space-y-2 mt-4 list-disc list-inside md:list-outside md:mr-4">
-                              {exp.achievements.map((achievement, i) => (
-                                <li key={i} className="leading-relaxed">
-                                  {achievement}
-                                </li>
-                              ))}
-                            </ul>
-                          )}
-                        </div>
-                      </div>
+                      )}
                     </div>
-                  )}
-                </div>
 
-                {/* Center Icon */}
-                <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center">
-                  <div
-                    className="w-16 h-16 rounded-full flex items-center justify-center shadow-lg border-4 border-[#F5E6D3]"
-                    style={{ backgroundColor: exp.color }}
-                  >
-                    <Briefcase className="w-8 h-8 text-white" />
-                  </div>
-                </div>
-
-                {/* Right Side (or Left for odd items) */}
-                <div
-                  className={`${
-                    index % 2 === 1
-                      ? "md:text-right md:pr-12"
-                      : "md:order-1 md:pl-12"
-                  }`}
-                >
-                  {index % 2 === 1 && (
-                    <div className="bg-white rounded-2xl p-6 shadow-md">
-                      <div className="flex items-start gap-4">
-                        <div
-                          className="bg-[#FFE8DC] w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0"
-                          style={{ backgroundColor: `${exp.color}20` }}
-                        >
-                          <exp.icon
-                            className="w-7 h-7"
-                            style={{ color: exp.color }}
-                          />
-                        </div>
-                        <div className="flex-1">
-                          <h3 className="text-xl font-semibold text-gray-900 mb-1">
-                            {exp.title}
-                          </h3>
-                          <p
-                            className="text-sm font-medium mb-2"
-                            style={{ color: exp.color }}
-                          >
-                            {exp.company}
-                          </p>
-                          {exp.achievements.length > 0 && (
-                            <ul className="text-sm text-gray-600 space-y-2 mt-4 list-disc list-inside">
-                              {exp.achievements.map((achievement, i) => (
-                                <li key={i} className="leading-relaxed">
-                                  {achievement}
-                                </li>
-                              ))}
-                            </ul>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Period Badge */}
-                  <div className="mt-4 md:mt-6">
-                    <div
-                      className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium"
-                      style={{
-                        backgroundColor: `${exp.color}20`,
-                        color: exp.color,
-                      }}
-                    >
-                      <svg
-                        className="w-4 h-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                        />
-                      </svg>
-                      {exp.period}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Mobile View */}
-                <div className="md:hidden bg-white rounded-2xl p-6 shadow-md col-span-2">
-                  <div className="flex items-start gap-4">
-                    <div
-                      className="bg-[#FFE8DC] w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0"
-                      style={{ backgroundColor: `${exp.color}20` }}
-                    >
-                      <exp.icon
-                        className="w-7 h-7"
-                        style={{ color: exp.color }}
-                      />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-semibold text-gray-900 mb-1">
-                        {exp.title}
-                      </h3>
-                      <p
-                        className="text-sm font-medium mb-2"
-                        style={{ color: exp.color }}
-                      >
-                        {exp.company}
-                      </p>
+                    {/* MIDDLE COLUMN: icon + local line segment */}
+                    <div className="relative flex flex-col items-center">
+                      {/* Optional small segment overlay (line is already drawn globally) */}
                       <div
-                        className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium mb-3"
+                        className="w-16 h-16 rounded-full flex items-center justify-center shadow-lg border-4"
                         style={{
-                          backgroundColor: `${exp.color}20`,
-                          color: exp.color,
+                          backgroundColor: exp.color,
+                          borderColor: "#F5E6D3",
                         }}
                       >
-                        {exp.period}
+                        <Briefcase className="w-8 h-8 text-white" />
                       </div>
-                      {exp.achievements.length > 0 && (
-                        <ul className="text-sm text-gray-600 space-y-2 mt-4 list-disc list-inside">
-                          {exp.achievements.map((achievement, i) => (
-                            <li key={i} className="leading-relaxed">
-                              {achievement}
-                            </li>
-                          ))}
-                        </ul>
+                    </div>
+
+                    {/* RIGHT COLUMN */}
+                    <div className="flex justify-start">
+                      {!isLeft ? (
+                        <div className="w-full max-w-lg">
+                          <Card exp={exp} />
+                        </div>
+                      ) : (
+                        // period on right when card is on left (matches screenshot)
+                        <div
+                          className="text-sm font-medium"
+                          style={{ color: exp.color }}
+                        >
+                          {exp.period}
+                        </div>
                       )}
                     </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+
+                  {/* Mobile: stacked card */}
+                  <div className="md:hidden">
+                    <div className="bg-white rounded-2xl p-6 shadow-md">
+                      <div className="flex items-start gap-4">
+                        <div
+                          className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0"
+                          style={{ backgroundColor: `${exp.color}20` }}
+                        >
+                          <exp.icon
+                            className="w-7 h-7"
+                            style={{ color: exp.color }}
+                          />
+                        </div>
+
+                        <div className="flex-1">
+                          <h3 className="text-xl font-semibold text-gray-900 mb-1">
+                            {exp.title}
+                          </h3>
+                          <p
+                            className="text-sm font-medium mb-2"
+                            style={{ color: exp.color }}
+                          >
+                            {exp.company}
+                          </p>
+
+                          <div
+                            className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium mb-3"
+                            style={{
+                              backgroundColor: `${exp.color}20`,
+                              color: exp.color,
+                            }}
+                          >
+                            {exp.period}
+                          </div>
+
+                          {exp.achievements?.length > 0 && (
+                            <ul className="text-sm text-gray-600 space-y-2 mt-4 list-disc list-inside">
+                              {exp.achievements.map((a, i) => (
+                                <li key={i} className="leading-relaxed">
+                                  {a}
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </div>

@@ -1,50 +1,43 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
-import {
-  Code,
-  Server,
-  Database,
-  Cloud,
-  CreditCard,
-  Smartphone,
-} from "lucide-react";
 
 const skillsData = [
   {
-    icon: Code,
+    image: "/service/frontend.svg",
     title: "Frontend",
     skills:
       "React.js, Next.js, Redux, Tailwind CSS, ShadCN, Styled-components, Framer-motion",
   },
   {
-    icon: Smartphone,
+    image: "/service/mobile-app-phone.svg",
     title: "Mobile Development",
     skills: "React Native, Expo, Mobile UI/UX, Cross-platform Development",
   },
   {
-    icon: Server,
+    image: "/service/backend.svg",
     title: "Backend",
     skills: "Node.js, Express.js, Nest.js, REST API, Prisma, JWT, Mongoose",
   },
   {
-    icon: "TS",
+    image: "/service/language.svg",
     title: "Language",
     skills: "JavaScript (ES6+), TypeScript",
   },
   {
-    icon: Database,
+    image: "/service/database-svgrepo-com.svg",
     title: "Database",
     skills: "MongoDB, PostgreSQL",
   },
   {
-    icon: Cloud,
+    image: "/service/clouded-cloud-svgrepo-com.svg",
     title: "Cloud & Tools",
     skills:
       "AWS S3, Firebase, Supabase, Git, GitHub, GitLab, Postman, VS Code, Vercel, Netlify",
   },
   {
-    icon: CreditCard,
+    image: "/service/payment-method.svg",
     title: "Payment Integration",
     skills: "PayPal, Razorpay, Stripe, SSLCommerz",
   },
@@ -52,7 +45,7 @@ const skillsData = [
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="py-16 sm:py-24 bg-[#F5E6D3]">
+    <section id="skills" className="py-16 sm:py-24 bg-[#F5E6D3] relative overflow-hidden" style={{ backgroundImage: "url(/skills-bg.png)", backgroundSize: "cover", backgroundPosition: "center" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         {/* Header */}
         <div className="text-center mb-12">
@@ -78,26 +71,26 @@ export default function SkillsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow"
+              className={`bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow ${index === skillsData.length - 1 ? "md:col-span-2" : ""}`}
             >
               <div className="flex items-start gap-4">
                 {/* Icon */}
                 <div className="bg-[#FFE8DC] w-16 h-16 rounded-xl flex items-center justify-center flex-shrink-0">
-                  {skill.icon === "TS" ? (
-                    <span className="text-[#BE5F47] text-2xl font-bold">
-                      TS
-                    </span>
-                  ) : (
-                    <skill.icon className="w-8 h-8 text-[#BE5F47]" />
-                  )}
+                  <Image
+                    src={skill.image}
+                    alt={skill.title}
+                    width={32}
+                    height={32}
+                    className="w-8 h-8"
+                  />
                 </div>
 
                 {/* Content */}
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2 font-['Modern_Antiqua']">
                     {skill.title}
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-gray-600 text-sm leading-relaxed font-['Modern_Antiqua']">
                     {skill.skills}
                   </p>
                 </div>
