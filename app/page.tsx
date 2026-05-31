@@ -10,6 +10,7 @@ import AboutSection from "@/components/new-homepage/about-section";
 import ExperienceSection from "@/components/new-homepage/experience-section";
 import ProjectsSection from "@/components/new-homepage/projects-section";
 import ContactSection from "@/components/new-homepage/contact-section";
+import GitHubSection from "@/components/new-homepage/github-section";
 import Footer from "@/components/new-homepage/footer";
 
 export default function NewHomepage() {
@@ -38,6 +39,9 @@ export default function NewHomepage() {
 
       {/* Contact */}
       <ContactSection />
+
+      {/* GitHub Contributions */}
+      <GitHubSection />
 
       {/* Footer */}
       <Footer />
