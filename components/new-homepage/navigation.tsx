@@ -146,10 +146,10 @@ export default function Navigation() {
                   <div className="space-y-4 mb-6">
                     {contactInfo.map((info) => (
                       <div key={info.label}>
-                        <p className="text-xs text-gray-500 uppercase tracking-wider">
+                        <p className="text-xs text-gray-500 uppercase tracking-wider font-['Modern_Antiqua']">
                           {info.label}
                         </p>
-                        <p className="text-sm font-medium text-gray-900">
+                        <p className="text-sm font-medium text-gray-900 font-['Modern_Antiqua']">
                           {info.value}
                         </p>
                       </div>
@@ -161,23 +161,23 @@ export default function Navigation() {
                       type="text"
                       placeholder="Your Name"
                       required
-                      className="w-full px-4 py-2.5 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#BE5F47]/30 focus:border-[#BE5F47] transition placeholder:text-gray-400"
+                      className="w-full px-4 py-2.5 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#BE5F47]/30 focus:border-[#BE5F47] transition placeholder:text-gray-400 font-['Modern_Antiqua']"
                     />
                     <input
                       type="email"
                       placeholder="Your Email"
                       required
-                      className="w-full px-4 py-2.5 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#BE5F47]/30 focus:border-[#BE5F47] transition placeholder:text-gray-400"
+                      className="w-full px-4 py-2.5 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#BE5F47]/30 focus:border-[#BE5F47] transition placeholder:text-gray-400 font-['Modern_Antiqua']"
                     />
                     <textarea
                       placeholder="Your Message..."
                       required
                       rows={3}
-                      className="w-full px-4 py-2.5 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#BE5F47]/30 focus:border-[#BE5F47] transition placeholder:text-gray-400 resize-none"
+                      className="w-full px-4 py-2.5 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#BE5F47]/30 focus:border-[#BE5F47] transition placeholder:text-gray-400 resize-none font-['Modern_Antiqua']"
                     />
                     <button
                       type="submit"
-                      className="w-full px-6 py-2.5 rounded-xl text-white text-sm font-semibold flex items-center justify-center gap-2 transition hover:opacity-90"
+                      className="w-full px-6 py-2.5 rounded-xl text-white text-sm font-semibold flex items-center justify-center gap-2 transition hover:opacity-90 font-['Modern_Antiqua']"
                       style={{
                         background:
                           "linear-gradient(134.19deg, #BE5F47 27.13%, #D29D73 73.56%)",

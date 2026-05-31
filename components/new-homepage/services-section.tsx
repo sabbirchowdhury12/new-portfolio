@@ -68,7 +68,7 @@ export default function ServicesSection() {
             SERVICES
           </p>
           <h2 className="text-4xl sm:text-5xl font-['Modern_Antiqua'] text-gray-900 mb-4">
-            Services <span className="text-[#BE5F47]">We Provide</span>
+            Services <span className="text-[#BE5F47]"> Provide</span>
           </h2>
           <p className="text-gray-700 max-w-2xl mx-auto">
             Comprehensive development solutions from concept to deployment,
@@ -91,14 +91,14 @@ export default function ServicesSection() {
                   isRight ? "md:ml-auto" : "",
                 ].join(" ")}
               >
-                <div className="shrink-0 flex md:hidden items-center gap-3">
+                <div className="shrink-0 flex  items-center gap-3">
                   <div className="h-16 w-16 border flex justify-center items-center border-dashed rounded-full border-[#BE5F47]">
                     <div className="h-10 w-10 bg-[#BE5F47] rounded-full flex justify-center items-center text-white font-bold">
                       {s.id}
                     </div>
                   </div>
                   <div
-                    className="h-16 w-16 flex justify-center items-center rounded-full shrink-0"
+                    className="h-16 w-16 md:hidden flex justify-center items-center rounded-full shrink-0"
                     style={{
                       background:
                         "linear-gradient(134.19deg, #BE5F47 27.13%, #D29D73 73.56%)",
@@ -111,14 +111,16 @@ export default function ServicesSection() {
                 <div
                   className={[
                     "min-w-0 flex flex-col gap-2",
-                    isRight ? "md:text-right md:items-end" : "md:text-left md:items-start",
+                    isRight
+                      ? "md:text-right md:items-end"
+                      : "md:text-left md:items-start",
                     "text-center items-center",
                   ].join(" ")}
                 >
-                  <p className="text-xl text-gray-900 font-['Modern_Antiqua']">
+                  <p className="text-xl md:text-2xl text-gray-900 font-['Modern_Antiqua']">
                     {s.title}
                   </p>
-                  <p className="text-base text-gray-700 font-['Modern_Antiqua']">
+                  <p className="text-base md:text-lg text-gray-700 font-['Modern_Antiqua']">
                     {s.description}
                   </p>
                 </div>
