@@ -1,9 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import { FaGithubSquare } from "react-icons/fa";
+import { useRef } from "react";
 
 interface Project {
   id: number;
@@ -119,9 +120,109 @@ const projects: Project[] = [
   },
 ];
 
-export default function ProjectsSection() {
+function ProjectCard({ project, index }: { project: Project; index: number }) {
   return (
-    <section id="projects" className="py-16 sm:py-24" style={{ background: "linear-gradient(134.19deg, #BE5F47 27.13%, #D29D73 73.56%)" }}>
+    <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group flex flex-col md:flex-row">
+      <div className="relative w-full md:w-[280px] lg:w-[320px] h-52 md:h-auto shrink-0">
+        <Image
+          src={project.imgUrl}
+          alt={project.title}
+          fill
+          className="object-cover group-hover:scale-105 transition-transform duration-700"
+        />
+      </div>
+
+      <div className="p-6 flex flex-col justify-between flex-1">
+        <div>
+          <h3 className="text-xl font-bold md:text-2xl font-['Modern_Antiqua']  text-gray-900 mb-2">
+            {project.title}
+          </h3>
+
+          <ul className="space-y-1.5 mb-4">
+            {project.features.map((feature, i) => (
+              <li
+                key={i}
+                className="flex items-start gap-2 text-sm text-gray-700"
+              >
+                <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#BE5F47] shrink-0" />
+                {feature}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="flex flex-wrap items-center gap-2">
+          {project.tags.slice(0, 4).map((tag) => (
+            <span
+              key={tag}
+              className="px-2.5 py-0.5 bg-[#BE5F47]/10 text-[#BE5F47] text-xs rounded-full font-medium"
+            >
+              {tag}
+            </span>
+          ))}
+          {project.tags.length > 4 && (
+            <span className="text-xs text-gray-400">
+              +{project.tags.length - 4}
+            </span>
+          )}
+        </div>
+
+        <div className="flex items-center gap-4 mt-4 pt-4 border-t border-gray-100">
+          {project.live && (
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 text-sm text-gray-600 hover:text-[#BE5F47] transition-colors"
+            >
+              <ExternalLink className="w-4 h-4" />
+              Live Site
+            </a>
+          )}
+          {project.client && (
+            <a
+              href={project.client}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 text-sm text-gray-600 hover:text-[#BE5F47] transition-colors"
+            >
+              <FaGithubSquare className="w-4 h-4" />
+              Client
+            </a>
+          )}
+          {project.server && (
+            <a
+              href={project.server}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 text-sm text-gray-600 hover:text-[#BE5F47] transition-colors"
+            >
+              <FaGithubSquare className="w-4 h-4" />
+              Server
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function ProjectsSection() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end end"],
+  });
+
+  return (
+    <section
+      id="projects"
+      className="py-16 sm:py-24"
+      style={{
+        background:
+          "linear-gradient(134.19deg, #BE5F47 27.13%, #D29D73 73.56%)",
+      }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         <div className="text-center mb-12">
           <p className="text-white/80 uppercase tracking-wider text-sm mb-2">
@@ -136,96 +237,19 @@ export default function ProjectsSection() {
           </p>
         </div>
 
-        <div className="flex flex-col gap-8">
+        <div ref={sectionRef} className="relative">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.15 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              className="sticky top-24 md:top-32"
+              style={{ zIndex: index + 1 }}
             >
-              <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group flex flex-col md:flex-row">
-                <div className="relative w-full md:w-[280px] lg:w-[320px] h-52 md:h-auto shrink-0">
-                  <Image
-                    src={project.imgUrl}
-                    alt={project.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                </div>
-
-                <div className="p-6 flex flex-col justify-between flex-1">
-                  <div>
-                    <h3 className="text-xl font-['Modern_Antiqua'] text-gray-900 mb-2">
-                      {project.title}
-                    </h3>
-
-                    <ul className="space-y-1.5 mb-4">
-                      {project.features.map((feature, i) => (
-                        <li
-                          key={i}
-                          className="flex items-start gap-2 text-sm text-gray-700"
-                        >
-                          <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#BE5F47] shrink-0" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="flex flex-wrap items-center gap-2">
-                    {project.tags.slice(0, 4).map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-2.5 py-0.5 bg-[#BE5F47]/10 text-[#BE5F47] text-xs rounded-full font-medium"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                    {project.tags.length > 4 && (
-                      <span className="text-xs text-gray-400">
-                        +{project.tags.length - 4}
-                      </span>
-                    )}
-                  </div>
-
-                  <div className="flex items-center gap-4 mt-4 pt-4 border-t border-gray-100">
-                    {project.live && (
-                      <a
-                        href={project.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-1.5 text-sm text-gray-600 hover:text-[#BE5F47] transition-colors"
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                        Live Site
-                      </a>
-                    )}
-                    {project.client && (
-                      <a
-                        href={project.client}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-1.5 text-sm text-gray-600 hover:text-[#BE5F47] transition-colors"
-                      >
-                        <FaGithubSquare className="w-4 h-4" />
-                        Client
-                      </a>
-                    )}
-                    {project.server && (
-                      <a
-                        href={project.server}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-1.5 text-sm text-gray-600 hover:text-[#BE5F47] transition-colors"
-                      >
-                        <FaGithubSquare className="w-4 h-4" />
-                        Server
-                      </a>
-                    )}
-                  </div>
-                </div>
+              <div className="pb-6 md:pb-8">
+                <ProjectCard project={project} index={index} />
               </div>
             </motion.div>
           ))}
