@@ -8,6 +8,23 @@ const nextConfig = {
       },
     ],
   },
+
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "www.sabbir-chowdhury.pro.bd",
+          },
+        ],
+        destination: "https://sabbir-chowdhury.pro.bd/:path*",
+        permanent: true,
+      },
+    ];
+  },
+
   async rewrites() {
     return [
       {
