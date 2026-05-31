@@ -45,37 +45,65 @@ const skillsData = [
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="py-16 sm:py-24 bg-[#F5E6D3] relative overflow-hidden" style={{ backgroundImage: "url(/skills-bg.png)", backgroundSize: "cover", backgroundPosition: "center" }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-8">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <p className="text-[#BE5F47] uppercase tracking-wider text-sm mb-2">
-            SKILLS
-          </p>
-          <h2 className="text-4xl sm:text-5xl font-['Modern_Antiqua'] text-gray-900 mb-4">
-            Technologies <span className="text-[#BE5F47]">I work with</span>
-          </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            I use modern tools and technologies to build scalable,
-            high-performance web applications and deliver great user
-            experiences.
-          </p>
+    <section
+      id="skills"
+      className="relative bg-[#F5E6D3] py-16 sm:py-24"
+      style={{
+        backgroundImage: "url(/skills-bg.png)",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+        <div className="lg:sticky lg:top-28 lg:h-fit">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6 }}
+            className="max-w-xl"
+          >
+            <p className="mb-2 text-sm uppercase tracking-wider text-[#BE5F47]">
+              SKILLS
+            </p>
+            <h2 className="mb-5 font-['Modern_Antiqua'] text-4xl leading-tight text-gray-900 sm:text-5xl">
+              Technologies{" "}
+              <span className="text-[#BE5F47]">I work with</span>
+            </h2>
+            <p className="text-base leading-relaxed text-gray-700 sm:text-lg">
+              I use modern tools and technologies to build scalable,
+              high-performance web applications and deliver great user
+              experiences.
+            </p>
+
+            <div className="mt-8 h-1.5 w-full max-w-xs overflow-hidden rounded-full bg-white">
+              <motion.div
+                initial={{ width: "0%" }}
+                whileInView={{ width: "100%" }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.2, ease: "easeOut" }}
+                className="h-full rounded-full bg-[#BE5F47]"
+              />
+            </div>
+          </motion.div>
         </div>
 
-        {/* Skills Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="space-y-6 pb-24 lg:space-y-8 lg:pb-40">
           {skillsData.map((skill, index) => (
             <motion.div
               key={skill.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 36 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow ${index === skillsData.length - 1 ? "md:col-span-2" : ""}`}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.55, delay: index * 0.06 }}
+              className="sticky rounded-2xl border border-[#BE5F47]/10 bg-white p-6 shadow-sm transition-shadow hover:shadow-md sm:p-8"
+              style={{
+                top: `calc(6rem + ${index * 12}px)`,
+                zIndex: index + 1,
+              }}
             >
-              <div className="flex items-start gap-4">
-                {/* Icon */}
-                <div className="bg-[#FFE8DC] w-16 h-16 rounded-xl flex items-center justify-center flex-shrink-0">
+              <div className="flex items-start gap-4 sm:gap-5">
+                <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-xl bg-[#FFE8DC]">
                   <Image
                     src={skill.image}
                     alt={skill.title}
@@ -85,12 +113,16 @@ export default function SkillsSection() {
                   />
                 </div>
 
-                {/* Content */}
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2 font-['Modern_Antiqua']">
-                    {skill.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed font-['Modern_Antiqua']">
+                <div className="min-w-0">
+                  <div className="mb-2 flex items-center justify-between gap-4">
+                    <h3 className="font-['Modern_Antiqua'] text-xl font-semibold text-gray-900 sm:text-2xl">
+                      {skill.title}
+                    </h3>
+                    <span className="hidden font-['Modern_Antiqua'] text-3xl text-[#BE5F47]/25 sm:block">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+                  <p className="font-['Modern_Antiqua'] text-sm leading-relaxed text-gray-600 sm:text-base">
                     {skill.skills}
                   </p>
                 </div>
