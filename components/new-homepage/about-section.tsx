@@ -92,10 +92,10 @@ export default function AboutSection() {
           {values.map((value, index) => (
             <motion.div
               key={value.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              initial={{ opacity: 0, y: 30, scale: 0.9 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.5, delay: index * 0.12 }}
               className="text-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl hover:scale-105 hover:brightness-110 transition-all duration-300"
               style={{
                 background:

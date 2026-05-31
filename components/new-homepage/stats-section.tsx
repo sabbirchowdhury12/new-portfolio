@@ -1,11 +1,35 @@
 "use client";
 
+import { motion } from "framer-motion";
+
+const statVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, delay: i * 0.15, ease: "easeOut" },
+  }),
+};
+
 export default function StatsSection() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-8 py-8 sm:py-16">
-      <div className="bg-[#F5E6D3] rounded-[80px] p-6 sm:p-12 grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7 }}
+        className="bg-[#F5E6D3] rounded-[80px] p-6 sm:p-12 grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8"
+      >
         {/* Years Experience */}
-        <div className="text-center">
+        <motion.div
+          custom={0}
+          variants={statVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="text-center"
+        >
           <div className="relative w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center mx-auto mb-4 overflow-hidden">
             <div
               className="absolute inset-0 blob"
@@ -34,10 +58,17 @@ export default function StatsSection() {
             scalable web applications with modern Frontend and backend
             technologies.
           </p>
-        </div>
+        </motion.div>
 
         {/* Client Projects */}
-        <div className="text-center">
+        <motion.div
+          custom={1}
+          variants={statVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="text-center"
+        >
           <div className="relative w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center mx-auto mb-4 overflow-hidden">
             <div
               className="absolute inset-0 blob"
@@ -66,10 +97,17 @@ export default function StatsSection() {
             automation systems, AI-powered posture analysis tools, dashboards,
             and visual editors for clients and startups.
           </p>
-        </div>
+        </motion.div>
 
         {/* Hours Available */}
-        <div className="text-center">
+        <motion.div
+          custom={2}
+          variants={statVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="text-center"
+        >
           <div className="relative w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center mx-auto mb-4 overflow-hidden">
             <div
               className="absolute inset-0 blob"
@@ -102,8 +140,8 @@ export default function StatsSection() {
             <br />
             whatsapp: 01617837797
           </p>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 }

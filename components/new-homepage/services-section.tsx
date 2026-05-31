@@ -63,7 +63,13 @@ export default function ServicesSection() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
         {/* Header */}
-        <div className="text-center mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
+        >
           <p className="text-[#BE5F47] uppercase tracking-wider text-sm mb-2">
             SERVICES
           </p>
@@ -74,7 +80,7 @@ export default function ServicesSection() {
             Comprehensive development solutions from concept to deployment,
             delivering quality products that solve real-world problems.
           </p>
-        </div>
+        </motion.div>
 
         {/* Services Grid */}
         <div className="flex flex-col gap-12">
@@ -83,8 +89,12 @@ export default function ServicesSection() {
             const Icon = s.icon;
 
             return (
-              <div
+              <motion.div
                 key={s.id}
+                initial={{ opacity: 0, x: isRight ? 40 : -40, y: 20 }}
+                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ duration: 0.6, delay: idx * 0.1 }}
                 className={[
                   "flex flex-col md:flex-row items-center gap-4 sm:gap-8 mb-0",
                   "w-full md:max-w-[60%]",
@@ -136,7 +146,7 @@ export default function ServicesSection() {
                     <Icon className="w-8 h-8 text-white" />
                   </div>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>

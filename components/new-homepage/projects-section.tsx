@@ -214,17 +214,22 @@ export default function ProjectsSection() {
     offset: ["start start", "end end"],
   });
 
+  const headingY = useTransform(scrollYProgress, [0, 1], [0, -80]);
+
   return (
     <section
       id="projects"
-      className="py-16 sm:py-24"
-      style={{
-        background:
-          "linear-gradient(134.19deg, #BE5F47 27.13%, #D29D73 73.56%)",
-      }}
+      className="py-16 sm:py-24 relative overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-8">
-        <div className="text-center mb-12">
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(134.19deg, #BE5F47 27.13%, #D29D73 73.56%)",
+        }}
+      />
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-8">
+        <motion.div style={{ y: headingY }} className="text-center mb-12">
           <p className="text-white/80 uppercase tracking-wider text-sm mb-2">
             PROJECTS
           </p>
@@ -235,16 +240,16 @@ export default function ProjectsSection() {
             Real-world applications I&apos;ve built — from SaaS platforms to
             automation tools.
           </p>
-        </div>
+        </motion.div>
 
         <div ref={sectionRef} className="relative">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
-              initial={{ opacity: 0, y: 60 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 60, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
               className="sticky top-24 md:top-32"
               style={{ zIndex: index + 1 }}
             >

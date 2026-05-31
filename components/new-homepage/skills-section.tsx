@@ -92,8 +92,8 @@ export default function SkillsSection() {
           {skillsData.map((skill, index) => (
             <motion.div
               key={skill.title}
-              initial={{ opacity: 0, y: 36 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 40, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.55, delay: index * 0.06 }}
               className="sticky rounded-2xl border border-[#BE5F47]/10 bg-white p-6 shadow-sm transition-shadow hover:shadow-md sm:p-8"
