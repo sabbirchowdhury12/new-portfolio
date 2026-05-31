@@ -134,7 +134,7 @@ export default function DocsPage() {
         />
       )}
 
-      <main className="flex-1 lg:ml-0 p-4 lg:p-12">
+      <main className="flex-1 lg:ml-0 min-w-0 p-4 lg:p-12">
         <div className="px-0 lg:px-4 mx-auto max-w-4xl">
           <h1 className="text-2xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Documentation

@@ -202,7 +202,7 @@ export default function DocsSlugPage() {
         />
       )}
 
-      <main className="flex-1 lg:ml-0 p-4 lg:p-12">
+      <main className="flex-1 lg:ml-0 min-w-0 p-4 lg:p-12">
         {contentLoading ||
         (initialLoading && categories.length === 0 && !isSyncing) ? (
           <div className="flex items-center justify-center h-64">
@@ -214,11 +214,11 @@ export default function DocsSlugPage() {
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-medium mb-4">
                 {document.category?.name}
               </div>
-              <h1 className="text-2xl lg:text-4xl font-bold text-gray-900 dark:text-white">
+              <h1 className="text-2xl lg:text-4xl font-bold text-gray-900 dark:text-white break-words">
                 {document.title}
               </h1>
             </div>
-            <div className="prose prose-lg dark:prose-invert max-w-none prose-headings:font-semibold prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl prose-code:bg-gray-200 dark:prose-code:bg-gray-700 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none prose-code:text-gray-900 dark:prose-code:text-gray-100 prose-pre:bg-gray-200 dark:prose-pre:bg-gray-700 prose-pre:text-gray-900 dark:prose-pre:text-gray-100 prose-pre:rounded-xl prose-a:text-blue-600 dark:prose-a:text-blue-400">
+            <div className="prose prose-sm sm:prose-base lg:prose-lg dark:prose-invert max-w-none overflow-x-auto break-words prose-headings:font-semibold prose-h1:text-2xl sm:prose-h1:text-3xl prose-h2:text-xl sm:prose-h2:text-2xl prose-h3:text-lg sm:prose-h3:text-xl prose-code:bg-gray-200 dark:prose-code:bg-gray-700 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none prose-code:text-gray-900 dark:prose-code:text-gray-100 prose-pre:bg-gray-200 dark:prose-pre:bg-gray-700 prose-pre:text-gray-900 dark:prose-pre:text-gray-100 prose-pre:rounded-xl prose-pre:overflow-x-auto prose-a:text-blue-600 dark:prose-a:text-blue-400 prose-table:overflow-x-auto">
               <ReactMarkdown remarkPlugins={[remarkGfm]}>
                 {document.content}
               </ReactMarkdown>
