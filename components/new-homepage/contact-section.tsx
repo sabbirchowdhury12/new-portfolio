@@ -1,7 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, MapPin, Phone, Send } from "lucide-react";
+import { sendEmail } from "@/actions/sendEmail";
+import toast from "react-hot-toast";
 
 const contactInfo = [
   { icon: Mail, label: "Email", value: "sabbirchowdhury40854@gmail.com" },
@@ -10,6 +13,8 @@ const contactInfo = [
 ];
 
 export default function ContactSection() {
+  const [pending, setPending] = useState(false);
+
   return (
     <section id="contact" className="py-16 sm:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
@@ -80,6 +85,21 @@ export default function ContactSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="lg:col-span-3 bg-white rounded-2xl p-8 shadow-sm"
+            onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
+              e.preventDefault();
+              e.stopPropagation();
+              setPending(true);
+              const formData = new FormData(e.currentTarget);
+              sendEmail(formData).then(({ error }) => {
+                if (error) {
+                  toast.error(error);
+                } else {
+                  toast.success("Email sent successfully!");
+                  e.currentTarget.reset();
+                }
+                setPending(false);
+              });
+            }}
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
               <div>
@@ -88,6 +108,7 @@ export default function ContactSection() {
                 </label>
                 <input
                   type="text"
+                  name="senderName"
                   placeholder="John Doe"
                   required
                   className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#BE5F47]/30 focus:border-[#BE5F47] transition placeholder:text-gray-400"
@@ -99,6 +120,7 @@ export default function ContactSection() {
                 </label>
                 <input
                   type="email"
+                  name="senderEmail"
                   placeholder="john@example.com"
                   required
                   className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#BE5F47]/30 focus:border-[#BE5F47] transition placeholder:text-gray-400"
@@ -112,6 +134,7 @@ export default function ContactSection() {
               </label>
               <input
                 type="text"
+                name="subject"
                 placeholder="Project Collaboration"
                 className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#BE5F47]/30 focus:border-[#BE5F47] transition placeholder:text-gray-400"
               />
@@ -122,6 +145,7 @@ export default function ContactSection() {
                 Your Message
               </label>
               <textarea
+                name="message"
                 placeholder="Tell me about your project..."
                 required
                 rows={5}
@@ -131,14 +155,21 @@ export default function ContactSection() {
 
             <button
               type="submit"
-              className="w-full px-6 py-3.5 rounded-xl text-white text-sm font-semibold flex items-center justify-center gap-2 transition hover:opacity-90"
+              disabled={pending}
+              className="w-full px-6 py-3.5 rounded-xl text-white text-sm font-semibold flex items-center justify-center gap-2 transition hover:opacity-90 disabled:opacity-60 disabled:cursor-not-allowed"
               style={{
                 background:
                   "linear-gradient(134.19deg, #BE5F47 27.13%, #D29D73 73.56%)",
               }}
             >
-              <Send className="w-4 h-4" />
-              Send Message
+              {pending ? (
+                <div className="h-5 w-5 animate-spin rounded-full border-b-2 border-white" />
+              ) : (
+                <>
+                  <Send className="w-4 h-4" />
+                  Send Message
+                </>
+              )}
             </button>
           </motion.form>
         </div>

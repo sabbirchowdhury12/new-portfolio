@@ -3,10 +3,11 @@
 import { validateString, getErrorMessage } from "@/lib/utils";
 import ContactFormEmail from "@/email/contact-form-email";
 import { renderAsync } from "@react-email/components";
+import { Resend } from "resend";
 
-const BREVO_API_KEY = process.env.BREVO_API_KEY;
-const BREVO_SENDER_EMAIL = process.env.BREVO_SENDER_EMAIL || "hello@yourdomain.com";
-const BREVO_SENDER_NAME = process.env.BREVO_SENDER_NAME || "Portfolio";
+const resend = new Resend(process.env.RESEND_API_KEY);
+
+const SENDER_EMAIL = process.env.SENDER_EMAIL || "hello@yourdomain.com";
 const RECEIVER_EMAIL = process.env.RECEIVER_EMAIL || "sabbirchowdhury40854@gmail.com";
 
 export const sendEmail = async (formData: FormData) => {
@@ -39,37 +40,20 @@ export const sendEmail = async (formData: FormData) => {
   }
 
   try {
-    const response = await fetch("https://api.brevo.com/v3/smtp/email", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "api-key": BREVO_API_KEY!,
-      },
-      body: JSON.stringify({
-        sender: {
-          name: BREVO_SENDER_NAME,
-          email: BREVO_SENDER_EMAIL,
-        },
-        to: [
-          {
-            email: RECEIVER_EMAIL,
-          },
-        ],
-        replyTo: {
-          email: senderEmail as string,
-        },
-        subject: "Message from contact form",
-        htmlContent: emailHtml,
-      }),
+    const { data, error } = await resend.emails.send({
+      from: SENDER_EMAIL,
+      to: RECEIVER_EMAIL,
+      subject: "Message from contact form",
+      html: emailHtml,
+      reply_to: senderEmail as string,
     });
 
-    if (!response.ok) {
-      const errorData = await response.json();
-      throw new Error(errorData.message || "Failed to send email");
+    if (error) {
+      throw new Error(error.message);
     }
 
     return {
-      data: await response.json(),
+      data,
     };
   } catch (error: unknown) {
     return {

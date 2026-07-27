@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import SectionHeading from "./section-heading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
@@ -11,7 +11,8 @@ import { contactCards } from "@/lib/data";
 
 export default function Contact() {
   const { ref } = useSectionInView("Contact");
-  const formRef = useRef<null>(null);
+  const formRef = useRef<HTMLFormElement>(null);
+  const [pending, setPending] = useState(false);
 
   return (
     <motion.section
@@ -49,17 +50,22 @@ export default function Contact() {
         ))}
       </div>
       <form
-        ref={formRef as any}
+        ref={formRef}
         className="mt-10 flex flex-col dark:text-black"
-        action={async (formData: FormData) => {
-          const { data, error } = await sendEmail(formData);
-
-          if (error) {
-            toast.error(error);
-            return;
-          }
-
-          toast.success("Email sent successfully!");
+        onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
+          e.preventDefault();
+          e.stopPropagation();
+          setPending(true);
+          const formData = new FormData(e.currentTarget);
+          sendEmail(formData).then(({ data, error }) => {
+            if (error) {
+              toast.error(error);
+            } else {
+              toast.success("Email sent successfully!");
+              formRef.current?.reset();
+            }
+            setPending(false);
+          });
         }}
       >
         <input
@@ -77,7 +83,7 @@ export default function Contact() {
           required
           maxLength={5000}
         />
-        <SubmitBtn />
+        <SubmitBtn pending={pending} />
       </form>
     </motion.section>
   );
