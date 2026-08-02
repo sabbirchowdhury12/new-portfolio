@@ -10,7 +10,10 @@ import {
   ArrowLeft,
   Menu,
   X,
+  Mail,
+  Check,
 } from "lucide-react";
+import toast from "react-hot-toast";
 
 interface Category {
   id: string;
@@ -27,6 +30,34 @@ export default function CategoryPage() {
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [email, setEmail] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [subscribed, setSubscribed] = useState(false);
+
+  async function handleSubscribe(e: React.FormEvent) {
+    e.preventDefault();
+    if (!email.trim()) return;
+
+    setSubmitting(true);
+    try {
+      const res = await fetch("/api/public/subscribers", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email.trim() }),
+      });
+      if (res.ok) {
+        setSubscribed(true);
+        setEmail("");
+        toast.success("Subscribed! You'll get notified about new docs.");
+      } else {
+        toast.error("Something went wrong. Please try again.");
+      }
+    } catch {
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
+  }
 
   useEffect(() => {
     let active = true;
@@ -206,6 +237,51 @@ export default function CategoryPage() {
               </p>
             </div>
           )}
+
+          <div className="mt-12 p-8 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
+            <div className="flex items-center gap-3 mb-2">
+              <Mail className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+              <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
+                Stay updated
+              </h2>
+            </div>
+            <p className="text-gray-600 dark:text-gray-400 mb-5">
+              Subscribe to get notified when new{" "}
+              {category.name.toLowerCase()} docs are published.
+            </p>
+
+            {subscribed ? (
+              <div className="flex items-center gap-2 px-4 py-3 rounded-lg bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-sm">
+                <Check className="w-4 h-4" />
+                You&apos;re subscribed! Watch your inbox for updates.
+              </div>
+            ) : (
+              <form
+                onSubmit={handleSubscribe}
+                className="flex flex-col sm:flex-row gap-3"
+              >
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email"
+                  required
+                  className="flex-1 px-4 py-2.5 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/30 focus:border-blue-500 transition placeholder:text-gray-400"
+                />
+                <button
+                  type="submit"
+                  disabled={submitting}
+                  className="px-6 py-2.5 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {submitting ? (
+                    <Loader2 className="w-4 h-4 animate-spin mx-auto" />
+                  ) : (
+                    "Subscribe"
+                  )}
+                </button>
+              </form>
+            )}
+          </div>
         </div>
       </main>
     </div>
