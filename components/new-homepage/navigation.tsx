@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Mail, MapPin, Phone, Send, Menu } from "lucide-react";
 
@@ -70,12 +71,12 @@ export default function Navigation() {
             <Menu className="w-6 h-6" />
           </button>
 
-          <a
+          <Link
             href="/learn"
             className="bg-white text-[#BE5F47] px-4 py-2 rounded-full hover:opacity-90 transition text-sm"
           >
             Learn
-          </a>
+          </Link>
         </div>
       </nav>
 

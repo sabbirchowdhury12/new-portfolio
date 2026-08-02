@@ -12,6 +12,7 @@ import {
   Loader2,
   Menu,
   X,
+  ArrowLeft,
 } from "lucide-react";
 import { trackDocView } from "@/lib/analytics";
 
@@ -41,9 +42,15 @@ export default function DocsSlugPage() {
   );
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isSyncing, setIsSyncing] = useState(false);
+  const [shareCat, setShareCat] = useState<string | undefined>(undefined);
 
   const categorySlug = params.categorySlug as string | undefined;
   const docSlug = params.docSlug as string | undefined;
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    setShareCat(params.get("cat") || undefined);
+  }, []);
 
   useEffect(() => {
     const cached = localStorage.getItem("docs_categories");
@@ -125,6 +132,10 @@ export default function DocsSlugPage() {
     });
   }
 
+  const visibleCategories = shareCat
+    ? categories.filter((c) => c.slug === shareCat)
+    : categories;
+
   return (
     <div className="flex min-h-screen bg-gray-50 dark:bg-gray-950">
       <button
@@ -152,11 +163,11 @@ export default function DocsSlugPage() {
               <Loader2 className="w-4 h-4 animate-spin" />
               Loading...
             </div>
-          ) : categories.length === 0 ? (
+          ) : visibleCategories.length === 0 ? (
             <p className="text-sm text-gray-500">No documents available</p>
           ) : (
             <div className="space-y-4">
-              {categories.map((category) => (
+              {visibleCategories.map((category) => (
                 <div key={category.id}>
                   <button
                     onClick={() => toggleCategory(category.id)}
@@ -175,7 +186,9 @@ export default function DocsSlugPage() {
                       {category.documents.map((doc) => (
                         <Link
                           key={doc.id}
-                          href={`/learn/${category.slug}/${doc.slug}`}
+                          href={`/learn/${category.slug}/${doc.slug}${
+                            shareCat ? `?cat=${shareCat}` : ""
+                          }`}
                           onClick={() => setSidebarOpen(false)}
                           className={`block px-3 py-2 text-sm rounded-lg transition-colors ${
                             docSlug === doc.slug
@@ -210,6 +223,15 @@ export default function DocsSlugPage() {
           </div>
         ) : document ? (
           <div className="px-0 lg:px-4 mx-auto max-w-4xl">
+            {shareCat && (
+              <Link
+                href={`/learn/${shareCat}`}
+                className="inline-flex items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 mb-6 transition-colors"
+              >
+                <ArrowLeft className="w-4 h-4" />
+                {document.category?.name || shareCat}
+              </Link>
+            )}
             <div className="mb-8 pb-8 border-b border-gray-200 dark:border-gray-800">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-medium mb-4">
                 {document.category?.name}
