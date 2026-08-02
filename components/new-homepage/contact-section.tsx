@@ -89,13 +89,14 @@ export default function ContactSection() {
               e.preventDefault();
               e.stopPropagation();
               setPending(true);
-              const formData = new FormData(e.currentTarget);
+              const form = e.currentTarget;
+              const formData = new FormData(form);
               sendEmail(formData).then(({ error }) => {
                 if (error) {
                   toast.error(error);
                 } else {
                   toast.success("Email sent successfully!");
-                  e.currentTarget.reset();
+                  form.reset();
                 }
                 setPending(false);
               });

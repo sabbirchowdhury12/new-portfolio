@@ -13,28 +13,41 @@ import {
 import { Tailwind } from "@react-email/tailwind";
 
 type ContactFormEmailProps = {
-  message: string;
+  senderName: string;
   senderEmail: string;
+  subject: string;
+  message: string;
 };
 
 export default function ContactFormEmail({
-  message,
+  senderName,
   senderEmail,
+  subject,
+  message,
 }: ContactFormEmailProps) {
   return (
     <Html>
       <Head />
-      <Preview>New message from your portfolio site</Preview>
+      <Preview>
+        {subject ? subject : "New message from your portfolio site"}
+      </Preview>
       <Tailwind>
         <Body className="bg-gray-100 text-black">
           <Container>
-            <Section className="bg-white borderBlack my-10 px-10 py-4 rounded-md">
-              <Heading className="leading-tight">
-                You received the following message from the contact form
+            <Section className="bg-white my-10 px-10 py-6 rounded-md shadow-sm">
+              <Heading className="text-2xl text-gray-900">
+                New message from {senderName}
               </Heading>
-              <Text>{message}</Text>
+              {subject && (
+                <Text className="text-sm font-semibold text-gray-900">
+                  Subject: <span className="font-normal">{subject}</span>
+                </Text>
+              )}
+              <Text className="text-base text-gray-700">{message}</Text>
               <Hr />
-              <Text>The sender&apos;s email is: {senderEmail}</Text>
+              <Text className="text-sm text-gray-500">
+                Reply to: {senderName} - {senderEmail}
+              </Text>
             </Section>
           </Container>
         </Body>

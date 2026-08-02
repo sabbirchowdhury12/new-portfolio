@@ -11,12 +11,24 @@ const SENDER_EMAIL = process.env.SENDER_EMAIL || "hello@yourdomain.com";
 const RECEIVER_EMAIL = process.env.RECEIVER_EMAIL || "sabbirchowdhury40854@gmail.com";
 
 export const sendEmail = async (formData: FormData) => {
+  const senderName = formData.get("senderName");
   const senderEmail = formData.get("senderEmail");
+  const subject = formData.get("subject");
   const message = formData.get("message");
 
+  if (!validateString(senderName, 500)) {
+    return {
+      error: "Invalid sender name",
+    };
+  }
   if (!validateString(senderEmail, 500)) {
     return {
       error: "Invalid sender email",
+    };
+  }
+  if (!validateString(subject, 500)) {
+    return {
+      error: "Invalid subject",
     };
   }
   if (!validateString(message, 5000)) {
@@ -29,8 +41,10 @@ export const sendEmail = async (formData: FormData) => {
   try {
     emailHtml = await renderAsync(
       ContactFormEmail({
-        message: message as string,
+        senderName: senderName as string,
         senderEmail: senderEmail as string,
+        subject: subject as string,
+        message: message as string,
       })
     );
   } catch (error) {
@@ -43,7 +57,7 @@ export const sendEmail = async (formData: FormData) => {
     const { data, error } = await resend.emails.send({
       from: SENDER_EMAIL,
       to: RECEIVER_EMAIL,
-      subject: "Message from contact form",
+      subject: subject ? `Portfolio: ${subject}` : "Message from contact form",
       html: emailHtml,
       reply_to: senderEmail as string,
     });
