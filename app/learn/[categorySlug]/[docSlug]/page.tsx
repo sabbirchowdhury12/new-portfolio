@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import {
@@ -27,7 +27,10 @@ interface Document {
   id: string;
   slug: string;
   title: string;
+  titleBn?: string | null;
   content: string;
+  contentBn?: string | null;
+  hasBangla?: boolean;
   category: { id: string; slug: string; name: string } | null;
 }
 
@@ -43,13 +46,18 @@ export default function DocsSlugPage() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isSyncing, setIsSyncing] = useState(false);
   const [shareCat, setShareCat] = useState<string | undefined>(undefined);
+  const [lang, setLang] = useState<"en" | "bn">("en");
 
+  const router = useRouter();
   const categorySlug = params.categorySlug as string | undefined;
   const docSlug = params.docSlug as string | undefined;
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     setShareCat(params.get("cat") || undefined);
+    const l = params.get("lang");
+    if (l === "bn") setLang("bn");
+    else if (l === "en") setLang("en");
   }, []);
 
   useEffect(() => {
@@ -131,6 +139,35 @@ export default function DocsSlugPage() {
       return next;
     });
   }
+
+  const availableLangs: ("en" | "bn")[] = document
+    ? (["en", "bn"] as const).filter((l) =>
+        l === "en" ? Boolean(document.content) : Boolean(document.contentBn),
+      )
+    : [];
+
+  const effectiveLang: "en" | "bn" = availableLangs.includes(lang)
+    ? lang
+    : availableLangs.includes("en")
+      ? "en"
+      : "bn";
+
+  function changeLang(next: "en" | "bn") {
+    setLang(next);
+    const url = new URL(window.location.href);
+    url.searchParams.set("lang", next);
+    router.replace(url.pathname + url.search, { scroll: false });
+  }
+
+  const displayTitle =
+    effectiveLang === "bn" && document?.titleBn
+      ? document.titleBn
+      : document?.title ?? "";
+
+  const markdownContent =
+    effectiveLang === "bn" && document?.contentBn
+      ? document.contentBn
+      : document?.content ?? "";
 
   const visibleCategories = shareCat
     ? categories.filter((c) => c.slug === shareCat)
@@ -233,16 +270,40 @@ export default function DocsSlugPage() {
               </Link>
             )}
             <div className="mb-8 pb-8 border-b border-gray-200 dark:border-gray-800">
+              {availableLangs.length > 1 && (
+                <div className="inline-flex items-center gap-1 border border-gray-200 dark:border-gray-700 rounded-lg p-1 bg-white dark:bg-gray-900 mb-4">
+                  <button
+                    onClick={() => changeLang("en")}
+                    className={`px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
+                      effectiveLang === "en"
+                        ? "bg-blue-600 text-white"
+                        : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
+                    }`}
+                  >
+                    English
+                  </button>
+                  <button
+                    onClick={() => changeLang("bn")}
+                    className={`px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
+                      effectiveLang === "bn"
+                        ? "bg-blue-600 text-white"
+                        : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
+                    }`}
+                  >
+                    বাংলা
+                  </button>
+                </div>
+              )}
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-medium mb-4">
                 {document.category?.name}
               </div>
               <h1 className="text-2xl lg:text-4xl font-bold text-gray-900 dark:text-white break-words">
-                {document.title}
+                {displayTitle}
               </h1>
             </div>
             <div className="prose prose-sm sm:prose-base lg:prose-lg dark:prose-invert max-w-none overflow-x-auto break-words prose-headings:font-semibold prose-h1:text-2xl sm:prose-h1:text-3xl prose-h2:text-xl sm:prose-h2:text-2xl prose-h3:text-lg sm:prose-h3:text-xl prose-code:bg-gray-200 dark:prose-code:bg-gray-700 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none prose-code:text-gray-900 dark:prose-code:text-gray-100 prose-pre:bg-gray-200 dark:prose-pre:bg-gray-700 prose-pre:text-gray-900 dark:prose-pre:text-gray-100 prose-pre:rounded-xl prose-pre:overflow-x-auto prose-a:text-blue-600 dark:prose-a:text-blue-400 prose-table:overflow-x-auto">
               <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                {document.content}
+                {markdownContent}
               </ReactMarkdown>
             </div>
           </div>
