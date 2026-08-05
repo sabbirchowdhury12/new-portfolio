@@ -7,7 +7,7 @@ const values = [
   {
     title: "Reputation",
     description:
-      "10+ successful projects delivered — SaaS platforms, AI tools, automation systems, dashboards, and visual editors for clients and startups.",
+      "20+ successful projects delivered — SaaS platforms, AI tools, automation systems, dashboards, and visual editors for clients and startups.",
   },
   {
     title: "Tech Leadership",

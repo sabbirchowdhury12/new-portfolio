@@ -83,7 +83,7 @@ export default function StatsSection() {
               style={{ fontFamily: "'Modern Antiqua', serif" }}
               className="relative text-3xl sm:text-4xl font-bold text-black"
             >
-              10+
+              20+
             </span>
           </div>
           <h3

@@ -40,7 +40,7 @@ This folder contains all the modular components for the new homepage design.
 
 - Three stat cards:
   - Years of Experience (3+)
-  - Client Projects (10+)
+  - Client Projects (20+)
   - Hours Available (24/7) with contact info
 - Cream background container
 - Circular badge with numbers
