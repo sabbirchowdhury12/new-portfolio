@@ -270,32 +270,34 @@ export default function DocsSlugPage() {
               </Link>
             )}
             <div className="mb-8 pb-8 border-b border-gray-200 dark:border-gray-800">
-              {availableLangs.length > 1 && (
-                <div className="inline-flex items-center gap-1 border border-gray-200 dark:border-gray-700 rounded-lg p-1 bg-white dark:bg-gray-900 mb-4">
-                  <button
-                    onClick={() => changeLang("en")}
-                    className={`px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
-                      effectiveLang === "en"
-                        ? "bg-blue-600 text-white"
-                        : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
-                    }`}
-                  >
-                    English
-                  </button>
-                  <button
-                    onClick={() => changeLang("bn")}
-                    className={`px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
-                      effectiveLang === "bn"
-                        ? "bg-blue-600 text-white"
-                        : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
-                    }`}
-                  >
-                    বাংলা
-                  </button>
+              <div className="flex items-center justify-between gap-4 mb-4">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-medium">
+                  {document.category?.name}
                 </div>
-              )}
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-medium mb-4">
-                {document.category?.name}
+                {availableLangs.length > 1 && (
+                  <div className="inline-flex items-center gap-1 border border-gray-200 dark:border-gray-700 rounded-lg p-1 bg-white dark:bg-gray-900">
+                    <button
+                      onClick={() => changeLang("en")}
+                      className={`px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
+                        effectiveLang === "en"
+                          ? "bg-blue-600 text-white"
+                          : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
+                      }`}
+                    >
+                      English
+                    </button>
+                    <button
+                      onClick={() => changeLang("bn")}
+                      className={`px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
+                        effectiveLang === "bn"
+                          ? "bg-blue-600 text-white"
+                          : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
+                      }`}
+                    >
+                      বাংলা
+                    </button>
+                  </div>
+                )}
               </div>
               <h1 className="text-2xl lg:text-4xl font-bold text-gray-900 dark:text-white break-words">
                 {displayTitle}

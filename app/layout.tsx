@@ -15,7 +15,7 @@ const poppins = Poppins({
 
 export const metadata = {
   title: "Sabbir Chowdhury | Personal Portfolio",
-  description: "Sabbir is a full-stack developer with 2 years of experience.",
+  description: "Sabbir is a full-stack developer with 3 years of experience.",
 };
 
 export default function RootLayout({
