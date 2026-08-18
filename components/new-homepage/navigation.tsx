@@ -72,8 +72,14 @@ export default function Navigation() {
           </button>
 
           <Link
-            href="/learn"
+            href="/project"
             className="bg-white text-[#BE5F47] px-4 py-2 rounded-full hover:opacity-90 transition text-sm"
+          >
+            Projects
+          </Link>
+          <Link
+            href="/learn"
+            className="bg-white/10 text-white px-4 py-2 rounded-full hover:bg-white/20 transition text-sm border border-white/20"
           >
             Learn
           </Link>
@@ -99,6 +105,13 @@ export default function Navigation() {
                   {link.label}
                 </a>
               ))}
+              <Link
+                href="/project"
+                onClick={() => setIsMenuOpen(false)}
+                className="text-white/90 hover:text-white transition text-lg font-['Modern_Antiqua']"
+              >
+                Projects
+              </Link>
             </div>
           </motion.div>
         )}

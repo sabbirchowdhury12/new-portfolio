@@ -1,0 +1,584 @@
+{
+  "projects": [
+    {
+      "slug": "edumanage",
+      "name": "EduManage",
+      "tagline": "Intelligent, Bilingual School Management System",
+      "taglineBn": "Intelligent, Bilingual School Management System",
+      "category": "Full-Stack SaaS",
+      "status": "In Development",
+      "statusBn": "In Development",
+      "liveUrl": "https://sabbir-academy-edu-manage.vercel.app/",
+      "thumbnail": "/project/educational/admin-dashboard.png",
+      "heroImage": "/project/educational/admin-dashboard.png",
+      "accentColor": "#4F46E5",
+      "demoCredentials": [
+        {
+          "role": "Admin",
+          "roleBn": "প্রশাসক",
+          "email": "admin@demo.com",
+          "password": "123456"
+        },
+        {
+          "role": "Teacher",
+          "roleBn": "শিক্ষক",
+          "email": "teacher1@demo.com",
+          "password": "123456"
+        },
+        {
+          "role": "Student",
+          "roleBn": "ছাত্র",
+          "email": "student21@demo.com",
+          "password": "123456"
+        },
+        {
+          "role": "Parent",
+          "roleBn": "অভিভাবক",
+          "email": "parent11@demo.com",
+          "password": "123456"
+        }
+      ],
+      "gallery": [
+        {
+          "src": "/project/educational/admin-dashboard.png",
+          "alt": "Admin Dashboard Overview",
+          "caption": "Main admin dashboard with live metrics and at-risk alerts",
+          "captionBn": "লাইভ মেট্রিক্স ও ঝুঁকিপূর্ণ ছাত্রদের সতর্কতা সহ প্রধান অ্যাডমিন ড্যাশবোর্ড"
+        },
+        {
+          "src": "/project/educational/admin-student-details.png",
+          "alt": "Student Management",
+          "caption": "Detailed student profiles with attendance and academic history",
+          "captionBn": "উপস্থিতি ও একাডেমিক ইতিহাস সহ বিস্তারিত ছাত্র প্রোফাইল"
+        },
+        {
+          "src": "/project/educational/admin-students-result.png",
+          "alt": "Student Results",
+          "caption": "Exam results with subject-wise grading and GPA computation",
+          "captionBn": "বিষয়ভিত্তিক গ্রেডিং ও GPA গণনা সহ পরীক্ষার ফলাফল"
+        },
+        {
+          "src": "/project/educational/admin-subject-page.png",
+          "alt": "Subject Management",
+          "caption": "Subject configuration with bilingual names and teacher assignments",
+          "captionBn": "দ্বিভাষিক নাম ও শিক্ষক নিয়োগ সহ বিষয় কনফিগারেশন"
+        },
+        {
+          "src": "/project/educational/admin-teacher-leave-rqst-page.png",
+          "alt": "Leave Requests",
+          "caption": "Teacher leave request approval workflow",
+          "captionBn": "শিক্ষক ছুটির অনুরোধ অনুমোদন কার্যপ্রবাহ"
+        },
+        {
+          "src": "/project/educational/admin-teacher-salary.png",
+          "alt": "Salary Management",
+          "caption": "Payroll system with salary structures, bonuses, and deductions",
+          "captionBn": "বেতন কাঠামো, বোনাস ও কর্তন সহ বেতন ব্যবস্থাপনা সিস্টেম"
+        },
+        {
+          "src": "/project/educational/teacher-dashboard-my-classes.png",
+          "alt": "Teacher Dashboard",
+          "caption": "Teacher portal showing assigned classes and pending tasks",
+          "captionBn": "নির্ধারিত ক্লাস ও মুলতুবি কাজ দেখানো শিক্ষক পোর্টাল"
+        },
+        {
+          "src": "/project/educational/teacher-details-page.png",
+          "alt": "Teacher Details",
+          "caption": "Teacher profile with designation and employment status",
+          "captionBn": "পদবি ও চাকরির অবস্থা সহ শিক্ষক প্রোফাইল"
+        },
+        {
+          "src": "/project/educational/teachers-mark-entry.png",
+          "alt": "Marks Entry",
+          "caption": "Bulk marks entry interface for exams",
+          "captionBn": "পরীক্ষার জন্য বাল্ক মার্কস এন্ট্রি ইন্টারফেস"
+        },
+        {
+          "src": "/project/educational/teachers-routine.png",
+          "alt": "Class Routine",
+          "caption": "Weekly timetable for teacher class scheduling",
+          "captionBn": "শিক্ষক ক্লাস সময়সূচির জন্য সাপ্তাহিক টাইমটেবিল"
+        },
+        {
+          "src": "/project/educational/students-result-page.png",
+          "alt": "Student Results View",
+          "caption": "Student-facing result page with GPA and grade breakdown",
+          "captionBn": "GPA ও গ্রেড বিশ্লেষণ সহ ছাত্রদের জন্য ফলাফল পৃষ্ঠা"
+        },
+        {
+          "src": "/project/educational/parent-dashboard.png",
+          "alt": "Parent Dashboard",
+          "caption": "Parent portal with multi-child overview",
+          "captionBn": "একাধিক সন্তানের সারসংক্ষেপ সহ অভিভাবক পোর্টাল"
+        },
+        {
+          "src": "/project/educational/parents-children-page.png",
+          "alt": "Children Page",
+          "caption": "Detailed view of linked children with academic progress",
+          "captionBn": "একাডেমিক অগ্রগতি সহ সংযুক্ত সন্তানদের বিস্তারিত দৃশ্য"
+        },
+        {
+          "src": "/project/educational/Ai-fatures-ai-asistant.png",
+          "alt": "AI Chat Assistant",
+          "caption": "Bilingual AI assistant answering student queries",
+          "captionBn": "ছাত্রদের প্রশ্নের উত্তর দেওয়া দ্বিভাষিক এআই সহকারী"
+        },
+        {
+          "src": "/project/educational/ai-fetature-progress-report.png",
+          "alt": "AI Progress Report",
+          "caption": "AI-generated bilingual progress report narratives",
+          "captionBn": "এআই-নির্মিত দ্বিভাষিক অগ্রগতি প্রতিবেদন"
+        },
+        {
+          "src": "/project/educational/ai-risk-student-list.png",
+          "alt": "At-Risk Students",
+          "caption": "AI-flagged at-risk student monitoring list",
+          "captionBn": "এআই-চিহ্নিত ঝুঁকিপূর্ণ ছাত্রদের পর্যবেক্ষণ তালিকা"
+        },
+        {
+          "src": "/project/educational/ai-features-risk-students-details.png",
+          "alt": "Risk Student Details",
+          "caption": "Detailed risk breakdown with attendance and marks trends",
+          "captionBn": "উপস্থিতি ও মার্কস ট্রেন্ড সহ বিস্তারিত ঝুঁকি বিশ্লেষণ"
+        }
+      ],
+      "overview": "EduManage is an AI-powered, fully bilingual school management platform built for educational institutions of all levels — from primary schools to colleges. Administrators can configure custom classes, sections, and subjects to fit any curriculum. The system provides four dedicated portals — Admin, Teacher, Student, and Parent — each with role-specific dashboards, granular permissions, and localized features. Every interface, AI-generated output, and PDF document supports seamless English and Bengali switching.",
+      "overviewBn": "EduManage হলো একটি এআই-চালিত, সম্পূর্ণ দ্বিভাষিক স্কুল ব্যবস্থাপনা প্ল্যাটফর্ম যা প্রাথমিক থেকে কলেজ পর্যন্ত সকল ধরনের শিক্ষা প্রতিষ্ঠানের জন্য তৈরি। প্রশাসকরা যেকোনো পাঠ্যক্রমের জন্য কাস্টম ক্লাস, সেকশন এবং বিষয় কনফিগার করতে পারবেন। সিস্টেমটি চারটি পৃথক পোর্টাল প্রদান করে — অ্যাডমিন, শিক্ষক, ছাত্র এবং অভিভাবক — প্রতিটিতে ভূমিকা-নির্দিষ্ট ড্যাশবোর্ড, বিস্তারিত অনুমতি এবং স্থানীয়কৃত বৈশিষ্ট্য রয়েছে।",
+      "highlights": [
+        "Built for any educational institution — fully customizable classes, sections, and subjects to fit any curriculum",
+        "Four separate portals with role-based access control — each user sees only what matters to them",
+        "AI woven into the core product: automatic risk detection, progress report generation, and a conversational chatbot",
+        "Nightly cron job runs a weighted multi-factor algorithm to flag students who need early intervention",
+        "Teacher-in-the-loop: all AI-generated reports require human review before reaching parents",
+        "End-to-end PDF generation for result cards, admit cards, payment receipts, and teacher payslips"
+      ],
+      "highlightsBn": [
+        "যেকোনো শিক্ষা প্রতিষ্ঠানের জন্য তৈরি — যেকোনো পাঠ্যক্রমে ফিট করতে সম্পূর্ণ কাস্টমাইজযোগ্য ক্লাস, সেকশন ও বিষয়",
+        "চারটি পৃথক পোর্টাল ভূমিকা-ভিত্তিক অ্যাক্সেস নিয়ন্ত্রণ সহ — প্রতিটি ব্যবহারকারী শুধুমাত্র তা দেখে যা তাদের জন্য গুরুত্বপূর্ণ",
+        "কোর প্রোডাক্টে এআই সংযুক্ত: স্বয়ংক্রিয় ঝুঁকি সনাক্তকরণ, অগ্রগতি প্রতিবেদন তৈরি এবং কথোপকথনমূলক চ্যাটবট",
+        "রাতের বেলা ক্রন জব একটি ওজনযুক্ত বহু-ফ্যাক্টর অ্যালগরিদম চালায় যার ফলে প্রাথমিক হস্তক্ষেপ প্রয়োজনীয় ছাত্রদের চিহ্নিত করা হয়",
+        "শিক্ষক-ইন-দ্য-লুপ: সমস্ত এআই-নির্মিত প্রতিবেদন অভিভাবকদের কাছে পৌঁছানোর আগে মানব পর্যালোচনা প্রয়োজন",
+        "ফলাফল কার্ড, ভর্তি কার্ড, পেমেন্ট রিসিট এবং শিক্ষকদের বেতনপত্রের জন্য এন্ড-টু-এন্ড পিডিএফ জেনারেশন"
+      ],
+      "techStack": [
+        {
+          "category": "Frontend",
+          "categoryBn": "ফ্রন্টএন্ড",
+          "items": [
+            "Next.js 16 (App Router)",
+            "React 19",
+            "TypeScript",
+            "Tailwind CSS v4",
+            "shadcn/ui",
+            "Framer Motion"
+          ]
+        },
+        {
+          "category": "Backend & Database",
+          "categoryBn": "ব্যাকএন্ড ও ডেটাবেস",
+          "items": [
+            "Prisma 7 ORM",
+            "Supabase PostgreSQL",
+            "Custom JWT Auth (jose)",
+            "bcryptjs"
+          ]
+        },
+        {
+          "category": "AI & Integrations",
+          "categoryBn": "এআই ও ইন্টিগ্রেশন",
+          "items": [
+            "OpenAI GPT-4o-mini",
+            "OpenAI TTS",
+            "Resend Email",
+            "Nodemailer SMTP"
+          ]
+        },
+        {
+          "category": "Infrastructure",
+          "categoryBn": "অবকাঠামো",
+          "items": [
+            "Vercel (Serverless)",
+            "OVH Object Storage (S3)",
+            "@react-pdf/renderer",
+            "Zod Validation",
+            "next-intl"
+          ]
+        }
+      ],
+      "userRoles": [
+        {
+          "role": "Administrator",
+          "roleBn": "প্রশাসক",
+          "description": "Full control over school operations — student/teacher CRUD, exam management, fee collection, payroll, notices, and AI-powered risk monitoring.",
+          "descriptionBn": "স্কুল পরিচালনায় সম্পূর্ণ নিয়ন্ত্রণ — ছাত্র/শিক্ষক ব্যবস্থাপনা, পরীক্ষা পরিচালনা, ফি সংগ্রহ, বেতন ব্যবস্থাপনা, নোটিশ এবং এআই-চালিত ঝুঁকি পর্যবেক্ষণ।",
+          "icon": "shield",
+          "features": [
+            "Bird's-eye dashboard with enrollment counts, attendance rates, fee collection totals, and at-risk alerts",
+            "Complete student lifecycle management — create, edit, transfer, mark as left, and reinstate",
+            "Teacher profiles with designations, salary structures, attendance tracking, and leave approval",
+            "Exam creation with configurable max marks, session ordering, and term grouping",
+            "Bulk marks entry for entire class sections in a single view",
+            "Computed results with national grading scale (A+ through F) and GPA calculation",
+            "Notice publishing with category tags, PDF attachments, and email distribution",
+            "Internal messaging across in-app, email, and SMS channels",
+            "At-risk student dashboard with AI-generated parent notification drafts"
+          ],
+          "featuresBn": [
+            "ভর্তি সংখ্যা, উপস্থিতির হার, ফি সংগ্রহ এবং ঝুঁকিপূর্ণ সতর্কতা সহ ড্যাশবোর্ড",
+            "সম্পূর্ণ ছাত্র জীবনচক্র ব্যবস্থাপনা — তৈরি, সম্পাদনা, স্থানান্তর, বিদ্যালয় ছেড়ে গেছে চিহ্নিত এবং পুনর্বহাল",
+            "পদবি, বেতন কাঠামো, উপস্থিতি ট্র্যাকিং এবং ছুটি অনুমোদন সহ শিক্ষক প্রোফাইল",
+            "কনফিগারযোগ্য সর্বোচ্চ মার্কস, সেশন অর্ডারিং এবং টার্ম গ্রুপিং সহ পরীক্ষা তৈরি",
+            "একক দৃশ্যে সম্পূর্ণ ক্লাস সেকশনের জন্য বাল্ক মার্কস এন্ট্রি",
+            "জাতীয় গ্রেডিং স্কেল (A+ থেকে F) এবং GPA গণনা সহ গণনাকৃত ফলাফল",
+            "ক্যাটাগরি ট্যাগ, পিডিএফ সংযুক্তি এবং ইমেইল বিতরণ সহ নোটিশ প্রকাশ",
+            "ইন-অ্যাপ, ইমেইল এবং এসএমএস চ্যানেল জুড়ে অভ্যন্তরীণ মেসেজিং",
+            "এআই-নির্মিত অভিভাবক বিজ্ঞপ্তি খসড়া সহ ঝুঁকিপূর্ণ ছাত্র ড্যাশবোর্ড"
+          ]
+        },
+        {
+          "role": "Teacher",
+          "roleBn": "শিক্ষক",
+          "description": "Streamlined portal for classroom operations — attendance, grading, report review, and student well-being monitoring.",
+          "descriptionBn": "শ্রেণীকক্ষ পরিচালনার জন্য সুসংগঠিত পোর্টাল — উপস্থিতি, গ্রেডিং, প্রতিবেদন পর্যালোচনা এবং ছাত্রদের কল্যাণ পর্যবেক্ষণ।",
+          "icon": "book-open",
+          "features": [
+            "Personal dashboard showing assigned classes, pending tasks, and recent notices",
+            "Daily student attendance marking for each assigned class section",
+            "Exam marks entry interface with bulk-scoring for all students in a subject",
+            "AI progress report review — read, edit, and approve before parent delivery",
+            "At-risk student alerts with detailed academic and attendance breakdowns",
+            "Personal weekly class routine and attendance history",
+            "Leave request submission with type selection and date range"
+          ],
+          "featuresBn": [
+            "নির্ধারিত ক্লাস, মুলতুবি কাজ এবং সাম্প্রতিক নোটিশ দেখানো ব্যক্তিগত ড্যাশবোর্ড",
+            "প্রতিটি নির্ধারিত ক্লাস সেকশনের জন্য দৈনিক ছাত্র উপস্থিতি চিহ্নিতকরণ",
+            "একটি বিষয়ের সমস্ত ছাত্রদের জন্য বাল্ক-স্কোরিং সহ পরীক্ষার মার্কস এন্ট্রি ইন্টারফেস",
+            "এআই অগ্রগতি প্রতিবেদন পর্যালোচনা — অভিভাবকদের কাছে পাঠানোর আগে পড়ুন, সম্পাদনা করুন এবং অনুমোদন করুন",
+            "বিস্তারিত একাডেমিক ও উপস্থিতি বিশ্লেষণ সহ ঝুঁকিপূর্ণ ছাত্র সতর্কতা",
+            "ব্যক্তিগত সাপ্তাহিক ক্লাস রুটিন এবং উপস্থিতির ইতিহাস",
+            "ধরন নির্বাচন ও তারিখ পরিসীমা সহ ছুটির অনুরোধ জমা"
+          ]
+        },
+        {
+          "role": "Student",
+          "roleBn": "ছাত্র",
+          "description": "Personal academic hub — track attendance, view results, download documents, and chat with an AI assistant.",
+          "descriptionBn": "ব্যক্তিগত একাডেমিক কেন্দ্র — উপস্থিতি ট্র্যাক করুন, ফলাফল দেখুন, ডকুমেন্ট ডাউনলোড করুন এবং এআই সহকারীর সাথে কথা বলুন।",
+          "icon": "graduation-cap",
+          "features": [
+            "Quick-glance dashboard with attendance rate, latest GPA, fee status, and notices",
+            "Attendance history with present/absent/late breakdowns per month",
+            "Exam results with subject-wise marks, letter grades, and cumulative GPA",
+            "PDF downloads for result cards and exam admit cards",
+            "Fee status overview — paid, pending, and overdue amounts with online payment initiation",
+            "AI chatbot for natural-language queries about attendance, fees, exams, and notices"
+          ],
+          "featuresBn": [
+            "উপস্থিতির হার, সর্বশেষ GPA, ফি স্ট্যাটাস এবং নোটিশ সহ দ্রুত ড্যাশবোর্ড",
+            "মাস অনুযায়ী উপস্থিত/অনুপস্থিত/বিলম্বিত বিশ্লেষণ সহ উপস্থিতির ইতিহাস",
+            "বিষয়ভিত্তিক মার্কস, অক্ষর গ্রেড এবং কামিউলেটিভ GPA সহ পরীক্ষার ফলাফল",
+            "ফলাফল কার্ড এবং পরীক্ষার ভর্তি কার্ডের জন্য পিডিএফ ডাউনলোড",
+            "পেইড, পেন্ডিং এবং বকেয়া পরিমাণ সহ ফি স্ট্যাটাস ওভারভিউ এবং অনলাইন পেমেন্ট",
+            "উপস্থিতি, ফি, পরীক্ষা এবং নোটিশ সম্পর্কে প্রাকৃতিক ভাষার প্রশ্নের জন্য এআই চ্যাটবট"
+          ]
+        },
+        {
+          "role": "Parent",
+          "roleBn": "অভিভাবক",
+          "description": "Multi-child monitoring portal — track all children's academics, fees, and communications from one dashboard.",
+          "descriptionBn": "একাধিক সন্তানের পর্যবেক্ষণ পোর্টাল — একটি ড্যাশবোর্ড থেকে সমস্ত সন্তানের একাডেমিক, ফি এবং যোগাযোগ ট্র্যাক করুন।",
+          "icon": "users",
+          "features": [
+            "Unified dashboard with quick stats for every linked child",
+            "Detailed child profiles with academic progress and attendance trends",
+            "Fee status per child with payment initiation",
+            "Internal message inbox for admin and teacher communications",
+            "AI chatbot with child-selector — switch between children to query any data"
+          ],
+          "featuresBn": [
+            "প্রতিটি সংযুক্ত সন্তানের জন্য দ্রুত পরিসংখ্যান সহ একীভূত ড্যাশবোর্ড",
+            "একাডেমিক অগ্রগতি ও উপস্থিতির প্রবণতা সহ বিস্তারিত সন্তান প্রোফাইল",
+            "পেমেন্ট শুরু সহ প্রতিটি সন্তানের জন্য ফি স্ট্যাটাস",
+            "অ্যাডমিন ও শিক্ষকদের যোগাযোগের জন্য অভ্যন্তরীণ মেসেজ ইনবক্স",
+            "সন্তান-নির্বাচক সহ এআই চ্যাটবট — যেকোনো ডেটা কুয়েরি করতে সন্তানদের মধ্যে পরিবর্তন করুন"
+          ]
+        }
+      ],
+      "aiFeatures": [
+        {
+          "name": "Quick Performance Insights",
+          "nameBn": "দ্রুত কার্যক্ষমতা অন্তর্দৃষ্টি",
+          "description": "Generates a concise 2-3 sentence observation about a student's trajectory — comparing current marks against previous exams, factoring in attendance patterns and fee status. Displayed instantly on the results page in both English and Bengali, with a text-to-speech button for accessibility.",
+          "descriptionBn": "একজন ছাত্রের পারফরম্যান্স সম্পর্কে ২-৩ বাক্যের সংক্ষিপ্ত পর্যবেক্ষণ তৈরি করে — পূর্ববর্তী পরীক্ষার সাথে বর্তমান মার্কস তুলনা, উপস্থিতির ধরণ এবং ফি স্ট্যাটাস বিবেচনা করে। ফলাফল পৃষ্ঠায় ইংরেজি ও বাংলা উভয় ভাষায় তাৎক্ষণিকভাবে প্রদর্শিত হয়, সহজলভ্যতার জন্য টেক্সট-টু-স্পিচ বোতাম সহ।",
+          "trigger": "Automatic — when results are viewed",
+          "triggerBn": "স্বয়ংক্রিয় — ফলাফল দেখার সময়",
+          "output": "Bilingual natural-language summary (< 60 words)",
+          "outputBn": "দ্বিভাষিক প্রাকৃতিক ভাষার সারাংশ (< ৬০ শব্দ)"
+        },
+        {
+          "name": "Formal Progress Reports",
+          "nameBn": "আনুষ্ঠানিক অগ্রগতি প্রতিবেদন",
+          "description": "Produces structured, formal narratives suitable for official report cards. Each report synthesizes academic performance, attendance records, and behavioral observations into a polished bilingual document. Reports follow a draft-review-approve pipeline before embedding into PDF report cards.",
+          "descriptionBn": "অফিসিয়াল রিপোর্ট কার্ডের জন্য উপযুক্ত গঠিত, আনুষ্ঠানিক বিবরণ তৈরি করে। প্রতিটি প্রতিবেদন একাডেমিক কার্যক্ষমতা, উপস্থিতির রেকর্ড এবং আচরণগত পর্যবেক্ষণকে একটি পরিমার্জিত দ্বিভাষিক ডকুমেন্টে সমন্বয় করে। প্রতিবেদনগুলো পিডিএফ রিপোর্ট কার্ডে এম্বেড করার আগে ড্রাফট-পর্যালোচনা-অনুমোদন পাইপলাইন অনুসরণ করে।",
+          "trigger": "Manual — admin or teacher initiates per student per exam",
+          "triggerBn": "ম্যানুয়াল — অ্যাডমিন বা শিক্ষক প্রতি ছাত্র প্রতি পরীক্ষায় শুরু করেন",
+          "output": "Formal bilingual narrative with teacher-editable draft",
+          "outputBn": "শিক্ষক-সম্পাদনাযোগ্য খসড়া সহ আনুষ্ঠানিক দ্বিভাষিক বিবরণ"
+        },
+        {
+          "name": "Conversational AI Assistant",
+          "nameBn": "কথোপকথনমূলক এআই সহকারী",
+          "description": "A bilingual chatbot that understands natural-language questions in both English and Bengali. It resolves student identity from the verified session (never from client input), queries the database for real-time answers, and rephrases raw data into conversational responses. Rate-limited to 20 messages per account per hour with persistent chat history.",
+          "descriptionBn": "ইংরেজি ও বাংলা উভয় ভাষায় প্রাকৃতিক ভাষার প্রশ্ন বোঝে এমন একটি দ্বিভাষিক চ্যাটবট। এটি যাচাইকৃত সেশন থেকে ছাত্রের পরিচয় সমাধান করে (কখনো ক্লায়েন্ট ইনপুট থেকে নয়), রিয়েল-টাইম উত্তরের জন্য ডেটাবেস কুয়েরি করে এবং কাঁচি ডেটাকে কথোপকথনমূলক প্রতিক্রিয়ায় পুনর্ব্যবহার করে। প্রতি ঘণ্টায় প্রতি অ্যাকাউন্টে ২০টি মেসেজের হার সীমাবদ্ধ এবং স্থায়ী চ্যাট ইতিহাস।",
+          "trigger": "Student or parent asks a question",
+          "triggerBn": "ছাত্র বা অভিভাবক একটি প্রশ্ন করেন",
+          "supportedQueries": [
+            "Attendance summary for the current month",
+            "Outstanding fee dues and overdue months",
+            "Next upcoming exam date with countdown",
+            "Latest exam GPA, grade, and class average",
+            "Five most recent published school notices"
+          ],
+          "supportedQueriesBn": [
+            "বর্তমান মাসের উপস্থিতি সারসংক্ষেপ",
+            "বকেয়া ফি এবং মুলতুবি মাস",
+            "পরবর্তী আসন্ন পরীক্ষার তারিখ ও কাউন্টডাউন",
+            "সর্বশেষ পরীক্ষার GPA, গ্রেড এবং ক্লাস গড়",
+            "পাঁচটি সর্বশেষ প্রকাশিত স্কুল নোটিশ"
+          ]
+        },
+        {
+          "name": "Risk Alert Drafting",
+          "nameBn": "ঝুঁকি সতর্কতা খসড়া তৈরি",
+          "description": "When a student is flagged as at-risk, the system drafts a warm, supportive notification message for parents — never alarming, always constructive. Admin or teacher can edit the AI-generated text, approve it, and send via in-app notification or email.",
+          "descriptionBn": "যখন একজন ছাত্রকে ঝুঁকিপূর্ণ হিসাবে চিহ্নিত করা হয়, সিস্টেম অভিভাবকদের জন্য একটি উষ্ণ, সহায়ক বিজ্ঞপ্তি বার্তা খসড়া তৈরি করে — কখনো উদ্বেগজনক নয়, সবসময় গঠনমূলক। অ্যাডমিন বা শিক্ষক এআই-নির্মিত টেক্সট সম্পাদনা, অনুমোদন এবং ইন-অ্যাপ বিজ্ঞপ্তি বা ইমেইলের মাধ্যমে পাঠাতে পারেন।",
+          "trigger": "Manual — for WATCH or AT_RISK students",
+          "triggerBn": "ম্যানুয়াল — WATCH বা AT_RISK ছাত্রদের জন্য",
+          "output": "Bilingual parent notification in a caring tone",
+          "outputBn": "যত্নশীল সুরে দ্বিভাষিক অভিভাবক বিজ্ঞপ্তি"
+        },
+        {
+          "name": "Automated Risk Scoring",
+          "nameBn": "স্বয়ংক্রিয় ঝুঁকি স্কোরিং",
+          "description": "A weighted algorithm runs nightly at 3:00 AM UTC via Vercel cron, evaluating every active student across three dimensions. Attendance contributes 40% (comparing recent vs. baseline trends), academic marks contribute 35% (analyzing exam trajectories and subject-level declines), and fee payment status contributes 25% (counting consecutive unpaid cycles). Students are classified as SAFE (0-24), WATCH (25-54), or AT_RISK (55+).",
+          "descriptionBn": "Vercel cron-এর মাধ্যমে প্রতি রাত ৩:০০ AM UTC-তে একটি ওজনযুক্ত অ্যালগরিদম চলে, তিনটি মাত্রায় প্রতিটি সক্রিয় ছাত্রকে মূল্যায়ন করে। উপস্থিতি ৪০% অবদান রাখে (সাম্প্রতিক বনাম বেসলাইন ট্রেন্ড তুলনা), একাডেমিক মার্কস ৩৫% (পরীক্ষার প্রবণতা এবং বিষয়-স্তরের পতন বিশ্লেষণ), এবং ফি পেমেন্ট স্ট্যাটাস ২৫% (ক্রমাগত অপরিশোধিত চক্র গণনা)। ছাত্রদের SAFE (০-২৪), WATCH (২৫-৫৪), বা AT_RISK (৫৫+) হিসাবে শ্রেণীবদ্ধ করা হয়।",
+          "trigger": "Automated — nightly cron job",
+          "triggerBn": "স্বয়ংক্রিয় — রাতের ক্রন জব",
+          "riskLevels": [
+            {
+              "level": "SAFE",
+              "range": "0-24",
+              "action": "No intervention needed",
+              "actionBn": "কোনো হস্তক্ষেপ প্রয়োজন নেই"
+            },
+            {
+              "level": "WATCH",
+              "range": "25-54",
+              "action": "Early monitoring recommended",
+              "actionBn": "প্রাথমিক পর্যবেক্ষণ সুপারিশকৃত"
+            },
+            {
+              "level": "AT_RISK",
+              "range": "55+",
+              "action": "Parent alert + intervention required",
+              "actionBn": "অভিভাবক সতর্কতা + হস্তক্ষেপ প্রয়োজন"
+            }
+          ]
+        }
+      ],
+      "database": {
+        "totalModels": 22,
+        "domains": [
+          {
+            "name": "User & Authentication",
+            "nameBn": "ব্যবহারকারী ও প্রমাণীকরণ",
+            "models": ["User", "Teacher", "Student", "Parent"],
+            "description": "Core identity and role management — each user account maps to one of four roles with dedicated profile tables linked via foreign keys.",
+            "descriptionBn": "মূল পরিচয় ও ভূমিকা ব্যবস্থাপনা — প্রতিটি ব্যবহারকারী অ্যাকাউন্ট চারটি ভূমিকার একটিতে ম্যাপ করে, ফরেন কী দ্বারা সংযুক্ত নির্দিষ্ট প্রোফাইল টেবিল সহ।"
+          },
+          {
+            "name": "Academics",
+            "nameBn": "একাডেমিক",
+            "models": [
+              "Class",
+              "Section",
+              "Subject",
+              "Exam",
+              "Mark",
+              "PeriodSlot"
+            ],
+            "description": "Curriculum structure — classes contain sections, subjects are assigned to teachers, exams define assessment events, and marks record student performance.",
+            "descriptionBn": "পাঠ্যক্রম কাঠামো — ক্লাসে সেকশন থাকে, বিষয়গুলো শিক্ষকদের নির্ধারিত হয়, পরীক্ষাগুলো মূল্যায়ন ইভেন্ট সংজ্ঞায়িত করে এবং মার্কস ছাত্রদের কার্যক্ষমতা রেকর্ড করে।"
+          },
+          {
+            "name": "Attendance & HR",
+            "nameBn": "উপস্থিতি ও এইচআর",
+            "models": [
+              "Attendance",
+              "TeacherAttendance",
+              "SalaryStructure",
+              "SalaryPayment",
+              "LeaveRequest"
+            ],
+            "description": "Daily attendance tracking for both students and teachers, plus a complete payroll system with salary configuration, monthly payments, and a leave approval workflow.",
+            "descriptionBn": "ছাত্র ও শিক্ষকদের দৈনিক উপস্থিতি ট্র্যাকিং, সাথে বেতন কনফিগারেশন, মাসিক পেমেন্ট এবং ছুটি অনুমোদন কার্যপ্রবাহ সহ সম্পূর্ণ বেতন ব্যবস্থাপনা সিস্টেম।"
+          },
+          {
+            "name": "Communication",
+            "nameBn": "যোগাযোগ",
+            "models": ["Notice", "NoticeRead", "Message", "MessageRecipient"],
+            "description": "School-wide notice publishing with read-receipt tracking, and an internal messaging system with per-recipient delivery status across multiple channels.",
+            "descriptionBn": "পঠন-প্রাপ্তি ট্র্যাকিং সহ স্কুল-ব্যাপী নোটিশ প্রকাশ, এবং বিভিন্ন চ্যানেল জুড়ে প্রতি-প্রাপক ডেলিভারি স্ট্যাটাস সহ অভ্যন্তরীণ মেসেজিং সিস্টেম।"
+          },
+          {
+            "name": "Financial",
+            "nameBn": "আর্থিক",
+            "models": ["FeeStructure", "Payment"],
+            "description": "Fee definitions (monthly, exam, admission) and individual payment records with online payment support and receipt generation.",
+            "descriptionBn": "ফি সংজ্ঞা (মাসিক, পরীক্ষা, ভর্তি) এবং অনলাইন পেমেন্ট সমর্থন ও রিসিট জেনারেশন সহ পৃথক পেমেন্ট রেকর্ড।"
+          },
+          {
+            "name": "AI & Analytics",
+            "nameBn": "এআই ও বিশ্লেষণ",
+            "models": ["AiInsight", "RiskScore", "RiskAlert", "ChatMessage"],
+            "description": "Storage for AI-generated content — performance insights, nightly risk assessments, parent notification drafts, and chatbot conversation history.",
+            "descriptionBn": "এআই-নির্মিত কনটেন্টের জন্য স্টোরেজ — কার্যক্ষমতা অন্তর্দৃষ্টি, রাতের ঝুঁকি মূল্যায়ন, অভিভাবক বিজ্ঞপ্তি খসড়া এবং চ্যাটবট কথোপকথনের ইতিহাস।"
+          },
+          {
+            "name": "Scheduling",
+            "nameBn": "সময়সূচি",
+            "models": ["ClassRoutine"],
+            "description": "Weekly timetable management mapping periods, subjects, teachers, and rooms to each class section.",
+            "descriptionBn": "প্রতিটি ক্লাস সেকশনে পিরিয়ড, বিষয়, শিক্ষক এবং রুম ম্যাপিং সহ সাপ্তাহিক টাইমটেবিল ব্যবস্থাপনা।"
+          }
+        ]
+      },
+      "security": [
+        {
+          "aspect": "Session Management",
+          "aspectBn": "সেশন ব্যবস্থাপনা",
+          "detail": "JWT tokens signed with HS256 (jose library), stored in httpOnly cookies with sameSite: lax and secure flag in production. 7-day session duration.",
+          "detailBn": "HS256 (jose লাইব্রেরি) দ্বারা স্বাক্ষরিত JWT টোকেন, প্রোডাকশনে httpOnly কুকিতে sameSite: lax এবং secure ফ্ল্যাগ সহ সংরক্ষিত। ৭ দিনের সেশন সময়কাল।"
+        },
+        {
+          "aspect": "Password Security",
+          "aspectBn": "পাসওয়ার্ড নিরাপত্তা",
+          "detail": "bcryptjs hashing with 10 salt rounds — never stored in plaintext.",
+          "detailBn": "১০ সল্ট রাউন্ড সহ bcryptjs হ্যাশিং — কখনো প্লেইনটেক্সটে সংরক্ষিত হয় না।"
+        },
+        {
+          "aspect": "Route Protection",
+          "aspectBn": "রুট সুরক্ষা",
+          "detail": "Custom middleware intercepts every request, validates the JWT, and enforces role-based route access before the request reaches any page or API.",
+          "detailBn": "কাস্টম মিডলওয়্যার প্রতিটি অনুরোধ ইন্টারসেপ্ট করে, JWT যাচাই করে এবং অনুরোধ কোনো পৃষ্ঠা বা API-তে পৌঁছানোর আগে ভূমিকা-ভিত্তিক রুট অ্যাক্সেস প্রয়োগ করে।"
+        },
+        {
+          "aspect": "API Security",
+          "aspectBn": "API নিরাপত্তা",
+          "detail": "Every server-side route validates both authentication and authorization. Helper functions like requireAdmin() and requireAdminOrTeacher() gate access at the function level.",
+          "detailBn": "প্রতিটি সার্ভার-সাইড রুট প্রমাণীকরণ এবং অনুমোদন উভয়ই যাচাই করে। requireAdmin() এবং requireAdminOrTeacher()-এর মতো সহায়ক ফাংশন ফাংশন স্তরে অ্যাক্সেস নিয়ন্ত্রণ করে।"
+        },
+        {
+          "aspect": "AI Security",
+          "aspectBn": "এআই নিরাপত্তা",
+          "detail": "The chat assistant resolves the student's identity exclusively from the verified JWT session — it never trusts IDs sent from the client, preventing unauthorized data access.",
+          "detailBn": "চ্যাট সহকারী শুধুমাত্র যাচাইকৃত JWT সেশন থেকে ছাত্রের পরিচয় সমাধান করে — এটি কখনো ক্লায়েন্ট থেকে পাঠানো ID বিশ্বাস করে না, অননুমোদিত ডেটা অ্যাক্সেস প্রতিরোধ করে।"
+        },
+        {
+          "aspect": "Rate Limiting",
+          "aspectBn": "হার সীমাবদ্ধতা",
+          "detail": "Chat assistant enforces 20 messages per account per hour to prevent abuse and manage OpenAI API costs.",
+          "detailBn": "অপব্যবহার প্রতিরোধ এবং OpenAI API খরচ পরিচালনার জন্য চ্যাট সহকারী প্রতি ঘণ্টায় প্রতি অ্যাকাউন্টে ২০টি মেসেজ প্রয়োগ করে।"
+        },
+        {
+          "aspect": "Input Validation",
+          "aspectBn": "ইনপুট যাচাই",
+          "detail": "Zod schemas validate every form input and API payload on both client and server, rejecting malformed data before it reaches the database.",
+          "detailBn": "Zod স্কিমা ক্লায়েন্ট ও সার্ভার উভয় স্থানে প্রতিটি ফর্ম ইনপুট এবং API পেলোড যাচাই করে, ত্রুটিপূর্ণ ডেটা ডেটাবেসে পৌঁছানোর আগে প্রত্যাখ্যান করে।"
+        }
+      ],
+      "pdfDocuments": [
+        {
+          "name": "Result Card",
+          "nameBn": "ফলাফল কার্ড",
+          "contents": "Institution branding, student info, subject-wise marks and grades, GPA, and AI-generated insight",
+          "contentsBn": "প্রতিষ্ঠানের ব্র্যান্ডিং, ছাত্র তথ্য, বিষয়ভিত্তিক মার্কস ও গ্রেড, GPA এবং এআই-নির্মিত অন্তর্দৃষ্টি"
+        },
+        {
+          "name": "Admit Card",
+          "nameBn": "ভর্তি কার্ড",
+          "contents": "Institution details, student photo, exam schedule, and roll number",
+          "contentsBn": "প্রতিষ্ঠানের বিবরণ, ছাত্রের ছবি, পরীক্ষার সময়সূচি এবং রোল নম্বর"
+        },
+        {
+          "name": "Payment Receipt",
+          "nameBn": "পেমেন্ট রিসিট",
+          "contents": "Fee payment amount, method, transaction reference, and date",
+          "contentsBn": "ফি পেমেন্টের পরিমাণ, পদ্ধতি, লেনদেন রেফারেন্স এবং তারিখ"
+        },
+        {
+          "name": "Teacher Payslip",
+          "nameBn": "শিক্ষক বেতনপত্র",
+          "contents": "Basic salary, allowances, bonus, deductions, and net pay breakdown",
+          "contentsBn": "মূল বেতন, ভাতা, বোনাস, কর্তন এবং নেট বেতন বিশ্লেষণ"
+        }
+      ],
+      "deployment": {
+        "platform": "Vercel (serverless functions)",
+        "database": "Supabase PostgreSQL (managed)",
+        "storage": "OVH Object Storage — S3-compatible, EU-West-Paris region",
+        "cron": "Nightly risk scoring at 3:00 AM UTC",
+        "email": "Resend (transactional) + Nodemailer (SMTP fallback)",
+        "ai": "OpenAI GPT-4o-mini (model configurable via environment variable)"
+      },
+      "roadmap": [
+        {
+          "phase": "Phase 1",
+          "timeline": "Immediate",
+          "items": [
+            "Automated absence email alerts for parents",
+            "Full audit log system tracking all admin actions",
+            "Progressive Web App with push notifications"
+          ]
+        },
+        {
+          "phase": "Phase 2",
+          "timeline": "Short-term",
+          "items": [
+            "Assignment submission and grading system",
+            "SMS gateway integration for notifications",
+            "Automated monthly fee reminder scheduler"
+          ]
+        },
+        {
+          "phase": "Phase 3",
+          "timeline": "Medium-term",
+          "items": [
+            "Predictive analytics for student performance",
+            "AI-powered exam paper generator",
+            "Custom grading scale configuration"
+          ]
+        },
+        {
+          "phase": "Phase 4",
+          "timeline": "Long-term",
+          "items": [
+            "Online examination platform with proctoring",
+            "Digital library resource management",
+            "Multi-school tenant support"
+          ]
+        },
+        {
+          "phase": "Phase 5",
+          "timeline": "Future",
+          "items": [
+            "Native mobile app (React Native)",
+            "Transport management and tracking",
+            "Hostel and dormitory management"
+          ]
+        }
+      ]
+    }
+  ]
+}
