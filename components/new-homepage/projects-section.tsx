@@ -118,6 +118,31 @@ const projects: Project[] = [
     client: "",
     server: "",
   },
+  {
+    id: 5,
+    title: "Spice Garden (Restaurant Management System)",
+    imgUrl: "/project/restaurant/owner-dashboard-page.png",
+    tags: [
+      "NestJS 11",
+      "Next.js 16",
+      "PostgreSQL",
+      "Prisma 7",
+      "Socket.IO",
+      "OpenAI",
+      "Tailwind CSS",
+      "TanStack Query",
+    ],
+    features: [
+      "Built a full-stack multi-branch restaurant platform with NestJS 11 backend and Next.js 16 frontend — POS ordering, QR-code table ordering, kitchen display, inventory, payroll, and analytics.",
+      "Implemented real-time Socket.IO gateway with JWT authentication for live order updates, kitchen board sync, payment notifications, and inventory alerts across branches.",
+      "Designed a flexible pricing engine with per-order discount/service-charge/tax (each configurable as % or flat), partial payments, and automatic stock deduction on order completion.",
+      "Built 5 role-based portals (Owner, Manager, Cashier, Kitchen, Waiter) with 3-layer auth guards, per-branch role assignment, and dynamic sidebar filtering.",
+      "Integrated OpenAI function-calling for AI Copilot (staff queries) and AI Waiter (guest QR ordering), plus demand forecasting with draft purchase order generation.",
+    ],
+    live: "https://restaurant-managment-dashboard.vercel.app",
+    client: "",
+    server: "",
+  },
 ];
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {

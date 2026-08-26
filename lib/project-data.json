@@ -393,7 +393,12 @@
           {
             "name": "User & Authentication",
             "nameBn": "ব্যবহারকারী ও প্রমাণীকরণ",
-            "models": ["User", "Teacher", "Student", "Parent"],
+            "models": [
+              "User",
+              "Teacher",
+              "Student",
+              "Parent"
+            ],
             "description": "Core identity and role management — each user account maps to one of four roles with dedicated profile tables linked via foreign keys.",
             "descriptionBn": "মূল পরিচয় ও ভূমিকা ব্যবস্থাপনা — প্রতিটি ব্যবহারকারী অ্যাকাউন্ট চারটি ভূমিকার একটিতে ম্যাপ করে, ফরেন কী দ্বারা সংযুক্ত নির্দিষ্ট প্রোফাইল টেবিল সহ।"
           },
@@ -427,28 +432,43 @@
           {
             "name": "Communication",
             "nameBn": "যোগাযোগ",
-            "models": ["Notice", "NoticeRead", "Message", "MessageRecipient"],
+            "models": [
+              "Notice",
+              "NoticeRead",
+              "Message",
+              "MessageRecipient"
+            ],
             "description": "School-wide notice publishing with read-receipt tracking, and an internal messaging system with per-recipient delivery status across multiple channels.",
             "descriptionBn": "পঠন-প্রাপ্তি ট্র্যাকিং সহ স্কুল-ব্যাপী নোটিশ প্রকাশ, এবং বিভিন্ন চ্যানেল জুড়ে প্রতি-প্রাপক ডেলিভারি স্ট্যাটাস সহ অভ্যন্তরীণ মেসেজিং সিস্টেম।"
           },
           {
             "name": "Financial",
             "nameBn": "আর্থিক",
-            "models": ["FeeStructure", "Payment"],
+            "models": [
+              "FeeStructure",
+              "Payment"
+            ],
             "description": "Fee definitions (monthly, exam, admission) and individual payment records with online payment support and receipt generation.",
             "descriptionBn": "ফি সংজ্ঞা (মাসিক, পরীক্ষা, ভর্তি) এবং অনলাইন পেমেন্ট সমর্থন ও রিসিট জেনারেশন সহ পৃথক পেমেন্ট রেকর্ড।"
           },
           {
             "name": "AI & Analytics",
             "nameBn": "এআই ও বিশ্লেষণ",
-            "models": ["AiInsight", "RiskScore", "RiskAlert", "ChatMessage"],
+            "models": [
+              "AiInsight",
+              "RiskScore",
+              "RiskAlert",
+              "ChatMessage"
+            ],
             "description": "Storage for AI-generated content — performance insights, nightly risk assessments, parent notification drafts, and chatbot conversation history.",
             "descriptionBn": "এআই-নির্মিত কনটেন্টের জন্য স্টোরেজ — কার্যক্ষমতা অন্তর্দৃষ্টি, রাতের ঝুঁকি মূল্যায়ন, অভিভাবক বিজ্ঞপ্তি খসড়া এবং চ্যাটবট কথোপকথনের ইতিহাস।"
           },
           {
             "name": "Scheduling",
             "nameBn": "সময়সূচি",
-            "models": ["ClassRoutine"],
+            "models": [
+              "ClassRoutine"
+            ],
             "description": "Weekly timetable management mapping periods, subjects, teachers, and rooms to each class section.",
             "descriptionBn": "প্রতিটি ক্লাস সেকশনে পিরিয়ড, বিষয়, শিক্ষক এবং রুম ম্যাপিং সহ সাপ্তাহিক টাইমটেবিল ব্যবস্থাপনা।"
           }
@@ -576,6 +596,547 @@
             "Native mobile app (React Native)",
             "Transport management and tracking",
             "Hostel and dormitory management"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "restaurant-management",
+      "name": "Spice Garden — Restaurant Management System",
+      "tagline": "Complete Multi-Branch Restaurant Platform with POS, QR Ordering & AI",
+      "taglineBn": "POS, QR অর্ডারিং ও AI সহ সম্পূর্ণ মাল্টি-ব্রাঞ্চ রেস্তোরাঁ প্ল্যাটফর্ম",
+      "category": "Full-Stack Platform",
+      "status": "Live",
+      "statusBn": "Live",
+      "liveUrl": "https://restaurant-managment-dashboard.vercel.app",
+      "thumbnail": "/project/restaurant/owner-dashboard-page.png",
+      "heroImage": "/project/restaurant/owner-dashboard-page.png",
+      "accentColor": "#BE5F47",
+      "demoCredentials": [
+        {
+          "role": "Owner",
+          "roleBn": "মালিক",
+          "email": "owner@spicegarden.com",
+          "password": "123456"
+        },
+        {
+          "role": "Manager",
+          "roleBn": "ম্যানেজার",
+          "email": "manager@spicegarden.com",
+          "password": "123456"
+        },
+        {
+          "role": "Cashier",
+          "roleBn": "ক্যাশিয়ার",
+          "email": "cashier@spicegarden.com",
+          "password": "123456"
+        },
+        {
+          "role": "Kitchen",
+          "roleBn": "কিচেন",
+          "email": "kitchen@spicegarden.com",
+          "password": "123456"
+        },
+        {
+          "role": "Waiter",
+          "roleBn": "ওয়েটার",
+          "email": "waiter@spicegarden.com",
+          "password": "123456"
+        }
+      ],
+      "gallery": [
+        {
+          "src": "/project/restaurant/owner-dashboard-page.png",
+          "alt": "Owner Dashboard",
+          "caption": "Main dashboard with revenue charts, order stats, and branch-aware analytics",
+          "captionBn": "আয় চার্ট, অর্ডার পরিসংখ্যান এবং ব্রাঞ্চ-সচেতন বিশ্লেষণ সহ প্রধান ড্যাশবোর্ড"
+        },
+        {
+          "src": "/project/restaurant/create-order.png",
+          "alt": "Create Order — POS",
+          "caption": "Unified POS hub with menu picker, table assignment, and flexible discount/charge editor",
+          "captionBn": "মেনু পিকার, টেবিল বরাদ্দ এবং নমনীয় ডিসকাউন্ট/চার্জ এডিটর সহ একীভূত POS হাব"
+        },
+        {
+          "src": "/project/restaurant/orders-details.png",
+          "alt": "Order Details & Payment",
+          "caption": "Order workspace with bill breakdown, status stepper, and partial payment support",
+          "captionBn": "বিল বিশ্লেষণ, স্ট্যাটাস স্টেপার এবং আংশিক পেমেন্ট সমর্থন সহ অর্ডার ওয়ার্কস্পেস"
+        },
+        {
+          "src": "/project/restaurant/staff.png",
+          "alt": "Staff Management",
+          "caption": "Staff roster with role assignment, salary structure editor, and attendance calendar",
+          "captionBn": "ভূমিকা নির্ধারণ, বেতন কাঠামো এডিটর এবং উপস্থিতি ক্যালেন্ডার সহ স্টাফ তালিকা"
+        },
+        {
+          "src": "/project/restaurant/payroll-page.png",
+          "alt": "Payroll System",
+          "caption": "Monthly payroll run sheet with generate/refresh, per-row breakdown, and partial payment tracking",
+          "captionBn": "জেনারেট/রিফ্রেশ, প্রতি-সারি বিশ্লেষণ এবং আংশিক পেমেন্ট ট্র্যাকিং সহ মাসিক বেতন রান শিট"
+        },
+        {
+          "src": "/project/restaurant/inventory.png",
+          "alt": "Inventory Control",
+          "caption": "Stock management with low-stock alerts, supplier links, and threshold configuration",
+          "captionBn": "কম-স্টক সতর্কতা, সরবরাহকারী লিঙ্ক এবং থ্রেশহোল্ড কনফিগারেশন সহ স্টক ব্যবস্থাপনা"
+        },
+        {
+          "src": "/project/restaurant/forecast-page.png",
+          "alt": "Demand Forecast",
+          "caption": "AI-powered demand prediction with draft purchase order generation per supplier",
+          "captionBn": "সরবরাহকারী প্রতি খসড়া ক্রয় অর্ডার জেনারেশন সহ এআই-চালিকৃত চাহিদা পূর্বাভাস"
+        },
+        {
+          "src": "/project/restaurant/item-and-category.png",
+          "alt": "Menu Management",
+          "caption": "Menu categories and items with price, availability toggle, and recipe linking",
+          "captionBn": "মূল্য, উপলব্ধতা টগল এবং রেসিপি লিঙ্ক সহ মেনু ক্যাটাগরি ও আইটেম"
+        },
+        {
+          "src": "/project/restaurant/frauad.png",
+          "alt": "Fraud Watch",
+          "caption": "Staff risk scoring from cancellations, cash share patterns, and price-edit anomalies",
+          "captionBn": "বাতিলকরণ, ক্যাশ শেয়ার প্যাটার্ন এবং মূল্য-সম্পাদনা বিসঙ্গতি থেকে স্টাফ ঝুঁকি স্কোরিং"
+        },
+        {
+          "src": "/project/restaurant/ai-copilot.png",
+          "alt": "AI Copilot",
+          "caption": "Natural-language AI assistant with function-calling over live restaurant data",
+          "captionBn": "লাইভ রেস্তোরাঁ ডেটায় ফাংশন-কলিং সহ প্রাকৃতিক ভাষার এআই সহকারী"
+        }
+      ],
+      "overview": "A complete, modern platform for running one or many restaurant branches from a single dashboard. The system unifies point-of-sale ordering, QR-code table ordering with live guest tracking, kitchen display, inventory that updates itself, a flexible salary & payroll engine, payments with split billing, discounts/charges control, analytics, fraud monitoring, an AI assistant, and automatic email alerts. Five role-based portals (Owner, Manager, Cashier, Kitchen, Waiter) ensure each user sees exactly what they need — from full system control to a focused kitchen board or order hub.",
+      "overviewBn": "একটি সম্পূর্ণ, আধুনিক প্ল্যাটফর্ম যা একটি একক ড্যাশবোর্ড থেকে এক বা একাধিক রেস্তোরাঁ শাখা পরিচালনা করে। সিস্টেমটি পয়েন্ট-অফ-সেল অর্ডারিং, QR-কোড টেবিল অর্ডারিং (লাইভ অতিথি ট্র্যাকিং), কিচেন ডিসপ্লে, স্বয়ংক্রিয় ইনভেন্টরি আপডেট, নমনীয় বেতন ও পেরোল ইঞ্জিন, স্প্লিট বিলিং, ডিসকাউন্ট/চার্জ নিয়ন্ত্রণ, অ্যানালিটিক্স, ফ্রড মনিটরিং, একটি এআই সহকারী এবং স্বয়ংক্রিয় ইমেইল সতর্কতা একত্রিত করে।",
+      "highlights": [
+        "Multi-branch support with per-branch role assignment — one person can be Manager in Branch A and Waiter in Branch B",
+        "QR-code table ordering: guests order from their phone and watch a live status timeline — no app download needed",
+        "Unified POS hub: menu picker, flexible discount/service-charge/tax (% or flat), partial payments, and real-time kitchen dispatch",
+        "Kitchen display board with 3-column workflow (New → Preparing → Ready) and elapsed-time highlighting",
+        "Inventory auto-deduction on order completion with recipe-linked ingredients and low-stock email alerts",
+        "Flexible salary engine: per-staff base + allowances − deductions, attendance-aware payroll with partial payment support",
+        "AI Copilot for natural-language queries over live data and AI Waiter for guest-side ordering assistance",
+        "Fraud Watch scoring staff risk from cancellations, cash share patterns, and price-edit anomalies"
+      ],
+      "highlightsBn": [
+        "প্রতি-ব্রাঞ্চ ভূমিকা নির্ধারণ সহ মাল্টি-ব্রাঞ্চ সমর্থন — একজন ব্যক্তি ব্রাঞ্চ A-তে ম্যানেজার এবং ব্রাঞ্চ B-তে ওয়েটার হতে পারেন",
+        "QR-কোড টেবিল অর্ডারিং: অতিথিরা তাদের ফোন থেকে অর্ডার করেন এবং লাইভ স্ট্যাটাস টাইমলাইন দেখেন — কোনো অ্যাপ ডাউনলোডের প্রয়োজন নেই",
+        "একীভূত POS হাব: মেনু পিকার, নমনীয় ডিসকাউন্ট/সার্ভিস চার্জ/ট্যাক্স (% বা ফ্ল্যাট), আংশিক পেমেন্ট এবং রিয়েল-টাইম কিচেন ডিসপ্যাচ",
+        "তিন কলামের কিচেন ডিসপ্লে বোর্ড (নতুন → প্রস্তুত হচ্ছে → প্রস্তুত) এবং সময়-পরিসীমা হাইলাইটিং",
+        "অর্ডার সম্পূর্ণতায় রেসিপি-লিঙ্কেড উপাদান সহ স্বয়ংক্রিয় ইনভেন্টরি ডিডাকশন এবং কম-স্টক ইমেইল সতর্কতা",
+        "নমনীয় বেতন ইঞ্জিন: প্রতি-স্টাফ বেস + ভাতা − কর্তন, উপস্থিতি-সচেতন পেরোল আংশিক পেমেন্ট সমর্থন সহ",
+        "লাইভ ডেটায় প্রাকৃতিক ভাষার প্রশ্নের জন্য এআই কোপাইলট এবং অতিথি-পক্ষ অর্ডারিং সহায়তার জন্য এআই ওয়েটার",
+        "বাতিলকরণ, ক্যাশ শেয়ার প্যাটার্ন এবং মূল্য-সম্পাদনা বিসঙ্গতি থেকে স্টাফ ঝুঁকি স্কোরিং সহ ফ্রড ওয়াচ"
+      ],
+      "techStack": [
+        {
+          "category": "Frontend",
+          "categoryBn": "ফ্রন্টএন্ড",
+          "items": [
+            "Next.js 16 (App Router)",
+            "React 19",
+            "TypeScript",
+            "Tailwind CSS v4",
+            "shadcn/ui-style components",
+            "TanStack Query 5",
+            "Zustand",
+            "react-hook-form + Zod",
+            "Recharts",
+            "socket.io-client",
+            "Framer Motion"
+          ]
+        },
+        {
+          "category": "Backend",
+          "categoryBn": "ব্যাকএন্ড",
+          "items": [
+            "NestJS 11",
+            "TypeScript",
+            "Prisma 7 ORM",
+            "Socket.IO (JWT-authenticated)",
+            "class-validator + ValidationPipe",
+            "@nestjs/throttler"
+          ]
+        },
+        {
+          "category": "Database & Auth",
+          "categoryBn": "ডেটাবেস ও প্রমাণীকরণ",
+          "items": [
+            "Supabase PostgreSQL",
+            "JWT access (15m) + refresh (7d, rotating)",
+            "bcrypt password hashing",
+            "SHA-256 token storage"
+          ]
+        },
+        {
+          "category": "AI & Integrations",
+          "categoryBn": "এআই ও ইন্টিগ্রেশন",
+          "items": [
+            "OpenAI SDK (function-calling)",
+            "Nodemailer SMTP",
+            "@nestjs/schedule (cron)",
+            "qrcode generation"
+          ]
+        }
+      ],
+      "userRoles": [
+        {
+          "role": "Owner",
+          "roleBn": "মালিক",
+          "description": "Full system control — settings (currency/tax/service charge), branches, staff, payroll, coupons, audit logs, fraud watch, AI copilot, and all operational pages.",
+          "descriptionBn": "সম্পূর্ণ সিস্টেম নিয়ন্ত্রণ — সেটিংস (মুদ্রা/ট্যাক্স/সার্ভিস চার্জ), শাখা, স্টাফ, পেরোল, কুপন, অডিট লগ, ফ্রড ওয়াচ, এআই কোপাইলট এবং সমস্ত অপারেশনাল পৃষ্ঠা।",
+          "icon": "crown",
+          "features": [
+            "Configure restaurant-wide settings: currency, tax rate, service charge, order prefix",
+            "Manage multi-branch hierarchy with self-referencing parent branches",
+            "Full payroll control: generate run sheets, record payments, manage salary structures",
+            "Fraud Watch with staff risk scoring from cancellation, cash share, and price-edit patterns",
+            "Audit log viewer for tracking all sensitive actions across the system",
+            "AI Copilot for natural-language queries over live restaurant data",
+            "Access all 16+ sidebar pages including branches, coupons, and notifications"
+          ],
+          "featuresBn": [
+            "রেস্তোরাঁ-ব্যাপী সেটিংস কনফিগার করুন: মুদ্রা, ট্যাক্স হার, সার্ভিস চার্জ, অর্ডার প্রিফিক্স",
+            "স্ব-রেফারেন্সিং প্যারেন্ট ব্রাঞ্চ সহ মাল্টি-ব্রাঞ্চ কাঠামো পরিচালনা করুন",
+            "সম্পূর্ণ পেরোল নিয়ন্ত্রণ: রান শিট জেনারেট করুন, পেমেন্ট রেকর্ড করুন, বেতন কাঠামো পরিচালনা করুন",
+            "বাতিলকরণ, ক্যাশ শেয়ার এবং মূল্য-সম্পাদনা প্যাটার্ন থেকে স্টাফ ঝুঁকি স্কোরিং সহ ফ্রড ওয়াচ",
+            "সিস্টেম জুড়ে সমস্ত সংবেদনশীল কার্যকলাপ ট্র্যাক করার জন্য অডিট লগ ভিউয়ার",
+            "লাইভ রেস্তোরাঁ ডেটায় প্রাকৃতিক ভাষার প্রশ্নের জন্য এআই কোপাইলট",
+            "শাখা, কুপন এবং বিজ্ঞপ্তি সহ ১৬+ সাইডবার পৃষ্ঠায় অ্যাক্সেস"
+          ]
+        },
+        {
+          "role": "Manager",
+          "roleBn": "ম্যানেজার",
+          "description": "Day-to-day operations — orders, menu, tables, kitchen, inventory, suppliers, staff, attendance, payroll, and performance monitoring.",
+          "descriptionBn": "দৈনিক পরিচালনা — অর্ডার, মেনু, টেবিল, কিচেন, ইনভেন্টরি, সরবরাহকারী, স্টাফ, উপস্থিতি, পেরোল এবং কার্যক্ষমতা পর্যবেক্ষণ।",
+          "icon": "clipboard-list",
+          "features": [
+            "Full order lifecycle management with POS, kitchen display, and payment recording",
+            "Menu management: categories, items, recipe setup, and availability control",
+            "Inventory tracking with low-stock alerts, supplier management, and purchase orders",
+            "Staff roster with salary structure editing, attendance marking, and payroll generation",
+            "Performance dashboard with branch-wide attendance overview and staff rankings",
+            "Demand forecast with ingredient needs prediction and draft PO generation",
+            "Access to 15 sidebar pages including AI copilot and notifications"
+          ],
+          "featuresBn": [
+            "POS, কিচেন ডিসপ্লে এবং পেমেন্ট রেকর্ডিং সহ সম্পূর্ণ অর্ডার জীবনচক্র পরিচালনা",
+            "মেনু ব্যবস্থাপনা: ক্যাটাগরি, আইটেম, রেসিপি সেটআপ এবং উপলব্ধতা নিয়ন্ত্রণ",
+            "কম-স্টক সতর্কতা, সরবরাহকারী ব্যবস্থাপনা এবং ক্রয় অর্ডার সহ ইনভেন্টরি ট্র্যাকিং",
+            "বেতন কাঠামো সম্পাদনা, উপস্থিতি চিহ্নিতকরণ এবং পেরোল জেনারেশন সহ স্টাফ তালিকা",
+            "ব্রাঞ্চ-ব্যাপী উপস্থিতি সারসংক্ষেপ এবং স্টাফ র‍্যাঙ্কিং সহ কার্যক্ষমতা ড্যাশবোর্ড",
+            "উপাদান চাহিদা পূর্বাভাস এবং খসড়া PO জেনারেশন সহ চাহিদা পূর্বাভাস",
+            "এআই কোপাইলট এবং বিজ্ঞপ্তি সহ ১৫ সাইডবার পৃষ্ঠায় অ্যাক্সেস"
+          ]
+        },
+        {
+          "role": "Cashier",
+          "roleBn": "ক্যাশিয়ার",
+          "description": "Payment-focused portal — order tracking, payment recording with Cash/Card/Online methods, payment history, and performance view.",
+          "descriptionBn": "পেমেন্ট-কেন্দ্রিক পোর্টাল — অর্ডার ট্র্যাকিং, ক্যাশ/কার্ড/অনলাইন পদ্ধতিতে পেমেন্ট রেকর্ডিং, পেমেন্ট ইতিহাস এবং কার্যক্ষমতা দৃশ্য।",
+          "icon": "credit-card",
+          "features": [
+            "Order hub with Active/Ready/History tabs, search, due badges, and elapsed timers",
+            "Payment recording: Cash, Card, or Online with pre-filled amounts and quick Full/Half chips",
+            "Partial payment support — final payment auto-completes order and frees the table",
+            "Payment history with method filtering, transaction stats, and order link-outs",
+            "Personal performance page with attendance and earnings summary"
+          ],
+          "featuresBn": [
+            "অ্যাক্টিভ/রেডি/হিস্ট্রি ট্যাব, সার্চ, ডিউ ব্যাজ এবং সময়-পরিসীমা টাইমার সহ অর্ডার হাব",
+            "ক্যাশ, কার্ড বা অনলাইনে পূর্ণ পূরণকৃত পরিমাণ এবং দ্রুত ফুল/হাফ চিপ সহ পেমেন্ট রেকর্ডিং",
+            "আংশিক পেমেন্ট সমর্থন — চূড়ান্ত পেমেন্ট স্বয়ংক্রিয়ভাবে অর্ডার সম্পূর্ণ করে এবং টেবিল মুক্ত করে",
+            "পদ্ধতি ফিল্টারিং, লেনদেন পরিসংখ্যান এবং অর্ডার লিঙ্ক-আউট সহ পেমেন্ট ইতিহাস",
+            "উপস্থিতি এবং আয় সারসংক্ষেপ সহ ব্যক্তিগত কার্যক্ষমতা পৃষ্ঠা"
+          ]
+        },
+        {
+          "role": "Kitchen Staff",
+          "roleBn": "কিচেন স্টাফ",
+          "description": "Focused kitchen board — view new orders, update preparation status, and track ready tickets with elapsed-time highlighting.",
+          "descriptionBn": "কেন্দ্রীভূত কিচেন বোর্ড — নতুন অর্ডার দেখুন, প্রস্তুতির স্ট্যাটাস আপডেট করুন এবং সময়-পরিসীমা হাইলাইটিং সহ প্রস্তুত টিকেট ট্র্যাক করুন।",
+          "icon": "chef-hat",
+          "features": [
+            "3-column board: New → Preparing → Ready with ticket counts",
+            "One-tap actions: Start Preparing, Mark Ready",
+            "Elapsed-time highlighting for tickets over 15 minutes",
+            "Ready tickets stay visible for 60 minutes after completion",
+            "Personal performance page with attendance summary"
+          ],
+          "featuresBn": [
+            "তিন কলামের বোর্ড: নতুন → প্রস্তুত হচ্ছে → প্রস্তুত (টিকেট গণনা সহ)",
+            "এক-ট্যাপ কার্যকলাপ: প্রস্তুতি শুরু করুন, প্রস্তুত চিহ্নিত করুন",
+            "১৫ মিনিটের বেশি টিকেটের জন্য সময়-পরিসীমা হাইলাইটিং",
+            "৬০ মিনিটের জন্য প্রস্তুত টিকেট দৃশ্যমান থাকে",
+            "উপস্থিতি সারসংক্ষেপ সহ ব্যক্তিগত কার্যক্ষমতা পৃষ্ঠা"
+          ]
+        },
+        {
+          "role": "Waiter",
+          "roleBn": "ওয়েটার",
+          "description": "Order-focused portal — create and track orders, view personal performance. Guests can also order via QR codes at their tables.",
+          "descriptionBn": "অর্ডার-কেন্দ্রিক পোর্টাল — অর্ডার তৈরি ও ট্র্যাক করুন, ব্যক্তিগত কার্যক্ষমতা দেখুন। অতিথিরা তাদের টেবিলে QR কোডের মাধ্যমেও অর্ডার করতে পারেন।",
+          "icon": "utensils",
+          "features": [
+            "Order hub with full POS capabilities for creating orders",
+            "Live order tracking with status updates from kitchen",
+            "Table assignment with visual occupied/available indicators",
+            "QR-code guest ordering: phone-based menu browsing and live order timeline",
+            "Personal performance page with attendance and shift summary"
+          ],
+          "featuresBn": [
+            "অর্ডার তৈরির জন্য সম্পূর্ণ POS ক্ষমতা সহ অর্ডার হাব",
+            "কিচেন থেকে স্ট্যাটাস আপডেট সহ লাইভ অর্ডার ট্র্যাকিং",
+            "দৃশ্যমান দখলকৃত/উপলব্ধ ইঙ্গিতকারী সহ টেবিল বরাদ্দ",
+            "QR-কোড অতিথি অর্ডারিং: ফোন-ভিত্তিক মেনু ব্রাউজিং এবং লাইভ অর্ডার টাইমলাইন",
+            "উপস্থিতি এবং শিফট সারসংক্ষেপ সহ ব্যক্তিগত কার্যক্ষমতা পৃষ্ঠা"
+          ]
+        }
+      ],
+      "aiFeatures": [
+        {
+          "name": "AI Copilot",
+          "nameBn": "এআই কোপাইলট",
+          "description": "A natural-language assistant for Owner and Manager roles that queries live restaurant data using function-calling. Ask questions about stock levels, sales summaries, popular items, or staff performance — and get instant, data-backed answers.",
+          "descriptionBn": "মালিক এবং ম্যানেজার ভূমিকার জন্য একটি প্রাকৃতিক ভাষার সহকারী যা ফাংশন-কলিং ব্যবহার করে লাইভ রেস্তোরাঁ ডেটা কুয়েরি করে। স্টক লেভেল, বিক্রয় সারসংক্ষেপ, জনপ্রিয় আইটেম বা স্টাফ কার্যক্ষমতা সম্পর্কে প্রশ্ন করুন — এবং তাৎক্ষণিক, ডেটা-সমর্থিত উত্তর পান।",
+          "trigger": "Owner or Manager types a question in the AI Assistant chat",
+          "triggerBn": "মালিক বা ম্যানেজার এআই সহকারী চ্যাটে একটি প্রশ্ন টাইপ করেন",
+          "output": "Conversational answer with data from live restaurant database",
+          "outputBn": "লাইভ রেস্তোরাঁ ডেটাবেস থেকে ডেটা সহ কথোপকথনমূলক উত্তর"
+        },
+        {
+          "name": "AI Waiter (Guest-Side)",
+          "nameBn": "এআই ওয়েটার (অতিথি-পক্ষ)",
+          "description": "Guests scanning a QR code can chat with an AI assistant that understands natural-language food orders like '2 biryani and a coke'. The AI responds with suggestions and add-to-cart actions — no login required.",
+          "descriptionBn": "QR কোড স্ক্যান করা অতিথিরা একটি এআই সহকারীর সাথে চ্যাট করতে পারেন যা '২ বিরিয়ানি এবং একটি কোক'-এর মতো প্রাকৃতিক ভাষার খাবার অর্ডার বোঝে। এআই পরামর্শ এবং কার্টে-যোগ করার কার্যকলাপ সহ উত্তর দেয় — কোনো লগইনের প্রয়োজন নেই।",
+          "trigger": "Guest scans QR code at their table and types a message",
+          "triggerBn": "অতিথি তাদের টেবিলে QR কোড স্ক্যান করেন এবং একটি বার্তা টাইপ করেন",
+          "output": "Food order suggestions with add-to-cart capability",
+          "outputBn": "কার্টে-যোগ করার ক্ষমতা সহ খাবার অর্ডার পরামর্শ"
+        },
+        {
+          "name": "Demand Forecast",
+          "nameBn": "চাহিদা পূর্বাভাস",
+          "description": "Predicts ingredient needs based on sales history, configurable horizon days, and safety buffer. Flags at-risk ingredients first, suggests order quantities, and generates draft purchase orders grouped by supplier for one-click procurement.",
+          "descriptionBn": "বিক্রয় ইতিহাস, কনফিগারযোগ্য দিনের সময়কাল এবং নিরাপত্তা বাফারের উপর ভিত্তি করে উপাদান চাহিদা পূর্বাভাস করে। ঝুঁকিপূর্ণ উপাদান প্রথমে ফ্ল্যাগ করে, অর্ডার পরিমাণ সুপারিশ করে এবং এক-ক্লিক সংগ্রহের জন্য সরবরাহকারী অনুযায়ী গ্রুপকৃত খসড়া ক্রয় অর্ডার তৈরি করে।",
+          "trigger": "Manager navigates to the Forecast page",
+          "triggerBn": "ম্যানেজার পূর্বাভাস পৃষ্ঠায় যান",
+          "output": "Sorted needs-attention table with draft POs per supplier",
+          "outputBn": "সরবরাহকারী প্রতি খসড়া PO সহ মনোযোগ-প্রয়োজনীয় টেবিল"
+        },
+        {
+          "name": "Fraud Watch",
+          "nameBn": "ফ্রড ওয়াচ",
+          "description": "Automatically scores staff risk based on cancellation frequency, cash payment share, and price-edit patterns. Surfaces suspicious activity for owner review with detailed breakdowns per staff member.",
+          "descriptionBn": "বাতিলকরণের ফ্রিকোয়েন্সি, ক্যাশ পেমেন্ট শেয়ার এবং মূল্য-সম্পাদনা প্যাটার্নের ভিত্তিতে স্বয়ংক্রিয়ভাবে স্টাফ ঝুঁকি স্কোর করে। প্রতি-স্টাফ বিস্তারিত বিশ্লেষণ সহ মালিক পর্যালোচনার জন্য সন্দেহজনক কার্যকলাপ প্রকাশ করে।",
+          "trigger": "Automated analysis based on order and payment data",
+          "triggerBn": "অর্ডার এবং পেমেন্ট ডেটার ভিত্তিতে স্বয়ংক্রিয় বিশ্লেষণ",
+          "output": "Risk scores and flagged activities per staff member",
+          "outputBn": "প্রতি স্টাফ সদস্যের জন্য ঝুঁকি স্কোর এবং ফ্ল্যাগ করা কার্যকলাপ"
+        }
+      ],
+      "database": {
+        "totalModels": 24,
+        "domains": [
+          {
+            "name": "Restaurant & Branches",
+            "nameBn": "রেস্তোরাঁ ও শাখা",
+            "models": [
+              "Restaurant",
+              "RestaurantSetting",
+              "Branch"
+            ],
+            "description": "Multi-branch restaurant hierarchy — each restaurant has settings (currency, tax, service charge) and branches with self-referencing parent relationships.",
+            "descriptionBn": "মাল্টি-ব্রাঞ্চ রেস্তোরাঁ কাঠামো — প্রতিটি রেস্তোরাঁয় সেটিংস (মুদ্রা, ট্যাক্স, সার্ভিস চার্জ) এবং স্ব-রেফারেন্সিং প্যারেন্ট সম্পর্ক সহ শাখা রয়েছে।"
+          },
+          {
+            "name": "Users & Auth",
+            "nameBn": "ব্যবহারকারী ও প্রমাণীকরণ",
+            "models": [
+              "User",
+              "BranchUser",
+              "RefreshToken"
+            ],
+            "description": "User accounts with email verification, password reset tokens, and per-branch role assignments. Refresh tokens stored as SHA-256 hashes.",
+            "descriptionBn": "ইমেইল যাচাইকরণ, পাসওয়ার্ড রিসেট টোকেন এবং প্রতি-ব্রাঞ্চ ভূমিকা নির্ধারণ সহ ব্যবহারকারী অ্যাকাউন্ট। রিফ্রেশ টোকেন SHA-256 হ্যাশ হিসাবে সংরক্ষিত।"
+          },
+          {
+            "name": "Orders & Payments",
+            "nameBn": "অর্ডার ও পেমেন্ট",
+            "models": [
+              "Order",
+              "OrderItem",
+              "Payment",
+              "Coupon"
+            ],
+            "description": "Flexible ordering engine with per-order charges (discount/service-charge/tax, each % or flat), partial payments, and coupon validation.",
+            "descriptionBn": "প্রতি-অর্ডার চার্জ (ডিসকাউন্ট/সার্ভিস চার্জ/ট্যাক্স, প্রতিটি % বা ফ্ল্যাট), আংশিক পেমেন্ট এবং কুপন যাচাইকরণ সহ নমনীয় অর্ডারিং ইঞ্জিন।"
+          },
+          {
+            "name": "Menu & Tables",
+            "nameBn": "মেনু ও টেবিল",
+            "models": [
+              "MenuCategory",
+              "MenuItem",
+              "Table"
+            ],
+            "description": "Menu items with categories, pricing, availability, and optional images. Tables with QR codes for guest ordering and status tracking (AVAILABLE/OCCUPIED/RESERVED).",
+            "descriptionBn": "ক্যাটাগরি, মূল্য, উপলব্ধতা এবং ঐচ্ছিক ছবি সহ মেনু আইটেম। অতিথি অর্ডারিং এবং স্ট্যাটাস ট্র্যাকিং (AVAILABLE/OCCUPIED/RESERVED) এর জন্য QR কোড সহ টেবিল।"
+          },
+          {
+            "name": "Kitchen & Inventory",
+            "nameBn": "কিচেন ও ইনভেন্টরি",
+            "models": [
+              "Inventory",
+              "RecipeItem",
+              "Supplier",
+              "Purchase",
+              "PurchaseItem"
+            ],
+            "description": "Stock items per branch with thresholds and supplier links. Recipe items link menu dishes to ingredients with quantities. Purchases increase stock automatically.",
+            "descriptionBn": "থ্রেশহোল্ড এবং সরবরাহকারী লিঙ্ক সহ প্রতি-ব্রাঞ্চ স্টক আইটেম। রেসিপি আইটেম মেনু ডিশকে পরিমাণ সহ উপাদানের সাথে সংযুক্ত করে। ক্রয় স্বয়ংক্রিয়ভাবে স্টক বাড়ায়।"
+          },
+          {
+            "name": "Staff & Payroll",
+            "nameBn": "স্টাফ ও পেরোল",
+            "models": [
+              "StaffProfile",
+              "SalaryComponent",
+              "Payroll",
+              "Attendance"
+            ],
+            "description": "Per-staff profiles with position, salary, and branch assignment. Flexible salary components (EARNING/DEDUCTION). Monthly payroll snapshots with attendance-aware calculations — LEAVE is paid, only ABSENT cuts pay.",
+            "descriptionBn": "পদবি, বেতন এবং ব্রাঞ্চ বরাদ্দ সহ প্রতি-স্টাফ প্রোফাইল। নমনীয় বেতন কম্পোনেন্ট (EARNING/DEDUCTION)। উপস্থিতি-সচেতন গণনা সহ মাসিক পেরোল স্ন্যাপশট — LEAVE বেতনযোগ্য, শুধুমাত্র ABSENT বেতন কাটে।"
+          },
+          {
+            "name": "Platform Services",
+            "nameBn": "প্ল্যাটফর্ম সেবা",
+            "models": [
+              "Notification",
+              "AuditLog"
+            ],
+            "description": "In-app notifications (ORDER/PAYMENT/INVENTORY/SYSTEM types) and audit trail logging sensitive actions with actor, time, and details.",
+            "descriptionBn": "ইন-অ্যাপ বিজ্ঞপ্তি (ORDER/PAYMENT/INVENTORY/SYSTEM টাইপ) এবং কর্মকর্তা, সময় এবং বিবরণ সহ সংবেদনশীল কার্যকলাপের অডিট ট্রেইল লগিং।"
+          }
+        ]
+      },
+      "security": [
+        {
+          "aspect": "JWT Authentication",
+          "aspectBn": "JWT প্রমাণীকরণ",
+          "detail": "Access tokens (15m) + rotating refresh tokens (7d) with bcrypt password hashing. Refresh tokens stored as SHA-256 hashes, revoked on logout/reset/suspend.",
+          "detailBn": "ব্যাপক পাসওয়ার্ড হ্যাশিং সহ অ্যাক্সেস টোকেন (১৫ মিনিট) + ঘূর্ণায়মান রিফ্রেশ টোকেন (৭ দিন)। রিফ্রেশ টোকেন SHA-256 হ্যাশ হিসাবে সংরক্ষিত, লগআউট/রিসেট/সাসপেন্ডে খারিজ।"
+        },
+        {
+          "aspect": "Role-Based Access Control",
+          "aspectBn": "ভূমিকা-ভিত্তিক অ্যাক্সেস নিয়ন্ত্রণ",
+          "detail": "Three-layer guard architecture: AuthGuard (token check), PageGuard (route permissions per role), and RoleGuard (component-level). Sidebar items and page access are dynamically filtered by role.",
+          "detailBn": "তিন-স্তরের গার্ড কাঠামো: AuthGuard (টোকেন চেক), PageGuard (প্রতি ভূমিকায় রুট অনুমতি) এবং RoleGuard (কম্পোনেন্ট-স্তর)। সাইডবার আইটেম এবং পৃষ্ঠা অ্যাক্সেস ভূমিকা অনুযায়ী গতিশীলভাবে ফিল্টার করা হয়।"
+        },
+        {
+          "aspect": "Tenant Isolation",
+          "aspectBn": "টেন্যান্ট বিচ্ছিন্নতা",
+          "detail": "All queries are scoped by JWT-derived restaurantId — never from client input. Ensures one restaurant's data is never accessible to another.",
+          "detailBn": "সমস্ত কুয়েরি JWT-প্রাপ্ত restaurantId দ্বারা সীমাবদ্ধ — কখনো ক্লায়েন্ট ইনপুট থেকে নয়। একটি রেস্তোরাঁর ডেটা অন্যটির দ্বারা অ্যাক্সেসযোগ্য নিশ্চিত করে।"
+        },
+        {
+          "aspect": "Rate Limiting",
+          "aspectBn": "হার সীমাবদ্ধতা",
+          "detail": "Global 100 req/min; tighter limits on public routes — menu 30/min, order 10/min, AI waiter 5/min, guest status 30/min.",
+          "detailBn": "গ্লোবাল ১০০ অনুরোধ/মিনিট; পাবলিক রুটে আরও কঠোর সীমা — মেন৩০/মিনিট, অর্ডার ১০/মিনিট, এআই ওয়েটার ৫/মিনিট, গেস্ট স্ট্যাটাস ৩০/মিনিট।"
+        },
+        {
+          "aspect": "Input Validation",
+          "aspectBn": "ইনপুট যাচাই",
+          "detail": "Strict DTOs with class-validator + global ValidationPipe (whitelist + forbidNonWhitelisted + transform) on every endpoint. Prisma parameterization prevents SQL injection.",
+          "detailBn": "প্রতি এন্ডপয়েন্টে class-validator + গ্লোবাল ValidationPipe (whitelist + forbidNonWhitelisted + transform) সহ কঠোর DTO। Prisma প্যারামিটারাইজেশন SQL ইনজেকশন প্রতিরোধ করে।"
+        },
+        {
+          "aspect": "Guest Order Isolation",
+          "aspectBn": "গেস্ট অর্ডার বিচ্ছিন্নতা",
+          "detail": "Order status is readable only through the same table's QR token — an orderId from one table's QR is unreadable from another table's QR. Rate-limited to 30/min per guest.",
+          "detailBn": "অর্ডার স্ট্যাটাস শুধুমাত্র একই টেবিলের QR টোকেনের মাধ্যমে পড়া যায় — একটি টেবিলের QR থেকে orderId অন্য টেবিলের QR থেকে পড়া যায় না। প্রতি অতিথি ৩০/মিনিটে সীমাবদ্ধ।"
+        },
+        {
+          "aspect": "Audit Trail",
+          "aspectBn": "অডিট ট্রেইল",
+          "detail": "Sensitive actions (user creation/deletion, role changes, settings updates) are logged with actor ID, timestamp, IP, and action details.",
+          "detailBn": "সংবেদনশীল কার্যকলাপ (ব্যবহারকারী তৈরি/মুছে ফেলা, ভূমিকা পরিবর্তন, সেটিংস আপডেট) কর্মকর্তা ID, টাইমস্ট্যাম্প, IP এবং কার্যকলাপ বিবরণ সহ লগ করা হয়।"
+        }
+      ],
+      "pdfDocuments": [
+        {
+          "name": "Order Invoice",
+          "nameBn": "অর্ডার ইনভয়েস",
+          "contents": "Itemized bill with items, quantities, prices, discount/charges breakdown, service charge, tax, total, paid amount, and balance due",
+          "contentsBn": "আইটেম, পরিমাণ, মূল্য, ডিসকাউন্ট/চার্জ বিশ্লেষণ, সার্ভিস চার্জ, ট্যাক্স, মোট, পরিশোধিত পরিমাণ এবং বকেয়া ব্যালেন্স সহ আইটেমাইজড বিল"
+        },
+        {
+          "name": "Thermal Receipt (80mm)",
+          "nameBn": "থার্মাল রিসিট (৮০মিমি)",
+          "contents": "Compact receipt layout with restaurant branding, items, totals, and payment details — designed for thermal printer output",
+          "contentsBn": "রেস্তোরাঁ ব্র্যান্ডিং, আইটেম, মোট এবং পেমেন্ট বিবরণ সহ কমপ্যাক্ট রিসিট লেআউট — থার্মাল প্রিন্টার আউটপুটের জন্য ডিজাইনকৃত"
+        },
+        {
+          "name": "Payroll Payslip",
+          "nameBn": "পেরোল বেতনপত্র",
+          "contents": "Base salary, allowances, deductions, absence deduction (absent days × daily rate), net amount, and payment history",
+          "contentsBn": "মূল বেতন, ভাতা, কর্তন, অনুপস্থিতি কর্তন (অনুপস্থিত দিন × দৈনিক হার), নেট পরিমাণ এবং পেমেন্ট ইতিহাস"
+        }
+      ],
+      "deployment": {
+        "platform": "Backend: Render (free tier) · Frontend: Vercel",
+        "database": "Supabase PostgreSQL (managed)",
+        "storage": "Supabase Storage (optional)",
+        "cron": "Weekly digest email — Monday 08:00 (revenue/orders WoW %, top items, low stock summary)",
+        "email": "Nodemailer SMTP (console fallback when SMTP not configured)",
+        "ai": "OpenAI SDK — function-calling for AI Copilot + AI Waiter"
+      },
+      "roadmap": [
+        {
+          "phase": "Phase 1",
+          "timeline": "Immediate",
+          "items": [
+            "Printable thermal 80mm receipts with auto-print on payment",
+            "Table reservations with overlapping-check validation and QR integration",
+            "Customer loyalty program with points earned on completed orders"
+          ]
+        },
+        {
+          "phase": "Phase 2",
+          "timeline": "Short-term",
+          "items": [
+            "Shift close / cash reconciliation with expected vs counted cash",
+            "Daily expenses tracking for real profit calculation (revenue − purchases − expenses)",
+            "Tips entry captured during payment and reported per cashier"
+          ]
+        },
+        {
+          "phase": "Phase 3",
+          "timeline": "Medium-term",
+          "items": [
+            "WhatsApp / SMS alerts for order ready notifications and low-stock warnings",
+            "Order modifiers and add-ons with price deltas and modifier groups",
+            "Repeat-customer analytics and visit frequency tracking"
+          ]
+        },
+        {
+          "phase": "Phase 4",
+          "timeline": "Long-term",
+          "items": [
+            "Dark mode (Tailwind class strategy)",
+            "Multi-language guest menu (i18n dictionary on QR pages)",
+            "Native mobile wrapper (Capacitor) for waiter/kitchen staff"
+          ]
+        },
+        {
+          "phase": "Phase 5",
+          "timeline": "Future",
+          "items": [
+            "PDF invoice export (server-side or client print-to-PDF)",
+            "Multi-restaurant admin panel for franchise owners",
+            "WhatsApp Cloud API integration for automated guest notifications"
           ]
         }
       ]

@@ -24,6 +24,11 @@ import {
   ChevronLeft,
   KeyRound,
   Languages,
+  Crown,
+  ClipboardList,
+  CreditCard,
+  ChefHat,
+  Utensils,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -32,6 +37,11 @@ const roleIcons: Record<string, React.ReactNode> = {
   "book-open": <BookOpen className="w-5 h-5" />,
   "graduation-cap": <GraduationCap className="w-5 h-5" />,
   users: <Users className="w-5 h-5" />,
+  crown: <Crown className="w-5 h-5" />,
+  "clipboard-list": <ClipboardList className="w-5 h-5" />,
+  "credit-card": <CreditCard className="w-5 h-5" />,
+  "chef-hat": <ChefHat className="w-5 h-5" />,
+  utensils: <Utensils className="w-5 h-5" />,
 };
 
 type Lang = "en" | "bn";
