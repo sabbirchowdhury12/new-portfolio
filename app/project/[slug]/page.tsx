@@ -124,7 +124,18 @@ export default function ProjectDetailPage({
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-[#BE5F47] font-semibold text-sm hover:shadow-lg transition-shadow"
               >
                 <ExternalLink className="w-4 h-4" />
-                Live Demo
+                {project.liveUrlLabel || "Live Demo"}
+              </a>
+            )}
+            {project.liveUrlAdmin && (
+              <a
+                href={project.liveUrlAdmin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-[#BE5F47] font-semibold text-sm hover:shadow-lg transition-shadow"
+              >
+                <ExternalLink className="w-4 h-4" />
+                {project.liveUrlAdminLabel || "Admin Dashboard"}
               </a>
             )}
             <Link

@@ -1140,6 +1140,468 @@
           ]
         }
       ]
+    },
+    {
+      "slug": "lumiere-beauty",
+      "name": "Lumiere Beauty — E-Commerce Platform",
+      "tagline": "Production-Ready E-Commerce for a Premium Skincare & Beauty Brand",
+      "taglineBn": "প্রিমিয়াম স্কিনকেয়ার ও বিউটি ব্র্যান্ডের জন্য প্রোডাকশন-রেডি ই-কমার্স প্ল্যাটফর্ম",
+      "category": "Full-Stack E-Commerce",
+      "status": "Live",
+      "statusBn": "Live",
+      "liveUrl": "https://skin-care-customer.vercel.app",
+      "liveUrlLabel": "Customer Site",
+      "liveUrlAdmin": "https://skin-care-admin.vercel.app",
+      "liveUrlAdminLabel": "Admin Dashboard",
+      "thumbnail": "/project/skin-care/customer-homepage.png",
+      "heroImage": "/project/skin-care/customer-homepage.png",
+      "accentColor": "#C49A6C",
+      "demoCredentials": [
+        {
+          "role": "Admin",
+          "roleBn": "অ্যাডমিন",
+          "email": "admin@gmail.com",
+          "password": "123456"
+        }
+      ],
+      "gallery": [
+        {
+          "src": "/project/skin-care/customer-homepage.png",
+          "alt": "Customer Storefront Homepage",
+          "caption": "Mobile-first storefront homepage with hero slider, category grid, and product carousels",
+          "captionBn": "হিরো স্লাইডার, ক্যাটাগরি গ্রিড এবং প্রোডাক্ট ক্যারোসেল সহ মোবাইল-ফার্স্ট স্টোরফ্রন্ট হোমপেজ"
+        },
+        {
+          "src": "/project/skin-care/customer-product-shop page.png",
+          "alt": "Customer Shop Page",
+          "caption": "Full product catalog with filtering, sorting, infinite scroll, and live search overlay",
+          "captionBn": "ফিল্টারিং, সর্টিং, ইনফিনিট স্ক্রোল এবং লাইভ সার্চ ওভারলে সহ সম্পূর্ণ প্রোডাক্ট ক্যাটালগ"
+        },
+        {
+          "src": "/project/skin-care/admin-dashboard.png",
+          "alt": "Admin Dashboard",
+          "caption": "KPI cards, revenue chart, and low-stock alerts with date-range filtering",
+          "captionBn": "KPI কার্ড, রেভিনিউ চার্ট এবং তারিখ-পরিসীমা ফিল্টারিং সহ কম-স্টক সতর্কতা"
+        },
+        {
+          "src": "/project/skin-care/admin-product-page.png",
+          "alt": "Admin Products",
+          "caption": "Searchable product table with bulk JSON import/export and variant management",
+          "captionBn": "বাল্ক JSON ইমপোর্ট/এক্সপোর্ট এবং ভ্যারিয়েন্ট ম্যানেজমেন্ট সহ সার্চযোগ্য প্রোডাক্ট টেবিল"
+        },
+        {
+          "src": "/project/skin-care/admin-product-edit.png",
+          "alt": "Admin Product Edit",
+          "caption": "Rich product form with flags, categories, variants, images, and combo items",
+          "captionBn": "ফ্ল্যাগ, ক্যাটাগরি, ভ্যারিয়েন্ট, ছবি এবং কম্বো আইটেম সহ রিচ প্রোডাক্ট ফর্ম"
+        },
+        {
+          "src": "/project/skin-care/admin-order-details.png",
+          "alt": "Admin Order Details",
+          "caption": "Full order view with status workflow, payment tracking, and customer info",
+          "captionBn": "স্ট্যাটাস কার্যপ্রবাহ, পেমেন্ট ট্র্যাকিং এবং কাস্টমার তথ্য সহ সম্পূর্ণ অর্ডার দৃশ্য"
+        },
+        {
+          "src": "/project/skin-care/admin-inventory.png",
+          "alt": "Admin Inventory",
+          "caption": "5-tab inventory system with stock levels, movements, suppliers, and physical counts",
+          "captionBn": "স্টক লেভেল, মুভমেন্ট, সরবরাহকারী এবং ফিজিক্যাল কাউন্ট সহ ৫-ট্যাব ইনভেন্টরি সিস্টেম"
+        },
+        {
+          "src": "/project/skin-care/admin-analytics.png",
+          "alt": "Admin Analytics",
+          "caption": "Interactive Recharts analytics with sales trends, top products, and customer cohorts",
+          "captionBn": "বিক্রয় প্রবণতা, শীর্ষ প্রোডাক্ট এবং কাস্টমার কোহর্ট সহ ইন্টারঅ্যাক্টিভ Recharts অ্যানালিটিক্স"
+        },
+        {
+          "src": "/project/skin-care/admin-reports.png",
+          "alt": "Admin Reports",
+          "caption": "6 exportable report types — sales, product performance, inventory valuation, tax, and P&L",
+          "captionBn": "৬টি এক্সপোর্টযোগ্য রিপোর্ট — সেলস, প্রোডাক্ট পারফরম্যান্স, ইনভেন্টরি ভ্যালুয়েশন, ট্যাক্স এবং P&L"
+        },
+        {
+          "src": "/project/skin-care/Screenshot_2.png",
+          "alt": "Skin Quiz & Personalization",
+          "caption": "Interactive skin quiz and routine tracker with AI-powered recommendations",
+          "captionBn": "এআই-চালিত রেকমেন্ডেশন সহ ইন্টারঅ্যাক্টিভ স্কিন কুইজ এবং রুটিন ট্র্যাকার"
+        }
+      ],
+      "overview": "Lumiere Beauty is a complete, production-ready e-commerce platform for a premium skincare and beauty brand, built with a modern JavaScript/TypeScript stack and localized for the Bangladesh market. It consists of three independent applications working together through a REST API: a customer-facing Next.js storefront, a Next.js admin dashboard, and an Express + Prisma backend that manages the database and business logic. Features include a full catalog with variants and 3-level categories, a 3-step checkout with Bangladesh shipping zones and local payment methods (COD active, bKash/Nagad/SSLCommerz), a loyalty points program, a skin quiz and routine tracker, an OpenAI-powered AI toolkit, a fraud-detection system, real-time Socket.IO order updates, and complete analytics and reporting — all backed by a 40+ model Prisma schema.",
+      "overviewBn": "Lumiere Beauty হলো একটি প্রিমিয়াম স্কিনকেয়ার ও বিউটি ব্র্যান্ডের জন্য সম্পূর্ণ, উৎপাদন-প্রস্তুত ই-কমার্স প্ল্যাটফর্ম, যা আধুনিক JavaScript/TypeScript স্ট্যাক দিয়ে তৈরি এবং বাংলাদেশের বাজারের জন্য স্থানীয়করণ করা। এটি তিনটি স্বাধীন অ্যাপ্লিকেশন নিয়ে গঠিত যা একটি REST API-র মাধ্যমে একসাথে কাজ করে: কাস্টমার-মুখী Next.js স্টোরফ্রন্ট, একটি Next.js অ্যাডমিন ড্যাশবোর্ড এবং একটি Express + Prisma ব্যাকএন্ড যা ডেটাবেস এবং ব্যবসায়িক লজিক পরিচালনা করে। বৈশিষ্ট্যের মধ্যে রয়েছে ভ্যারিয়েন্ট ও ৩-স্তরের ক্যাটাগরি সহ সম্পূর্ণ ক্যাটালগ, বাংলাদেশ শিপিং জোন ও স্থানীয় পেমেন্ট পদ্ধতি সহ ৩-ধাপ চেকআউট (COD সক্রিয়, bKash/Nagad/SSLCommerz), লয়ালটি পয়েন্ট প্রোগ্রাম, স্কিন কুইজ ও রুটিন ট্র্যাকার, OpenAI-চালিত এআই টুলকিট, ফ্রড ডিটেকশন সিস্টেম, রিয়েল-টাইম Socket.IO অর্ডার আপডেট এবং সম্পূর্ণ অ্যানালিটিক্স ও রিপোর্টিং — সবই ৪০+ মডেলের Prisma স্কিমা দ্বারা চালিত।",
+      "highlights": [
+        "Three independent apps (Customer Storefront, Admin Dashboard, Backend API) working together via a REST API",
+        "Full-featured storefront: infinite-scroll shop, variant selector, slide-out cart, coupons, wishlist, free-shipping progress bar",
+        "3-step checkout localized for Bangladesh — Inside/Outside Dhaka shipping zones and COD active (bKash/Nagad/SSLCommerz coming soon)",
+        "Loyalty program with configurable earn/redeem rates, points redemption at checkout, and full transaction history",
+        "Skin quiz, AM/PM routine builder, daily skin log, streak counter, and AI-powered weekly insights",
+        "Admin toolkit: full product/order/customer/inventory management, 6 report types with CSV export, and content CMS",
+        "6 OpenAI-powered AI tools — description generator, review summarizer, auto-tag, FAQ generator, copywriter, and recommendations",
+        "Real-time order updates via Socket.IO plus a fraud-detection system with risk scoring"
+      ],
+      "highlightsBn": [
+        "একটি REST API-র মাধ্যমে একসাথে কাজ করা তিনটি স্বাধীন অ্যাপ (কাস্টমার স্টোরফ্রন্ট, অ্যাডমিন ড্যাশবোর্ড, ব্যাকএন্ড API)",
+        "সম্পূর্ণ-ফিচারযুক্ত স্টোরফ্রন্ট: ইনফিনিট-স্ক্রোল শপ, ভ্যারিয়েন্ট সিলেক্টর, স্লাইড-আউট কার্ট, কুপন, উইশলিস্ট, ফ্রি-শিপিং প্রোগ্রেস বার",
+        "বাংলাদেশের জন্য স্থানীয়কৃত ৩-ধাপ চেকআউট — ঢাকার ভিতরে/বাইরে শিপিং জোন এবং COD সক্রিয় (bKash/Nagad/SSLCommerz শীঘ্রই)",
+        "কনফিগারযোগ্য আর্ন/রিডিম রেট, চেকআউটে পয়েন্ট রিডেম্পশন এবং সম্পূর্ণ লেনদেনের ইতিহাস সহ লয়ালটি প্রোগ্রাম",
+        "স্কিন কুইজ, AM/PM রুটিন বিল্ডার, দৈনিক স্কিন লগ, স্ট্রিক কাউন্টার এবং এআই-চালিত সাপ্তাহিক অন্তর্দৃষ্টি",
+        "অ্যাডমিন টুলকিট: সম্পূর্ণ প্রোডাক্ট/অর্ডার/কাস্টমার/ইনভেন্টরি ম্যানেজমেন্ট, CSV এক্সপোর্ট সহ ৬টি রিপোর্ট এবং কনটেন্ট CMS",
+        "৬টি OpenAI-চালিত এআই টুল — ডেসক্রিপশন জেনারেটর, রিভিউ সামারাইজার, অটো-ট্যাগ, FAQ জেনারেটর, কপিরাইটার এবং রেকমেন্ডেশন",
+        "Socket.IO-এর মাধ্যমে রিয়েল-টাইম অর্ডার আপডেট এবং রিস্ক স্কোরিং সহ ফ্রড ডিটেকশন সিস্টেম"
+      ],
+      "techStack": [
+        {
+          "category": "Frontend",
+          "categoryBn": "ফ্রন্টএন্ড",
+          "items": [
+            "Next.js 14 (Customer) + Next.js 16 (Admin)",
+            "React 18 / 19",
+            "TypeScript",
+            "Tailwind CSS 3 / 4",
+            "shadcn/ui",
+            "Zustand",
+            "TanStack React Query 5",
+            "Framer Motion",
+            "Axios",
+            "React Hook Form + Zod",
+            "Recharts",
+            "socket.io-client"
+          ]
+        },
+        {
+          "category": "Backend",
+          "categoryBn": "ব্যাকএন্ড",
+          "items": [
+            "Express.js",
+            "Prisma ORM",
+            "PostgreSQL",
+            "JWT (access + refresh)",
+            "bcryptjs",
+            "Zod validation",
+            "Node-Cron",
+            "Socket.IO",
+            "Winston"
+          ]
+        },
+        {
+          "category": "Payments & Integrations",
+          "categoryBn": "পেমেন্ট ও ইন্টিগ্রেশন",
+          "items": [
+            "SSLCommerz (BD local gateway)",
+            "Stripe (international cards)",
+            "ImageKit CDN",
+            "AWS S3 (backup storage)",
+            "Resend (transactional email)",
+            "Nodemailer (SMTP)",
+            "OpenAI GPT-4o-mini"
+          ]
+        }
+      ],
+      "userRoles": [
+        {
+          "role": "Administrator",
+          "roleBn": "অ্যাডমিন",
+          "description": "Full back-office control over the entire e-commerce operation — catalog, orders, customers, inventory, discounts, loyalty, content, analytics, and the AI toolkit.",
+          "descriptionBn": "সম্পূর্ণ ই-কমার্স পরিচালনার উপর পূর্ণ ব্যাক-অফিস নিয়ন্ত্রণ — ক্যাটালগ, অর্ডার, কাস্টমার, ইনভেন্টরি, ডিসকাউন্ট, লয়ালটি, কনটেন্ট, অ্যানালিটিক্স এবং এআই টুলকিট।",
+          "icon": "shield",
+          "features": [
+            "Dashboard with KPIs (revenue, orders, customers, AOV), revenue chart, and low-stock alerts",
+            "Full product CRUD with variants (SKU/price/stock), combo items, attributes, and status workflow",
+            "Order lifecycle management with status workflow, payment tracking, and real-time updates",
+            "5-tab inventory system: stock levels, movements, suppliers, physical counts, low-stock alerts",
+            "Customer CRM with segments (VIP/at-risk/new/dormant), tags, block/unblock, and CSV export",
+            "Coupon management (percent/fixed/BOGO/free shipping) and loyalty points configuration",
+            "6 exportable report types and full analytics with interactive Recharts",
+            "6 OpenAI-powered AI tools for descriptions, reviews, tagging, FAQ, and copywriting"
+          ],
+          "featuresBn": [
+            "KPI (রেভিনিউ, অর্ডার, কাস্টমার, AOV), রেভিনিউ চার্ট এবং কম-স্টক সতর্কতা সহ ড্যাশবোর্ড",
+            "ভ্যারিয়েন্ট (SKU/মূল্য/স্টক), কম্বো আইটেম, অ্যাট্রিবিউট এবং স্ট্যাটাস কার্যপ্রবাহ সহ সম্পূর্ণ প্রোডাক্ট CRUD",
+            "স্ট্যাটাস কার্যপ্রবাহ, পেমেন্ট ট্র্যাকিং এবং রিয়েল-টাইম আপডেট সহ অর্ডার জীবনচক্র ব্যবস্থাপনা",
+            "স্টক লেভেল, মুভমেন্ট, সরবরাহকারী, ফিজিক্যাল কাউন্ট, কম-স্টক সতর্কতা সহ ৫-ট্যাব ইনভেন্টরি সিস্টেম",
+            "সেগমেন্ট (VIP/ঝুঁকিপূর্ণ/নতুন/নিষ্ক্রিয়), ট্যাগ, ব্লক/আনব্লক এবং CSV এক্সপোর্ট সহ কাস্টমার CRM",
+            "কুপন ম্যানেজমেন্ট (পার্সেন্ট/ফিক্সড/BOGO/ফ্রি শিপিং) এবং লয়ালটি পয়েন্ট কনফিগারেশন",
+            "৬টি এক্সপোর্টযোগ্য রিপোর্ট টাইপ এবং ইন্টারঅ্যাক্টিভ Recharts সহ সম্পূর্ণ অ্যানালিটিক্স",
+            "ডেসক্রিপশন, রিভিউ, ট্যাগিং, FAQ এবং কপিরাইটিংয়ের জন্য ৬টি OpenAI-চালিত এআই টুল"
+          ]
+        },
+        {
+          "role": "Customer",
+          "roleBn": "কাস্টমার",
+          "description": "Passwordless OTP storefront account — browse, shop, manage orders, addresses, wishlist, loyalty points, and the skin routine.",
+          "descriptionBn": "পাসওয়ার্ডবিহীন OTP স্টোরফ্রন্ট অ্যাকাউন্ট — ব্রাউজ করুন, কেনাকাটা করুন, অর্ডার, ঠিকানা, উইশলিস্ট, লয়ালটি পয়েন্ট এবং স্কিন রুটিন পরিচালনা করুন।",
+          "icon": "users",
+          "features": [
+            "Passwordless email OTP login with 401 auto-redirect to login",
+            "Slide-out cart drawer with quantity controls, coupon codes, and free-shipping progress bar",
+            "Wishlist with heart-toggle that works without login via localStorage",
+            "Full-screen search overlay with debounced search and trending suggestions",
+            "3-step checkout with shipping zones and loyalty points redemption at checkout",
+            "Order history with real-time status updates and cancel option",
+            "Address book with labels (Home/Office/Other) and set-default",
+            "Loyalty dashboard showing available, earned, and redeemed points"
+          ],
+          "featuresBn": [
+            "401 অটো-রিডাইরেক্ট সহ পাসওয়ার্ডবিহীন ইমেইল OTP লগইন",
+            "কোয়ান্টিটি কন্ট্রোল, কুপন কোড এবং ফ্রি-শিপিং প্রোগ্রেস বার সহ স্লাইড-আউট কার্ট ড্রয়ার",
+            "localStorage-এর মাধ্যমে লগইন ছাড়াই কাজ করা হৃদয়-টগল সহ উইশলিস্ট",
+            "ডিবাউন্সড সার্চ এবং ট্রেন্ডিং সাজেশন সহ ফুল-স্ক্রিন সার্চ ওভারলে",
+            "শিপিং জোন এবং চেকআউটে লয়ালটি পয়েন্ট রিডেম্পশন সহ ৩-ধাপ চেকআউট",
+            "রিয়েল-টাইম স্ট্যাটাস আপডেট এবং ক্যান্সেল অপশন সহ অর্ডার ইতিহাস",
+            "লেবেল (Home/Office/Other) এবং সেট-ডিফল্ট সহ ঠিকানা বই",
+            "উপলব্ধ, অর্জিত এবং রিডিম করা পয়েন্ট দেখানো লয়ালটি ড্যাশবোর্ড"
+          ]
+        }
+      ],
+      "aiFeatures": [
+        {
+          "name": "AI Product Description Generator",
+          "nameBn": "এআই প্রোডাক্ট ডেসক্রিপশন জেনারেটর",
+          "description": "Generates marketing-ready product descriptions, short descriptions, meta titles, and meta descriptions from basic product inputs, dramatically speeding up the catalog setup.",
+          "descriptionBn": "প্রাথমিক প্রোডাক্ট ইনপুট থেকে মার্কেটিং-রেডি প্রোডাক্ট ডেসক্রিপশন, সংক্ষিপ্ত বিবরণ, মেটা টাইটেল এবং মেটা ডেসক্রিপশন তৈরি করে, ক্যাটালগ সেটআপ দ্রুততর করে।",
+          "trigger": "Manual — admin invokes for a product",
+          "triggerBn": "ম্যানুয়াল — অ্যাডমিন একটি প্রোডাক্টের জন্য চালু করেন",
+          "output": "Complete bilingual-ready product copy set",
+          "outputBn": "সম্পূর্ণ দ্বিভাষিক-প্রস্তুত প্রোডাক্ট কপি সেট"
+        },
+        {
+          "name": "Review Summarizer",
+          "nameBn": "রিভিউ সামারাইজার",
+          "description": "Aggregates customer reviews into digestible themes with pros/cons, a sentiment score, and a short AI-driven summary shown to shoppers.",
+          "descriptionBn": "কাস্টমার রিভিউগুলোকে পঠনযোগ্য থিমে একত্রিত করে প্রস/কনস, সেন্টিমেন্ট স্কোর এবং কেনাকাটাকারীদের দেখানো একটি সংক্ষিপ্ত এআই-চালিত সারাংশ সহ।",
+          "trigger": "Manual — admin or automated on review page",
+          "triggerBn": "ম্যানুয়াল — অ্যাডমিন বা রিভিউ পৃষ্ঠায় স্বয়ংক্রিয়ভাবে",
+          "output": "Themed review summary with sentiment score",
+          "outputBn": "সেন্টিমেন্ট স্কোর সহ থিম-ভিত্তিক রিভিউ সারাংশ"
+        },
+        {
+          "name": "Auto-Tag & Recommendations",
+          "nameBn": "অটো-ট্যাগ ও রেকমেন্ডেশন",
+          "description": "Suggests relevant tags, categories, and attributes for products, plus 'Similar products' and 'Frequently bought together' recommendations — all with one-click apply.",
+          "descriptionBn": "প্রোডাক্টের জন্য উপযুক্ত ট্যাগ, ক্যাটাগরি এবং অ্যাট্রিবিউট, সাথে 'সিমিলার প্রোডাক্ট' এবং 'ফ্রিকোয়েন্টলি বট টুগেদার' রেকমেন্ডেশন — সব এক-ক্লিক প্রয়োগ সহ।",
+          "trigger": "Manual — admin selects a product",
+          "triggerBn": "ম্যানুয়াল — অ্যাডমিন একটি প্রোডাক্ট নির্বাচন করেন",
+          "output": "Suggested tags, categories, and recommendations",
+          "outputBn": "সাজেস্টেড ট্যাগ, ক্যাটাগরি এবং রেকমেন্ডেশন"
+        },
+        {
+          "name": "Skin Quiz & Routine Insights",
+          "nameBn": "স্কিন কুইজ ও রুটিন ইনসাইট",
+          "description": "The storefront skin quiz produces personalized product recommendations from user answers, and the routine tracker unlocks AI-powered weekly insights after 7 days of logging.",
+          "descriptionBn": "স্টোরফ্রন্ট স্কিন কুইজ ব্যবহারকারীর উত্তরের ভিত্তিতে ব্যক্তিগতকৃত প্রোডাক্ট রেকমেন্ডেশন তৈরি করে, এবং রুটিন ট্র্যাকার ৭ দিন লগ করার পর এআই-চালিত সাপ্তাহিক অন্তর্দৃষ্টি আনলক করে।",
+          "trigger": "Quiz submission / routine streak milestone",
+          "triggerBn": "কুইজ জমা / রুটিন স্ট্রিক মাইলফলক",
+          "output": "Personalized product recommendations and weekly insights",
+          "outputBn": "ব্যক্তিগতকৃত প্রোডাক্ট রেকমেন্ডেশন এবং সাপ্তাহিক অন্তর্দৃষ্টি"
+        }
+      ],
+      "database": {
+        "totalModels": 40,
+        "domains": [
+          {
+            "name": "Admin & Audit",
+            "nameBn": "অ্যাডমিন ও অডিট",
+            "models": [
+              "Admin",
+              "AdminActivityLog",
+              "AdminNotification"
+            ],
+            "description": "Staff accounts with roles (super_admin, admin, manager, support), full activity logging, and in-app notifications.",
+            "descriptionBn": "ভূমিকা (super_admin, admin, manager, support), সম্পূর্ণ কার্যকলাপ লগিং এবং ইন-অ্যাপ বিজ্ঞপ্তি সহ স্টাফ অ্যাকাউন্ট।"
+          },
+          {
+            "name": "Customer & Auth",
+            "nameBn": "কাস্টমার ও প্রমাণীকরণ",
+            "models": [
+              "User",
+              "OtpVerification",
+              "EmailOtpVerification",
+              "Address"
+            ],
+            "description": "Customer accounts with passwordless email/phone OTP login, verification codes, and labeled delivery addresses.",
+            "descriptionBn": "পাসওয়ার্ডবিহীন ইমেইল/ফোন OTP লগইন, যাচাইকরণ কোড এবং লেবেলযুক্ত ডেলিভারি ঠিকানা সহ কাস্টমার অ্যাকাউন্ট।"
+          },
+          {
+            "name": "Product Catalog",
+            "nameBn": "প্রোডাক্ট ক্যাটালগ",
+            "models": [
+              "Product",
+              "ProductVariant",
+              "ProductImage",
+              "Brand",
+              "Category",
+              "Attribute",
+              "AttributeValue",
+              "Tag",
+              "ComboItem",
+              "Country"
+            ],
+            "description": "Core product entity with SKU-level variant pricing, a 3-level nested category tree, dynamic attributes (skin type, concern, finish), combo bundles, and more.",
+            "descriptionBn": "SKU-স্তরের ভ্যারিয়েন্ট মূল্য, ৩-স্তরের নেস্টেড ক্যাটাগরি ট্রি, ডাইনামিক অ্যাট্রিবিউট (স্কিন টাইপ, কনসার্ন, ফিনিশ), কম্বো বান্ডেল এবং আরও অনেক কিছু সহ মূল প্রোডাক্ট সত্তা।"
+          },
+          {
+            "name": "Commerce",
+            "nameBn": "কমার্স",
+            "models": [
+              "Cart",
+              "CartItem",
+              "WishlistItem",
+              "Order",
+              "OrderItem",
+              "OrderStatusHistory",
+              "Shipment"
+            ],
+            "description": "Shopping cart with local↔server sync, wishlist, full order lifecycle with status audit trail, and courier shipment tracking.",
+            "descriptionBn": "লোকাল↔সার্ভার সিঙ্ক সহ শপিং কার্ট, উইশলিস্ট, স্ট্যাটাস অডিট ট্রেইল সহ সম্পূর্ণ অর্ডার জীবনচক্র এবং কুরিয়ার শিপমেন্ট ট্র্যাকিং।"
+          },
+          {
+            "name": "Payments, Discounts & Loyalty",
+            "nameBn": "পেমেন্ট, ডিসকাউন্ট ও লয়ালটি",
+            "models": [
+              "Discount",
+              "LoyaltyConfig",
+              "LoyaltyAccount",
+              "LoyaltyTransaction"
+            ],
+            "description": "Coupon codes (percent/fixed/BOGO/free shipping), and a full loyalty program with earn/redeem rates, balances, and transaction histories.",
+            "descriptionBn": "কুপন কোড (পার্সেন্ট/ফিক্সড/BOGO/ফ্রি শিপিং) এবং আর্ন/রিডিম রেট, ব্যালেন্স এবং লেনদেনের ইতিহাস সহ সম্পূর্ণ লয়ালটি প্রোগ্রাম।"
+          },
+          {
+            "name": "Inventory & Reviews",
+            "nameBn": "ইনভেন্টরি ও রিভিউ",
+            "models": [
+              "StockMovement",
+              "Supplier",
+              "PhysicalCount",
+              "Review",
+              "FraudFlag"
+            ],
+            "description": "Inventory ledger, suppliers, physical count audits, moderated product reviews, and fraud flags with risk scoring.",
+            "descriptionBn": "ইনভেন্টরি লেজার, সরবরাহকারী, ফিজিক্যাল কাউন্ট অডিট, মডারেটেড প্রোডাক্ট রিভিউ এবং রিস্ক স্কোরিং সহ ফ্রড ফ্ল্যাগ।"
+          },
+          {
+            "name": "Skin Quiz, CMS & Settings",
+            "nameBn": "স্কিন কুইজ, CMS ও সেটিংস",
+            "models": [
+              "SkinQuiz",
+              "Routine",
+              "RoutineStep",
+              "RoutineLog",
+              "Banner",
+              "AnnouncementBar",
+              "NotificationTemplate",
+              "ShippingZone",
+              "SiteSetting",
+              "CurrencyRate"
+            ],
+            "description": "Skin quiz answers and routine tracking with daily logs, banner/content management, shipping zones, and site configuration.",
+            "descriptionBn": "স্কিন কুইজ উত্তর এবং দৈনিক লগ সহ রুটিন ট্র্যাকিং, ব্যানার/কনটেন্ট ম্যানেজমেন্ট, শিপিং জোন এবং সাইট কনফিগারেশন।"
+          }
+        ]
+      },
+      "security": [
+        {
+          "aspect": "JWT Token Authentication",
+          "aspectBn": "JWT টোকেন প্রমাণীকরণ",
+          "detail": "Admins use email/password login (JWT access + refresh). Customers use passwordless email or phone OTP (6-digit code) with token rotation.",
+          "detailBn": "অ্যাডমিনরা ইমেইল/পাসওয়ার্ড লগইন (JWT অ্যাক্সেস + রিফ্রেশ) ব্যবহার করেন। কাস্টমাররা টোকেন রোটেশন সহ পাসওয়ার্ডবিহীন ইমেইল বা ফোন OTP (৬-অঙ্কের কোড) ব্যবহার করেন।"
+        },
+        {
+          "aspect": "Role-Based Access Control (RBAC)",
+          "aspectBn": "ভূমিকা-ভিত্তিক অ্যাক্সেস নিয়ন্ত্রণ (RBAC)",
+          "detail": "Four admin roles — super_admin, admin, manager, support — each with granular module permissions enforced by middleware on every route.",
+          "detailBn": "চারটি অ্যাডমিন ভূমিকা — super_admin, admin, manager, support — প্রতিটির মডিউল অনুমতি প্রতিটি রুটে মিডলওয়্যার দ্বারা প্রয়োগ করা হয়।"
+        },
+        {
+          "aspect": "CORS & HTTP Security",
+          "aspectBn": "CORS ও HTTP নিরাপত্তা",
+          "detail": "Helmet sets security headers (CSP, X-Frame-Options), CORS uses an explicit allow-list, and rate limiting caps general (100/min), OTP (3/15min), and login (5/15min) requests.",
+          "detailBn": "Helmet সিকিউরিটি হেডার (CSP, X-Frame-Options) সেট করে, CORS স্পষ্ট allow-লিস্ট ব্যবহার করে এবং রেট লিমিটিং জেনারেল (১০০/মিনিট), OTP (৩/১৫মিনিট) এবং লগইন (৫/১৫মিনিট) অনুরোধ সীমাবদ্ধ করে।"
+        },
+        {
+          "aspect": "Input Validation & Fraud Detection",
+          "aspectBn": "ইনপুট যাচাই ও ফ্রড ডিটেকশন",
+          "detail": "Zod validates every API payload, a profanity filter auto-moderates reviews, and a fraud engine scores suspicious orders 0–100 with a review workflow.",
+          "detailBn": "Zod প্রতিটি API পেলোড যাচাই করে, একটি প্রোফ্যানিটি ফিল্টার রিভিউ অটো-মডারেট করে এবং একটি ফ্রড ইঞ্জিন সন্দেহজনক অর্ডারকে ০–১০০ স্কোর করে রিভিউ কার্যপ্রবাহ সহ।"
+        },
+        {
+          "aspect": "Password & Token Security",
+          "aspectBn": "পাসওয়ার্ড ও টোকেন নিরাপত্তা",
+          "detail": "Passwords hashed with bcrypt, JWT with access + refresh token rotation, and separate secrets for access and refresh tokens.",
+          "detailBn": "পাসওয়ার্ড bcrypt দিয়ে হ্যাশ করা, JWT অ্যাক্সেস + রিফ্রেশ টোকেন রোটেশন সহ এবং অ্যাক্সেস ও রিফ্রেশ টোকেনের জন্য পৃথক সিক্রেট।"
+        }
+      ],
+      "pdfDocuments": [
+        {
+          "name": "Sales Reports",
+          "nameBn": "সেলস রিপোর্ট",
+          "contents": "Sales trend with period-over-period comparison, orders, revenue, and AOV",
+          "contentsBn": "পিরিয়ড-ওভার-পিরিয়ড তুলনা, অর্ডার, রেভিনিউ এবং AOV সহ সেলস ট্রেন্ড"
+        },
+        {
+          "name": "Product Performance",
+          "nameBn": "প্রোডাক্ট পারফরম্যান্স",
+          "contents": "Units sold, revenue, and conversion rate per product",
+          "contentsBn": "প্রতি প্রোডাক্টে ইউনিট বিক্রি, রেভিনিউ এবং কনভার্সন রেট"
+        },
+        {
+          "name": "Inventory Valuation",
+          "nameBn": "ইনভেন্টরি ভ্যালুয়েশন",
+          "contents": "Total inventory value and dead-stock analysis",
+          "contentsBn": "মোট ইনভেন্টরি মূল্য এবং ডেড-স্টক বিশ্লেষণ"
+        },
+        {
+          "name": "Tax & Profit-Loss",
+          "nameBn": "ট্যাক্স ও প্রফিট-লস",
+          "contents": "Tax by period/region and P&L with COGS, gross profit, margins, and net profit",
+          "contentsBn": "পিরিয়ড/অঞ্চল অনুযায়ী ট্যাক্স এবং COGS, গ্রস প্রফিট, মার্জিন এবং নেট প্রফিট সহ P&L"
+        }
+      ],
+      "deployment": {
+        "platform": "Customer & Admin Storefronts: Vercel · Backend: Railway/Render/VPS",
+        "database": "PostgreSQL (managed, e.g. Railway/Render)",
+        "storage": "ImageKit CDN with AWS S3 backup",
+        "cron": "Auto-confirm COD (hourly), auto-cancel unpaid (hourly), daily 30-day sales export at 2:00 AM",
+        "email": "Resend (transactional OTP) + Nodemailer (SMTP admin notifications)",
+        "ai": "OpenAI GPT-4o-mini — configurable via environment variable"
+      },
+      "roadmap": [
+        {
+          "phase": "Phase 1",
+          "timeline": "Immediate",
+          "items": [
+            "Enable bKash and Nagad payment gateways for local mobile banking",
+            "Integrate SSLCommerz for card and mobile-banking payments",
+            "Native push notifications via PWA for order updates"
+          ]
+        },
+        {
+          "phase": "Phase 2",
+          "timeline": "Short-term",
+          "items": [
+            "Multi-vendor marketplace support",
+            "WhatsApp order-tracking notifications",
+            "Automated customer re-engagement email campaigns"
+          ]
+        },
+        {
+          "phase": "Phase 3",
+          "timeline": "Medium-term",
+          "items": [
+            "Predictive sales and demand forecasting with AI",
+            "Personalized product recommendation engine",
+            "Multi-currency support with live exchange rates"
+          ]
+        },
+        {
+          "phase": "Phase 4",
+          "timeline": "Long-term",
+          "items": [
+            "Native mobile apps (customer + admin)",
+            "AI-powered visual skincare analysis",
+            "Subscription and auto-replenishment plans"
+          ]
+        }
+      ]
     }
   ]
 }

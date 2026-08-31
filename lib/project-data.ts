@@ -90,6 +90,9 @@ export interface Project {
   status: string;
   statusBn: string;
   liveUrl?: string;
+  liveUrlLabel?: string;
+  liveUrlAdmin?: string;
+  liveUrlAdminLabel?: string;
   thumbnail: string;
   heroImage: string;
   accentColor: string;

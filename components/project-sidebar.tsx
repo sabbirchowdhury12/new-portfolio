@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, FolderOpen, ExternalLink } from "lucide-react";
+import { Menu, X, FolderOpen, ArrowLeft } from "lucide-react";
 import type { ProjectListItem } from "@/lib/project-data";
 
 interface ProjectSidebarProps {
@@ -37,22 +37,30 @@ export default function ProjectSidebar({
         }`}
       >
         <div className="p-6 pt-16 lg:pt-6">
-          <Link
-            href="/project"
-            className="flex items-center gap-2.5 mb-8 group"
-          >
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#BE5F47] to-[#D29D73] flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
-              <FolderOpen className="w-4.5 h-4.5 text-white" />
-            </div>
-            <div>
-              <h2 className="text-sm font-bold text-gray-900 dark:text-white tracking-tight">
-                Projects
-              </h2>
-              <p className="text-[11px] text-gray-500 dark:text-gray-400">
-                Portfolio Showcase
-              </p>
-            </div>
-          </Link>
+          <div className="flex items-center justify-between mb-8">
+            <Link href="/project" className="flex items-center gap-2.5 group">
+              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#BE5F47] to-[#D29D73] flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
+                <FolderOpen className="w-4.5 h-4.5 text-white" />
+              </div>
+              <div>
+                <h2 className="text-sm font-bold text-gray-900 dark:text-white tracking-tight">
+                  Projects
+                </h2>
+                <p className="text-[11px] text-gray-500 dark:text-gray-400">
+                  Portfolio Showcase
+                </p>
+              </div>
+            </Link>
+
+            <Link
+              href="/"
+              aria-label="Back to portfolio"
+              className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-[#BE5F47] hover:text-white transition-colors"
+            >
+              <ArrowLeft className="w-3.5 h-3.5" />
+              Back
+            </Link>
+          </div>
 
           <div className="space-y-2">
             {projects.map((project) => {
@@ -96,16 +104,6 @@ export default function ProjectSidebar({
                 </Link>
               );
             })}
-          </div>
-
-          <div className="mt-8 pt-6 border-t border-gray-100 dark:border-gray-800">
-            <Link
-              href="/"
-              className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 hover:text-[#BE5F47] dark:hover:text-[#D29D73] transition-colors"
-            >
-              <ExternalLink className="w-4 h-4" />
-              Back to Portfolio
-            </Link>
           </div>
         </div>
       </aside>
