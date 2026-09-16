@@ -16,6 +16,9 @@ const poppins = Poppins({
 export const metadata = {
   title: "Sabbir Chowdhury | Personal Portfolio",
   description: "Sabbir is a full-stack developer with 3 years of experience.",
+  verification: {
+    google: "46GxLDbBCR-SdM24Rk4RYHDN3dgH5uUQmqbS79OjQfI",
+  },
 };
 
 export default function RootLayout({
