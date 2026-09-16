@@ -258,7 +258,7 @@ function ProjectCard({
           {project.badge}
         </span>
 
-        <h3 className="text-xl sm:text-2xl font-['Modern_Antiqua'] text-gray-900 mb-2">
+        <h3 className="text-xl sm:text-2xl font-['Playfair_Display'] text-gray-900 mb-2">
           {project.title}
         </h3>
         <p className="text-gray-600 text-sm leading-relaxed mb-4">
@@ -344,7 +344,7 @@ function DetailsModal({
             <span className="inline-block px-3 py-1 rounded-full bg-[#BE5F47]/10 text-[#BE5F47] text-xs font-semibold uppercase tracking-wider mb-1.5">
               {project.badge}
             </span>
-            <h3 className="text-lg sm:text-2xl font-['Modern_Antiqua'] text-gray-900 truncate">
+            <h3 className="text-lg sm:text-2xl font-['Playfair_Display'] text-gray-900 truncate">
               {project.title}
             </h3>
           </div>
@@ -456,7 +456,7 @@ export default function AutomationProjectsSection() {
           <p className="text-white/80 uppercase tracking-wider text-sm mb-2">
             PROJECTS
           </p>
-          <h2 className="text-4xl sm:text-5xl font-['Modern_Antiqua'] text-white mb-4">
+          <h2 className="text-4xl sm:text-5xl font-['Playfair_Display'] text-white mb-4">
             Featured <span className="text-white/80">Projects</span>
           </h2>
         </motion.div>

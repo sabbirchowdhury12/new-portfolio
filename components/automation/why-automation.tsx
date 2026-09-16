@@ -51,7 +51,7 @@ export default function WhyAutomationSection() {
                 <stat.icon className="w-6 h-6 text-white" />
               </div>
               <div className="min-w-0">
-                <p className="text-2xl sm:text-3xl font-['Modern_Antiqua'] text-gray-900 leading-tight">
+                <p className="text-2xl sm:text-3xl font-['Playfair_Display'] text-gray-900 leading-tight">
                   {stat.value}{" "}
                   <span className="text-sm text-[#BE5F47] align-middle uppercase tracking-wide">
                     {stat.sub}

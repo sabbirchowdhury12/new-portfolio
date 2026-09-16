@@ -32,7 +32,7 @@ export default function TechMarquee() {
                 </div>
                 <span
                   className="text-white/80 text-xl tracking-wider transition-colors duration-300 group-hover:text-white"
-                  style={{ fontFamily: "'Modern Antiqua', serif" }}
+                  style={{ fontFamily: "'Playfair Display', serif" }}
                 >
                   {tech.name}
                 </span>

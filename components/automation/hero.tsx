@@ -22,7 +22,6 @@ export default function AutomationHero() {
           transition={{ duration: 0.5 }}
           className="inline-flex items-center gap-2 text-white/90 uppercase tracking-wider text-sm mb-6 px-4 py-1.5 rounded-full border border-white/30 bg-white/10 backdrop-blur-sm"
         >
-          <Sparkles className="w-4 h-4" />
           AI & Automation Engineering
         </motion.p>
 
@@ -30,7 +29,7 @@ export default function AutomationHero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-4xl sm:text-6xl lg:text-7xl font-['Modern_Antiqua'] text-white mb-6"
+          className="text-4xl sm:text-6xl lg:text-7xl font-['Playfair_Display'] text-white mb-6"
         >
           Stop Doing Repetitive
           <br />

@@ -30,7 +30,7 @@ export default function Footer() {
             className="lg:col-span-1"
           >
             <div className="flex items-center gap-3 mb-4">
-              <span className="text-2xl font-['Modern_Antiqua'] text-gray-900">
+              <span className="text-2xl font-['Playfair_Display'] text-gray-900">
                 Sabbir Chowdhury
               </span>
             </div>
@@ -47,7 +47,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <h3 className="text-lg font-['Modern_Antiqua'] text-gray-900 mb-4">
+            <h3 className="text-lg font-['Playfair_Display'] text-gray-900 mb-4">
               Quick Links
             </h3>
             <ul className="space-y-3">
@@ -72,7 +72,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h3 className="text-lg font-['Modern_Antiqua'] text-gray-900 mb-4">
+            <h3 className="text-lg font-['Playfair_Display'] text-gray-900 mb-4">
               Contact
             </h3>
             <ul className="space-y-3">
@@ -102,7 +102,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <h3 className="text-lg font-['Modern_Antiqua'] text-gray-900 mb-4">
+            <h3 className="text-lg font-['Playfair_Display'] text-gray-900 mb-4">
               Let&apos;s Connect
             </h3>
             <p className="text-gray-500 text-sm leading-relaxed mb-4">

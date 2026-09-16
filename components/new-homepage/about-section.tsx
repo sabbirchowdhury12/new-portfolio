@@ -55,7 +55,7 @@ export default function AboutSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-['Modern_Antiqua'] text-gray-900 mb-6 leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-['Playfair_Display'] text-gray-900 mb-6 leading-tight">
               <span className="text-[#BE5F47]">Your Next Tech Leader -</span>
               <br />
               Building scalable products with clean design & strong engineering.
@@ -102,7 +102,7 @@ export default function AboutSection() {
                   "linear-gradient(134.19deg, #BE5F47 27.13%, #D29D73 73.56%)",
               }}
             >
-              <h3 className="text-2xl font-['Modern_Antiqua'] mb-3">
+              <h3 className="text-2xl font-['Playfair_Display'] mb-3">
                 {value.title}
               </h3>
               <p className="text-white/90">{value.description}</p>

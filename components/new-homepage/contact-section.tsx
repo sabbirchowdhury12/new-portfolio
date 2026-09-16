@@ -23,7 +23,7 @@ export default function ContactSection() {
           <p className="text-[#BE5F47] uppercase tracking-wider text-sm mb-2">
             CONTACT
           </p>
-          <h2 className="text-4xl sm:text-5xl font-['Modern_Antiqua'] text-gray-900 mb-4">
+          <h2 className="text-4xl sm:text-5xl font-['Playfair_Display'] text-gray-900 mb-4">
             Get In <span className="text-[#BE5F47]">Touch</span>
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
@@ -68,7 +68,7 @@ export default function ContactSection() {
                   "linear-gradient(134.19deg, #BE5F47 27.13%, #D29D73 73.56%)",
               }}
             >
-              <h3 className="text-xl font-['Modern_Antiqua'] mb-2">
+              <h3 className="text-xl font-['Playfair_Display'] mb-2">
                 Let&apos;s Work Together
               </h3>
               <p className="text-white/80 text-sm leading-relaxed">

@@ -79,7 +79,7 @@ export default function ServicesSection() {
           <p className="text-[#BE5F47] uppercase tracking-wider text-sm mb-2">
             SERVICES
           </p>
-          <h2 className="text-4xl sm:text-5xl font-['Modern_Antiqua'] text-gray-900 mb-4">
+          <h2 className="text-4xl sm:text-5xl font-['Playfair_Display'] text-gray-900 mb-4">
             What I Can <span className="text-[#BE5F47]">Automate</span>
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
@@ -113,7 +113,7 @@ export default function ServicesSection() {
                     >
                       <Icon className="w-8 h-8 text-white" />
                     </div>
-                    <span className="text-3xl font-['Modern_Antiqua'] text-[#BE5F47]/40">
+                    <span className="text-3xl font-['Playfair_Display'] text-[#BE5F47]/40">
                       {service.id}
                     </span>
                   </div>
@@ -121,7 +121,7 @@ export default function ServicesSection() {
 
                 {/* Content */}
                 <div className="min-w-0 flex-1">
-                  <h3 className="text-xl sm:text-2xl font-['Modern_Antiqua'] text-gray-900 mb-3">
+                  <h3 className="text-xl sm:text-2xl font-['Playfair_Display'] text-gray-900 mb-3">
                     {service.title}
                   </h3>
                   <p className="text-gray-700 leading-relaxed mb-5">

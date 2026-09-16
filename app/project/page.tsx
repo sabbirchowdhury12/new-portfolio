@@ -16,7 +16,7 @@ export default function ProjectsPage() {
         <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#BE5F47] to-[#D29D73] flex items-center justify-center mx-auto mb-6 shadow-lg">
           <FolderOpen className="w-7 h-7 text-white" />
         </div>
-        <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-3 font-['Modern_Antiqua']">
+        <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-3 font-['Playfair_Display']">
           Project Showcase
         </h1>
         <p className="text-gray-500 dark:text-gray-400 mb-8">

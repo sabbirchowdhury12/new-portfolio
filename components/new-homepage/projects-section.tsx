@@ -159,7 +159,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
       <div className="p-6 flex flex-col justify-between flex-1">
         <div>
-          <h3 className="text-xl font-bold md:text-2xl font-['Modern_Antiqua']  text-gray-900 mb-2">
+          <h3 className="text-xl font-bold md:text-2xl font-['Playfair_Display']  text-gray-900 mb-2">
             {project.title}
           </h3>
 
@@ -258,7 +258,7 @@ export default function ProjectsSection() {
           <p className="text-white/80 uppercase tracking-wider text-sm mb-2">
             PROJECTS
           </p>
-          <h2 className="text-4xl sm:text-5xl font-['Modern_Antiqua'] text-white mb-4">
+          <h2 className="text-4xl sm:text-5xl font-['Playfair_Display'] text-white mb-4">
             Featured <span className="text-white/80">Projects</span>
           </h2>
           <p className="text-white/70 max-w-2xl mx-auto">

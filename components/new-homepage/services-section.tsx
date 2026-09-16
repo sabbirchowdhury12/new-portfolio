@@ -73,7 +73,7 @@ export default function ServicesSection() {
           <p className="text-[#BE5F47] uppercase tracking-wider text-sm mb-2">
             SERVICES
           </p>
-          <h2 className="text-4xl sm:text-5xl font-['Modern_Antiqua'] text-gray-900 mb-4">
+          <h2 className="text-4xl sm:text-5xl font-['Playfair_Display'] text-gray-900 mb-4">
             Services <span className="text-[#BE5F47]"> Provide</span>
           </h2>
           <p className="text-gray-700 max-w-2xl mx-auto">
@@ -127,10 +127,10 @@ export default function ServicesSection() {
                     "text-center items-center",
                   ].join(" ")}
                 >
-                  <p className="text-xl md:text-2xl text-gray-900 font-['Modern_Antiqua']">
+                  <p className="text-xl md:text-2xl text-gray-900 font-['Playfair_Display']">
                     {s.title}
                   </p>
-                  <p className="text-base md:text-lg text-gray-700 font-['Modern_Antiqua']">
+                  <p className="text-base md:text-lg text-gray-700 font-['Playfair_Display']">
                     {s.description}
                   </p>
                 </div>

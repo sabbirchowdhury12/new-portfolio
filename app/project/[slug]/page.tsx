@@ -109,7 +109,7 @@ export default function ProjectDetailPage({
             </button>
           </div>
 
-          <h1 className="text-4xl lg:text-6xl font-bold text-white mb-3 font-['Modern_Antiqua']">
+          <h1 className="text-4xl lg:text-6xl font-bold text-white mb-3 font-['Playfair_Display']">
             {project.name}
           </h1>
           <p className="text-lg text-white/75 max-w-2xl mb-6">
@@ -636,7 +636,7 @@ function SectionHeader({
       <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#BE5F47] to-[#D29D73] flex items-center justify-center text-white shadow-md">
         {icon}
       </div>
-      <h2 className="text-2xl font-bold text-gray-900 dark:text-white font-['Modern_Antiqua']">
+      <h2 className="text-2xl font-bold text-gray-900 dark:text-white font-['Playfair_Display']">
         {title}
       </h2>
     </div>

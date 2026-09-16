@@ -15,7 +15,7 @@ export default function AutomationFooter() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Brand */}
           <div>
-            <span className="text-xl font-['Modern_Antiqua'] text-gray-900">
+            <span className="text-xl font-['Playfair_Display'] text-gray-900">
               Sabbir Chowdhury
             </span>
             <p className="text-gray-500 text-sm leading-relaxed mt-3">
@@ -26,7 +26,7 @@ export default function AutomationFooter() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-['Modern_Antiqua'] text-gray-900 mb-4">
+            <h3 className="text-lg font-['Playfair_Display'] text-gray-900 mb-4">
               Quick Links
             </h3>
             <ul className="space-y-3">
@@ -46,7 +46,7 @@ export default function AutomationFooter() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-lg font-['Modern_Antiqua'] text-gray-900 mb-4">
+            <h3 className="text-lg font-['Playfair_Display'] text-gray-900 mb-4">
               Contact
             </h3>
             <ul className="space-y-3">

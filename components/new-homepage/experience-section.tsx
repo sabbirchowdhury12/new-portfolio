@@ -95,7 +95,7 @@ export default function ExperienceSection() {
           <p className="text-[#BE5F47] uppercase tracking-wider text-sm mb-2">
             EXPERIENCE
           </p>
-          <h2 className="text-4xl sm:text-5xl font-['Modern_Antiqua'] text-gray-900 mb-4">
+          <h2 className="text-4xl sm:text-5xl font-['Playfair_Display'] text-gray-900 mb-4">
             My Professional <span className="text-[#BE5F47]">Journey</span>
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">

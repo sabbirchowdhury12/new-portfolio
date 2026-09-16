@@ -12,7 +12,7 @@ export default function Hero() {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h2 className="text-white text-4xl sm:text-5xl lg:text-6xl font-['Modern_Antiqua'] leading-tight mb-4 sm:mb-6">
+        <h2 className="text-white text-4xl sm:text-5xl lg:text-6xl font-['Playfair_Display'] leading-tight mb-4 sm:mb-6">
           Tech Lead &<br />
           Full-Stack Developer
         </h2>
@@ -34,13 +34,13 @@ export default function Hero() {
           <a
             href="/cv.pdf"
             download="sabbir-chowdhury-resume.pdf"
-            className="bg-[#264653] text-white px-8 py-3 rounded-full hover:opacity-90 transition text-center font-['Modern_Antiqua']"
+            className="bg-[#264653] text-white px-8 py-3 rounded-full hover:opacity-90 transition text-center font-['Playfair_Display']"
           >
             Download Resume
           </a>
           <a
             href="#contact"
-            className="bg-white text-[#BE5F47] px-8 py-3 rounded-full hover:opacity-90 transition text-center font-['Modern_Antiqua']"
+            className="bg-white text-[#BE5F47] px-8 py-3 rounded-full hover:opacity-90 transition text-center font-['Playfair_Display']"
           >
             Contact me
           </a>

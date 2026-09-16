@@ -19,7 +19,7 @@ export default function AutomationNav() {
       <nav className="flex justify-between items-center px-4 sm:px-8 py-6 max-w-7xl mx-auto">
         <Link
           href="/"
-          className="text-white text-xl sm:text-2xl font-['Modern_Antiqua']"
+          className="text-white text-xl sm:text-2xl font-['Playfair_Display']"
         >
           Sabbir Chowdhury
         </Link>
@@ -65,7 +65,7 @@ export default function AutomationNav() {
                   key={link.label}
                   href={link.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="text-white/90 hover:text-white transition text-lg font-['Modern_Antiqua']"
+                  className="text-white/90 hover:text-white transition text-lg font-['Playfair_Display']"
                 >
                   {link.label}
                 </Link>
@@ -73,7 +73,7 @@ export default function AutomationNav() {
               <Link
                 href="/automation"
                 onClick={() => setIsMenuOpen(false)}
-                className="text-white hover:text-white transition text-lg font-['Modern_Antiqua']"
+                className="text-white hover:text-white transition text-lg font-['Playfair_Display']"
               >
                 Automation
               </Link>

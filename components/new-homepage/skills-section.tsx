@@ -66,7 +66,7 @@ export default function SkillsSection() {
             <p className="mb-2 text-sm uppercase tracking-wider text-[#BE5F47]">
               SKILLS
             </p>
-            <h2 className="mb-5 font-['Modern_Antiqua'] text-4xl leading-tight text-gray-900 sm:text-5xl">
+            <h2 className="mb-5 font-['Playfair_Display'] text-4xl leading-tight text-gray-900 sm:text-5xl">
               Technologies{" "}
               <span className="text-[#BE5F47]">I work with</span>
             </h2>
@@ -115,14 +115,14 @@ export default function SkillsSection() {
 
                 <div className="min-w-0">
                   <div className="mb-2 flex items-center justify-between gap-4">
-                    <h3 className="font-['Modern_Antiqua'] text-xl font-semibold text-gray-900 sm:text-2xl">
+                    <h3 className="font-['Playfair_Display'] text-xl font-semibold text-gray-900 sm:text-2xl">
                       {skill.title}
                     </h3>
-                    <span className="hidden font-['Modern_Antiqua'] text-3xl text-[#BE5F47]/25 sm:block">
+                    <span className="hidden font-['Playfair_Display'] text-3xl text-[#BE5F47]/25 sm:block">
                       {String(index + 1).padStart(2, "0")}
                     </span>
                   </div>
-                  <p className="font-['Modern_Antiqua'] text-sm leading-relaxed text-gray-600 sm:text-base">
+                  <p className="font-['Playfair_Display'] text-sm leading-relaxed text-gray-600 sm:text-base">
                     {skill.skills}
                   </p>
                 </div>

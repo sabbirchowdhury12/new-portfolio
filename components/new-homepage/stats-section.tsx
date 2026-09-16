@@ -41,14 +41,14 @@ export default function StatsSection() {
               }}
             />
             <span
-              style={{ fontFamily: "'Modern Antiqua', serif" }}
+              style={{ fontFamily: "'Playfair Display', serif" }}
               className="relative text-3xl sm:text-4xl font-bold text-black"
             >
               3+
             </span>
           </div>
           <h3
-            style={{ fontFamily: "'Modern Antiqua', serif" }}
+            style={{ fontFamily: "'Playfair Display', serif" }}
             className="text-lg sm:text-xl font-semibold text-gray-800 mb-2"
           >
             Years Experience
@@ -80,14 +80,14 @@ export default function StatsSection() {
               }}
             />
             <span
-              style={{ fontFamily: "'Modern Antiqua', serif" }}
+              style={{ fontFamily: "'Playfair Display', serif" }}
               className="relative text-3xl sm:text-4xl font-bold text-black"
             >
               20+
             </span>
           </div>
           <h3
-            style={{ fontFamily: "'Modern Antiqua', serif" }}
+            style={{ fontFamily: "'Playfair Display', serif" }}
             className="text-lg sm:text-xl font-semibold text-gray-800 mb-2"
           >
             Client&apos;s Projects
@@ -119,14 +119,14 @@ export default function StatsSection() {
               }}
             />
             <span
-              style={{ fontFamily: "'Modern Antiqua', serif" }}
+              style={{ fontFamily: "'Playfair Display', serif" }}
               className="relative text-3xl sm:text-4xl font-bold text-black"
             >
               24/7
             </span>
           </div>
           <h3
-            style={{ fontFamily: "'Modern Antiqua', serif" }}
+            style={{ fontFamily: "'Playfair Display', serif" }}
             className="text-lg sm:text-xl font-semibold text-gray-800 mb-2"
           >
             Hours Available

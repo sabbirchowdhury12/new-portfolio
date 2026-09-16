@@ -18,7 +18,7 @@ export default function CtaSection() {
               "linear-gradient(134.19deg, #BE5F47 27.13%, #D29D73 73.56%)",
           }}
         >
-          <h2 className="text-3xl sm:text-5xl font-['Modern_Antiqua'] mb-4">
+          <h2 className="text-3xl sm:text-5xl font-['Playfair_Display'] mb-4">
             Ready to Eliminate Repetitive Manual Work?
           </h2>
           <p className="text-white/90 max-w-2xl mx-auto leading-relaxed mb-10">

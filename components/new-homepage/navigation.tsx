@@ -27,7 +27,7 @@ export default function Navigation() {
   return (
     <>
       <nav className="flex justify-between items-center px-4 sm:px-8 py-6 max-w-7xl mx-auto">
-        <h1 className="text-white text-xl sm:text-2xl font-['Modern_Antiqua']">
+        <h1 className="text-white text-xl sm:text-2xl font-['Playfair_Display']">
           Sabbir Chowdhury
         </h1>
 
@@ -106,7 +106,7 @@ export default function Navigation() {
                   key={link.label}
                   href={link.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="text-white/90 hover:text-white transition text-lg font-['Modern_Antiqua']"
+                  className="text-white/90 hover:text-white transition text-lg font-['Playfair_Display']"
                 >
                   {link.label}
                 </a>
@@ -114,14 +114,14 @@ export default function Navigation() {
               <Link
                 href="/project"
                 onClick={() => setIsMenuOpen(false)}
-                className="text-white/90 hover:text-white transition text-lg font-['Modern_Antiqua']"
+                className="text-white/90 hover:text-white transition text-lg font-['Playfair_Display']"
               >
                 Projects
               </Link>
               <Link
                 href="/automation"
                 onClick={() => setIsMenuOpen(false)}
-                className="text-white/90 hover:text-white transition text-lg font-['Modern_Antiqua']"
+                className="text-white/90 hover:text-white transition text-lg font-['Playfair_Display']"
               >
                 Automation
               </Link>
@@ -148,7 +148,7 @@ export default function Navigation() {
               className="bg-white rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto shadow-2xl"
             >
               <div className="flex items-center justify-between p-4 border-b border-gray-100">
-                <h2 className="text-lg font-['Modern_Antiqua'] text-gray-900">
+                <h2 className="text-lg font-['Playfair_Display'] text-gray-900">
                   Quick Connect
                 </h2>
                 <button
@@ -173,10 +173,10 @@ export default function Navigation() {
                   <div className="space-y-4 mb-6">
                     {contactInfo.map((info) => (
                       <div key={info.label}>
-                        <p className="text-xs text-gray-500 uppercase tracking-wider font-['Modern_Antiqua']">
+                        <p className="text-xs text-gray-500 uppercase tracking-wider font-['Playfair_Display']">
                           {info.label}
                         </p>
-                        <p className="text-sm font-medium text-gray-900 font-['Modern_Antiqua']">
+                        <p className="text-sm font-medium text-gray-900 font-['Playfair_Display']">
                           {info.value}
                         </p>
                       </div>
@@ -188,23 +188,23 @@ export default function Navigation() {
                       type="text"
                       placeholder="Your Name"
                       required
-                      className="w-full px-4 py-2.5 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#BE5F47]/30 focus:border-[#BE5F47] transition placeholder:text-gray-400 font-['Modern_Antiqua']"
+                      className="w-full px-4 py-2.5 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#BE5F47]/30 focus:border-[#BE5F47] transition placeholder:text-gray-400 font-['Playfair_Display']"
                     />
                     <input
                       type="email"
                       placeholder="Your Email"
                       required
-                      className="w-full px-4 py-2.5 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#BE5F47]/30 focus:border-[#BE5F47] transition placeholder:text-gray-400 font-['Modern_Antiqua']"
+                      className="w-full px-4 py-2.5 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#BE5F47]/30 focus:border-[#BE5F47] transition placeholder:text-gray-400 font-['Playfair_Display']"
                     />
                     <textarea
                       placeholder="Your Message..."
                       required
                       rows={3}
-                      className="w-full px-4 py-2.5 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#BE5F47]/30 focus:border-[#BE5F47] transition placeholder:text-gray-400 resize-none font-['Modern_Antiqua']"
+                      className="w-full px-4 py-2.5 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#BE5F47]/30 focus:border-[#BE5F47] transition placeholder:text-gray-400 resize-none font-['Playfair_Display']"
                     />
                     <button
                       type="submit"
-                      className="w-full px-6 py-2.5 rounded-xl text-white text-sm font-semibold flex items-center justify-center gap-2 transition hover:opacity-90 font-['Modern_Antiqua']"
+                      className="w-full px-6 py-2.5 rounded-xl text-white text-sm font-semibold flex items-center justify-center gap-2 transition hover:opacity-90 font-['Playfair_Display']"
                       style={{
                         background:
                           "linear-gradient(134.19deg, #BE5F47 27.13%, #D29D73 73.56%)",
