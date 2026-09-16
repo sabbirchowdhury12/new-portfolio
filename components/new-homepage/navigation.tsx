@@ -78,6 +78,12 @@ export default function Navigation() {
             Projects
           </Link>
           <Link
+            href="/automation"
+            className="hidden lg:inline-block bg-white/10 text-white px-4 py-2 rounded-full hover:bg-white/20 transition text-sm border border-white/20"
+          >
+            Automation
+          </Link>
+          <Link
             href="/learn"
             className="bg-white/10 text-white px-4 py-2 rounded-full hover:bg-white/20 transition text-sm border border-white/20"
           >
@@ -111,6 +117,13 @@ export default function Navigation() {
                 className="text-white/90 hover:text-white transition text-lg font-['Modern_Antiqua']"
               >
                 Projects
+              </Link>
+              <Link
+                href="/automation"
+                onClick={() => setIsMenuOpen(false)}
+                className="text-white/90 hover:text-white transition text-lg font-['Modern_Antiqua']"
+              >
+                Automation
               </Link>
             </div>
           </motion.div>
