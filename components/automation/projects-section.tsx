@@ -21,6 +21,9 @@ import {
   ShieldAlert,
   Webhook,
   Lock,
+  FileDown,
+  Send,
+  CreditCard,
   X,
   ArrowRight,
   type LucideIcon,
@@ -171,7 +174,71 @@ const projectThree: Project = {
   images: [{ src: "/dollerpe.png", alt: "Binance P2P automation dashboard" }],
 };
 
-const projects = [projectOne, projectTwo, projectThree];
+const projectFour: Project = {
+  badge: "Project 04",
+  title: "Invoicely — Invoice & Billing Automation",
+  hook: "A full-stack invoice automation platform that generates branded PDFs, emails them to clients, runs recurring billing, and collects payments online via Stripe.",
+  problemSolution:
+    "Managing invoices manually meant building documents in a spreadsheet, exporting PDFs, emailing clients one by one, tracking payments by hand, and chasing overdue bills — hours of admin work every week. I built a full-stack invoice automation platform that handles the whole lifecycle: creating invoices, generating branded PDFs, emailing clients, scheduling recurring bills, and processing payments through Stripe — all from a single dashboard.",
+  stepsTitle: "Key Features",
+  steps: [
+    {
+      icon: FileDown,
+      text: "Puppeteer renders a branded HTML template into an A4 PDF invoice on demand, stored permanently via ImageKit",
+    },
+    {
+      icon: Send,
+      text: "Nodemailer emails each invoice to the client with the PDF attached automatically",
+    },
+    {
+      icon: Timer,
+      text: "BullMQ queue + cron job handles recurring billing (weekly / monthly / yearly) — auto-generating and emailing invoices on schedule while a daily job marks overdue invoices",
+    },
+    {
+      icon: CreditCard,
+      text: "Stripe Checkout integration — the Stripe webhook auto-marks invoices as PAID the moment checkout completes",
+    },
+    {
+      icon: Globe,
+      text: "Public payment page (/pay/[invoiceId]) — clients open the payment link from email and pay without logging in",
+    },
+    {
+      icon: LayoutDashboard,
+      text: "Dashboard with KPI cards (revenue, outstanding, overdue, clients), invoice status breakdown, and recent activity feed",
+    },
+    {
+      icon: ShieldCheck,
+      text: "Secure auth via JWT + bcrypt, protected routes, and server-side validation with Zod",
+    },
+    {
+      icon: Mail,
+      text: "Automated overdue reminder emails to clients, plus sequential invoice numbering (INV-2026-0001)",
+    },
+  ],
+  tools: [
+    "Next.js",
+    "TypeScript",
+    "Express",
+    "Prisma",
+    "PostgreSQL",
+    "Redis",
+    "BullMQ",
+    "Stripe",
+    "Puppeteer",
+    "Nodemailer",
+    "ImageKit",
+  ],
+  impact:
+    "Eliminates the entire manual invoice-to-payment workflow — replacing spreadsheet creation, manual PDF exports, one-by-one emailing, and payment chasing with one automated system that generates, ships, schedules, and collects invoices end-to-end.",
+  images: [
+    {
+      src: "/automation/imvoices-automation.png",
+      alt: "Invoicely invoice automation platform",
+    },
+  ],
+};
+
+const projects = [projectOne, projectTwo, projectThree, projectFour];
 
 function ProjectCard({
   project,

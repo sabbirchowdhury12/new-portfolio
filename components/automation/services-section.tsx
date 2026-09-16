@@ -59,6 +59,8 @@ const services = [
     description:
       "Automating repetitive document-based and communication-heavy processes (emails, reports, notifications) to reduce turnaround time and manual overhead.",
     tools: ["Node.js", "Puppeteer", "Email/Notification APIs"],
+    example:
+      "Built a full-stack invoice automation platform where Puppeteer generates branded A4 PDF invoices, Nodemailer emails them to clients automatically, BullMQ schedules recurring bills, and Stripe handles payments — eliminating the manual invoice-to-payment workflow end-to-end.",
   },
 ];
 
